@@ -25,6 +25,9 @@ public class CamMovement : MonoBehaviour
         YlocalPos = transform.localPosition.y;
 
         _player = GetComponentInParent<CharMovement>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     protected private void Update()
     {
@@ -42,7 +45,6 @@ public class CamMovement : MonoBehaviour
             transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
             if (_player._isMoving && !_player._isJumping)
             {
-
                 CamSineWave(YRange, YmovSens, YlocalPos);
             }
         }

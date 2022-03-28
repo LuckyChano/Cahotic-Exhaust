@@ -22,7 +22,7 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     //[HideInInspector]
     public bool _isMoving, _isJumping, _canMove;
-
+    bool canDash = true;
 
     private void Start()
     {
@@ -61,7 +61,7 @@ public class CharMovement : MonoBehaviour, IWalkable
         _rb.AddForce(Vector3.up * jumpHeight);
     }
 
-    void JumpRay()
+    void HeightRay()
     {
         
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), raydistance, layerMask))
@@ -70,22 +70,49 @@ public class CharMovement : MonoBehaviour, IWalkable
         }
         else
         {
-            _isJumping = true;
+            /*var airTimer = 0f;
+            airTimer += Time.deltaTime;
+
+            if(airTimer < 1.5f)
+            {
+                //hacer daño;
+            }*/
         }
     }
 
     private void Update()
     {
-        JumpRay();
+        HeightRay();
         if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
             {
                 Jump();
             }
+        
+        
+
     }
     virtual protected void FixedUpdate()
     {
-        verAxis = Input.GetAxis("Vertical");
-        horAxis = Input.GetAxis("Horizontal");
+        verAxis = Input.GetAxisRaw("Vertical");
+        horAxis = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKeyDown(KeyCode.LeftControl) && canDash)
+        {
+            StartCoroutine(Dash(horAxis, verAxis));
+        }
         Move();
+    }
+
+
+    IEnumerator Dash(float hor, float ver)
+    {
+        int force = 500;
+        if(hor != 0 && ver == 0)
+            _rb.AddForce((transform.right * hor) * force);
+        if(ver != 0 && hor == 0)
+            _rb.AddForce((transform.forward * ver) * force);
+        canDash = false;
+
+        yield return new WaitForSeconds(2f);
+        canDash = true;
     }
 }
