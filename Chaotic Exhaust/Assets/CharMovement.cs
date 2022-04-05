@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharMovement : MonoBehaviour, IWalkable
 {
+    protected Rigidbody rb;
+    
     protected float speed = 5f;
 
     protected float jumpHeight = 300f;
@@ -14,59 +16,49 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     protected float horAxis;
 
-    protected Rigidbody _rb;
-
     public float raydistance = 0f;
 
     public LayerMask layerMask;
 
+    //flags
     //[HideInInspector]
-    public bool _isMoving, _isJumping, _canMove;
-    bool canDash = true;
+    public bool isMoving, isJumping, canMove;
+    bool _canDash = true;
 
     private void Start()
     {
-        _canMove = true;
-        _rb = GetComponent<Rigidbody>();
-        _isMoving = false;
+        rb = GetComponent<Rigidbody>();
+        
+        canMove = true;
+        isMoving = false;
     }
 
-    public void Move()
+    private void Update()
     {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                speed = 10;
-            }
-            else speed = 5f;
-            position = transform.position;
-
-            position += (speed * verAxis * Time.deltaTime) * transform.forward;
-
-            if (horAxis != 0)
-            {
-                position += (speed * horAxis * Time.deltaTime) * transform.right;
-            }
-
-            _rb.MovePosition(position);
-
-
-            if (verAxis != 0 || horAxis != 0)
-            {
-                _isMoving = true;
-            }
-            else _isMoving = false;
+        HeightRay();
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            Jump();
+        }
     }
-    public void Jump()
+
+    virtual protected void FixedUpdate()
     {
-        _rb.AddForce(Vector3.up * jumpHeight);
+        verAxis = Input.GetAxisRaw("Vertical");
+        horAxis = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKeyDown(KeyCode.LeftControl) && _canDash)
+        {
+            StartCoroutine(Dash(horAxis, verAxis));
+        }
+        Move();
     }
 
     void HeightRay()
     {
-        
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), raydistance, layerMask))
-        {          
-            _isJumping = false;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), raydistance, layerMask))
+        {
+            isJumping = false;
         }
         else
         {
@@ -80,39 +72,48 @@ public class CharMovement : MonoBehaviour, IWalkable
         }
     }
 
-    private void Update()
+    public void Jump()
     {
-        HeightRay();
-        if (Input.GetKeyDown(KeyCode.Space) && !_isJumping)
-            {
-                Jump();
-            }
-        
-        
-
+        rb.AddForce(Vector3.up * jumpHeight);
     }
-    virtual protected void FixedUpdate()
+
+    public void Move()
     {
-        verAxis = Input.GetAxisRaw("Vertical");
-        horAxis = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.LeftControl) && canDash)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            StartCoroutine(Dash(horAxis, verAxis));
+            speed = 10;
         }
-        Move();
-    }
+        else speed = 5f;
+        
+        position = transform.position;
 
+        position += (speed * verAxis * Time.deltaTime) * transform.forward;
+
+        if (horAxis != 0)
+        {
+            position += (speed * horAxis * Time.deltaTime) * transform.right;
+        }
+
+        rb.MovePosition(position);
+
+
+        if (verAxis != 0 || horAxis != 0)
+        {
+            isMoving = true;
+        }
+        else isMoving = false;
+    }
 
     IEnumerator Dash(float hor, float ver)
     {
         int force = 500;
         if(hor != 0 && ver == 0)
-            _rb.AddForce((transform.right * hor) * force);
+            rb.AddForce((transform.right * hor) * force);
         if(ver != 0 && hor == 0)
-            _rb.AddForce((transform.forward * ver) * force);
-        canDash = false;
+            rb.AddForce((transform.forward * ver) * force);
+        _canDash = false;
 
         yield return new WaitForSeconds(2f);
-        canDash = true;
+        _canDash = true;
     }
 }
