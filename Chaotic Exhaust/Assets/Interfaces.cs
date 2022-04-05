@@ -7,6 +7,9 @@ public interface IWalkable
 
     void Jump();
 }
-
+public interface IsShootable
+{
+    void Damage(int amout);
+}
 
 
