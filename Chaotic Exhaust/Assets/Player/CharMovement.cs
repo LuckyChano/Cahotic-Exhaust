@@ -20,6 +20,8 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     protected float horAxis;
 
+    private Vector3 inputVector;
+
     private string _runButton = "Run";
     private string _jumpButton = "Jump";
     private string _dashButton = "Dash";
@@ -39,6 +41,13 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     private void Update()
     {
+        verAxis = Input.GetAxisRaw("Vertical");
+        horAxis = Input.GetAxisRaw("Horizontal");
+        
+        inputVector.x = horAxis;
+        inputVector.z = verAxis;
+        inputVector.y = 0;
+
         if (Input.GetButtonDown(_jumpButton) && footSensor.isGrownded)
         {
             Jump();
@@ -52,19 +61,21 @@ public class CharMovement : MonoBehaviour, IWalkable
                 //hacer daño;
             }*/
         }
-    }
 
-    virtual protected void FixedUpdate()
-    {
-        verAxis = Input.GetAxisRaw("Vertical");
-        horAxis = Input.GetAxisRaw("Horizontal");
-        
         if (Input.GetButtonDown(_dashButton) && _canDash)
         {
             StartCoroutine(Dash());
         }
-        
+
         Move();
+    }
+
+    virtual protected void FixedUpdate()
+    {
+        if (inputVector.magnitude > 0)
+        {
+            rb.MovePosition(rb.position + (transform.right * inputVector.x + transform.forward * inputVector.z) * walkSpeed * Time.deltaTime);
+        }
     }
 
     public void Jump()
@@ -72,36 +83,31 @@ public class CharMovement : MonoBehaviour, IWalkable
         rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
     }
 
+    IEnumerator Dash()
+    {
+        if(horAxis != 0 && verAxis == 0)
+            rb.AddForce((transform.right * horAxis) * dashSpeed, ForceMode.Impulse);
+        if(horAxis == 0 && verAxis != 0)
+            rb.AddForce((transform.forward * verAxis) * dashSpeed, ForceMode.Impulse);
+        if(horAxis == 0 && verAxis == 0)
+            rb.AddForce((transform.forward * 1) * dashSpeed, ForceMode.Impulse);
+        _canDash = false;
+
+        yield return new WaitForSeconds(2f);
+        _canDash = true;
+    }
+
     public void Move()
     {
-        Vector3 inputVector;
-        inputVector.x = horAxis;
-        inputVector.z = verAxis;
-        inputVector.y = 0;
-
         if (Input.GetButton(_runButton))
         {
             inputVector *= runSpeedMultiplier;
         }
-
-        rb.MovePosition(rb.position + (transform.right * inputVector.x + transform.forward * inputVector.z) * walkSpeed * Time.deltaTime);
 
         if (verAxis != 0 || horAxis != 0)
         {
             isMoving = true;
         }
         else isMoving = false;
-    }
-
-    IEnumerator Dash()
-    {
-        if(horAxis != 0 && verAxis == 0)
-            rb.AddForce((transform.right * horAxis) * dashSpeed, ForceMode.Impulse);
-        if(verAxis != 0 && horAxis == 0)
-            rb.AddForce((transform.forward * verAxis) * dashSpeed, ForceMode.Impulse);
-        _canDash = false;
-
-        yield return new WaitForSeconds(2f);
-        _canDash = true;
     }
 }
