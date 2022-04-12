@@ -48,6 +48,11 @@ public class CharMovement : MonoBehaviour, IWalkable
         inputVector.z = verAxis;
         inputVector.y = 0;
 
+        if (inputVector.magnitude > 1)
+        {
+            inputVector.Normalize();
+        }
+
         if (Input.GetButtonDown(_jumpButton) && footSensor.isGrownded)
         {
             Jump();

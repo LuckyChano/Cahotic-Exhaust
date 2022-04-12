@@ -7,24 +7,60 @@ public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
-    public Transform destination1;
-    public Transform destination2;
+    public Transform[] destinations;
+
+    private GameObject _player;
+
+    private int _i = 0;
+    
+    public float distanceToPoint = 2;
+
+    private float _distanceToPlayer;
+
+    public float distanceToFollowPlayer = 10;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        navMeshAgent.destination = destination1.position;
+        navMeshAgent.destination = destinations[0].position;
+
+        _player = FindObjectOfType<CharMovement>().gameObject;
     }
 
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, destination1.position);
+        _distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
 
-        if (distance < 2)
+        if (_distanceToPlayer <= distanceToFollowPlayer)
         {
-            navMeshAgent.destination = destination2.position;
+            FollowPlayer();
         }
-        
+        else
+        {
+            EnemyPath();
+        }
+    }
+
+    public void EnemyPath()
+    {
+        navMeshAgent.destination = destinations[_i].position;
+
+        if (Vector3.Distance(transform.position, destinations[_i].position) <= distanceToPoint)
+        {
+            if (destinations[_i] != destinations[destinations.Length - 1])
+            {
+                _i++;
+            }
+            else
+            {
+                _i = 0;
+            }
+        }
+    }
+
+    public void FollowPlayer()
+    {
+        navMeshAgent.destination = _player.transform.position;
     }
 }

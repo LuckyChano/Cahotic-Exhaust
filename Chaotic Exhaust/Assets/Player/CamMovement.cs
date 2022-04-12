@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class CamMovement : MonoBehaviour
 {
-
-    public float mouseSens = 100f;
-
     public Transform playerBody;
 
     private CharMovement _player;
     
-    private float _xRotation = 0f;
-
     public FootSensor footSensor;
+    
+    public float mouseSens = 100f;
+        
+    private float _xRotation = 0f;
 
     private float _YmovSens = 0.08f;
     private float _YRange = 0.15f;
