@@ -9,8 +9,6 @@ public class GunBehaviour : MonoBehaviour
 
     //Animator _anim;
 
-    Transform _gunpoint;
-
     AudioSource _sound;
 
     public GameObject blast;
@@ -18,7 +16,6 @@ public class GunBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _gunpoint = transform.Find("GunPoint");
         //_anim = GetComponent<Animator>();
         _sound = GetComponent<AudioSource>();
     }
@@ -41,7 +38,7 @@ public class GunBehaviour : MonoBehaviour
     public void Shoot()
     {
         RaycastHit hit;
-        if (Physics.Raycast(_gunpoint.transform.position, _gunpoint.transform.forward, out hit, _range))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, _range))
         {
             var tar = hit.transform.GetComponent<IsShootable>();
             if(tar !=null)
