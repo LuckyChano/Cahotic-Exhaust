@@ -9,7 +9,8 @@ public interface IWalkable
 }
 public interface IsShootable
 {
-    void Damage(int amout);
+    void Damage(int damage);
+    void DamageFeedback();
 }
 
 

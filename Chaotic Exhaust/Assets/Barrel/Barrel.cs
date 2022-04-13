@@ -6,34 +6,40 @@ public class Barrel : MonoBehaviour, IsShootable
 {
 
     AudioSource hitShot;
-    public int hp = 1;
-
-    public void Damage(int damage)
+    //public int hp = 1;
+    LifeBehaviour hpComponent;
+    public void Damage(int dmg)
     {
-        hp -= damage;
-        if(hp <= 0)
-        {
-            StartCoroutine(DamagedFeedback());
-        }
+        hpComponent.takeDamage(dmg);
+    }
+
+    public void DamageFeedback()
+    {
+        StartCoroutine(DamagedFeedback());
     }
 
     public IEnumerator DamagedFeedback()
     {
-        if(!hitShot.isPlaying)
-            hitShot.Play();
 
         GetComponentInChildren<Renderer>().material.color = Color.red;
 
         yield return new WaitForSeconds(.5f);
 
-        if (gameObject != null)
-        { 
+        GetComponentInChildren<Renderer>().material.color = Color.white;
+        if (hpComponent.hp <= 0)
             Destroy(gameObject);
-        }
     }
-
-    void Start()
+    private void Awake()
     {
         hitShot = GetComponent<AudioSource>();
+    }
+    void Start()
+    {
+        hpComponent = new LifeBehaviour(DamageFeedback, hitShot);
+    }
+
+    public int ReturnHP()
+    {
+        return hpComponent.hp;
     }
 }

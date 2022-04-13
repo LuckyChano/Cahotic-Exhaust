@@ -4,7 +4,7 @@ using System.Collections;
 public class GunBehaviour : MonoBehaviour
 {
 
-    int _damage = 2;
+    public int _damage = 2;
     public float _range = 200f;
 
     //Animator _anim;
@@ -43,9 +43,12 @@ public class GunBehaviour : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(_gunpoint.transform.position, _gunpoint.transform.forward, out hit, _range))
         {
-            var tar = hit.transform.GetComponent<IsShootable>() != null ? hit.transform.GetComponent<IsShootable>() : null;
+            var tar = hit.transform.GetComponent<IsShootable>();
             if(tar !=null)
+            {
                 tar.Damage(_damage);
+                Debug.Log(hit.transform.GetComponent<Barrel>().ReturnHP());
+            }
             var gunBlast = Instantiate(blast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
             Destroy(gunBlast, .5f);
         }
