@@ -1,27 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+public enum GunStates
+{ 
+    SHOOT,
+    RELOAD
+}
+
+
 public class GunBehaviour : MonoBehaviour
 {
 
     public int _damage = 2;
     public float _range = 200f;
     public int maxAmmo;
-    public int bulletAmout;
+    public int bulletAmout = 20;
     public float shootSpeed = 5f;
-    float shootTimer = 0;
     //Animator _anim;
 
     AudioSource _sound;
 
     public GameObject blast;
 
+    Machine _fsm;
+    ShootingState _shootState;
+    ReloadState _reloadStatel;
 
     private void Start()
     {
         //_anim = GetComponent<Animator>();
+        _fsm = new Machine();
         bulletAmout = maxAmmo;
         _sound = GetComponent<AudioSource>();
+        _shootState = new ShootingState(this, _fsm, Shoot, shootSpeed, _sound);
+        _reloadStatel = new ReloadState(this, _fsm, null);
+        _fsm.AddState(GunStates.SHOOT, _shootState);
+        _fsm.AddState(GunStates.RELOAD, _reloadStatel);
+        _fsm.ChangeState(GunStates.SHOOT);
     }
 
     void Update()
@@ -31,25 +47,7 @@ public class GunBehaviour : MonoBehaviour
 
     void PlayerState()
     {
-        
-        if(Input.GetButton("Fire1"))
-        {
-            if(Time.time - shootTimer > 1/shootSpeed && bulletAmout > 0)
-            {
-                shootTimer = Time.time;
-                Shoot();
-                _sound.Play();
-            }
-            if(bulletAmout <= 0)
-            {
-                //Animacion sin balas;
-            }
-            //_anim.SetTrigger("shoot");
-        }
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            bulletAmout = maxAmmo;
-        }
+        _fsm.Update();
     }
 
     public void Shoot()
