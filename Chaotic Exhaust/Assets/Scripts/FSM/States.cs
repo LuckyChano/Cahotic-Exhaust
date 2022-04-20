@@ -63,7 +63,11 @@ public class ShootingState : IStates
             }
         }
 
-        if(_agent.bulletAmout <= 0 || Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            machine.ChangeState(GunStates.RELOAD);
+        }
+        if (_agent.bulletAmout <= 0 && Input.GetKeyDown(KeyCode.R))
         {
             machine.ChangeState(GunStates.RELOAD);
         }
