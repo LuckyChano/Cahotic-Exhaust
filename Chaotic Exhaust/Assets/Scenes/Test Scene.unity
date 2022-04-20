@@ -1114,6 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2b9434c7d8b3643be3289d27e0ca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
 --- !u!82 &646223828
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1259,6 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2b9434c7d8b3643be3289d27e0ca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
 --- !u!114 &647643813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,8 +2694,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc2fc5112e3d6ca468e84506cc8a12e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2
+  _damage: 1
   _range: 200
+  maxAmmo: 20
+  bulletAmout: 20
+  shootSpeed: 4
   blast: {fileID: 2673247151236843949, guid: 39c6f65e299fa8941981590759d3c418, type: 3}
 --- !u!65 &1528517939
 BoxCollider:
