@@ -8,6 +8,8 @@ public class Barrel : MonoBehaviour, IsShootable
     AudioSource hitShot;
     //public int hp = 1;
     LifeBehaviour hpComponent;
+
+    public int hp;
     public void Damage(int dmg)
     {
         hpComponent.takeDamage(dmg);
@@ -35,7 +37,7 @@ public class Barrel : MonoBehaviour, IsShootable
     }
     void Start()
     {
-        hpComponent = new LifeBehaviour(DamageFeedback, hitShot);
+        hpComponent = new LifeBehaviour(DamageFeedback, hitShot, hp);
     }
 
     public int ReturnHP()

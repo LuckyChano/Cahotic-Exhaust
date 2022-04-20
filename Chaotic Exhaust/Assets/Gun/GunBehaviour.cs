@@ -6,7 +6,10 @@ public class GunBehaviour : MonoBehaviour
 
     public int _damage = 2;
     public float _range = 200f;
-
+    public int maxAmmo;
+    public int bulletAmout;
+    public float shootSpeed = 5f;
+    float shootTimer = 0;
     //Animator _anim;
 
     AudioSource _sound;
@@ -17,6 +20,7 @@ public class GunBehaviour : MonoBehaviour
     private void Start()
     {
         //_anim = GetComponent<Animator>();
+        bulletAmout = maxAmmo;
         _sound = GetComponent<AudioSource>();
     }
 
@@ -27,11 +31,24 @@ public class GunBehaviour : MonoBehaviour
 
     void PlayerState()
     {
-        if (Input.GetButtonDown("Fire1"))
+        
+        if(Input.GetButton("Fire1"))
         {
-            Shoot();
+            if(Time.time - shootTimer > 1/shootSpeed && bulletAmout > 0)
+            {
+                shootTimer = Time.time;
+                Shoot();
+                _sound.Play();
+            }
+            if(bulletAmout <= 0)
+            {
+                //Animacion sin balas;
+            }
             //_anim.SetTrigger("shoot");
-            _sound.Play();
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            bulletAmout = maxAmmo;
         }
     }
 
@@ -44,10 +61,10 @@ public class GunBehaviour : MonoBehaviour
             if(tar !=null)
             {
                 tar.Damage(_damage);
-                Debug.Log(hit.transform.GetComponent<Barrel>().ReturnHP());
             }
             var gunBlast = Instantiate(blast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
             Destroy(gunBlast, .5f);
         }
+            bulletAmout--;
     }
 }
