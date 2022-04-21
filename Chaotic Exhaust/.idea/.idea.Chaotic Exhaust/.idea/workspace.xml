@@ -10,13 +10,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/UI/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/UI/AlphaFade.cs" />
+      <option value="$PROJECT_DIR$/Assets/UI/ButtonBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/UI/MenuButtonController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />
@@ -63,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650498010821</updated>
       <workItem from="1650498038784" duration="2434000" />
+      <workItem from="1650572848525" duration="3824000" />
     </task>
     <servers />
   </component>
