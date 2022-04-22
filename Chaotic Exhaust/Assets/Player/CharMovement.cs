@@ -8,13 +8,13 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     public FootSensor footSensor;
     
-    protected float walkSpeed = 5f;
+    protected float walkSpeed = 7f;
 
     protected float runSpeedMultiplier = 2f;
 
     protected float jumpSpeed = 6f;
 
-    protected float dashSpeed = 10f;
+    protected float dashSpeed = 12f;
 
     protected float verAxis;
 
@@ -71,11 +71,11 @@ public class CharMovement : MonoBehaviour, IWalkable
         {
             StartCoroutine(Dash());
         }
-
         Move();
+
     }
 
-    virtual protected void FixedUpdate()
+    void FixedUpdate()
     {
         if (inputVector.magnitude > 0)
         {
@@ -90,12 +90,13 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     IEnumerator Dash()
     {
+        
         if(horAxis != 0 && verAxis == 0)
-            rb.AddForce((transform.right * horAxis) * dashSpeed, ForceMode.Impulse);
+            rb.AddForce((transform.right * horAxis).normalized * dashSpeed, ForceMode.Impulse);
         if(horAxis == 0 && verAxis != 0)
-            rb.AddForce((transform.forward * verAxis) * dashSpeed, ForceMode.Impulse);
+            rb.AddForce((transform.forward * verAxis).normalized * dashSpeed, ForceMode.Impulse);
         if(horAxis == 0 && verAxis == 0)
-            rb.AddForce((transform.forward * 1) * dashSpeed, ForceMode.Impulse);
+            rb.AddForce((transform.forward * 1).normalized * dashSpeed, ForceMode.Impulse);
         _canDash = false;
 
         yield return new WaitForSeconds(2f);

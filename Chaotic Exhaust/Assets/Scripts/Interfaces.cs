@@ -12,5 +12,9 @@ public interface IsShootable
     void Damage(int damage);
     void DamageFeedback();
 }
+public interface IPickable
+{
+    GameObject ReturnObject();
+}
 
 
