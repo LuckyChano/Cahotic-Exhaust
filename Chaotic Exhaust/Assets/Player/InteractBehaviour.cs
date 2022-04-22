@@ -14,20 +14,36 @@ public class InteractBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 50f))
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            var tar = hit.transform.GetComponent<IPickable>();
-            if (tar != null)
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 50f))
             {
-                pickUpManager.Interact(Interact, tar);
+                var tar = hit.transform.GetComponent<IPickable>();
+                if (tar != null)
+                {
+                    pickUpManager.Interact(Interact, tar);
+                }
             }
         }
     }
 
     void Interact(GameObject objectToInteract)
     {
+        if (objectToInteract == null)
+        {
+            return;
+        }
+        if(!inventory.Contains(objectToInteract))
+        {
+            FirstInteracted();
+        }
         inventory.Add(objectToInteract);
         Destroy(objectToInteract);
+    }
+
+    void FirstInteracted()
+    {
+
     }
 }
