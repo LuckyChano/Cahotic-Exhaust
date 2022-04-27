@@ -16,5 +16,10 @@ public interface IPickable
 {
     GameObject ReturnObject();
 }
+public interface IItem
+{
+    void FirstInteracted(GameObject gadget);
+    GameObject ReturnItem();
+}
 
 

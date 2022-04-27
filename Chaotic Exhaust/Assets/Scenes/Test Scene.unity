@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16840
+  m_Name: pb_Mesh25040
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2914,6 +2914,7 @@ GameObject:
   - component: {fileID: 209858319}
   - component: {fileID: 209858324}
   - component: {fileID: 209858323}
+  - component: {fileID: 209858325}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3007,7 +3008,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209858317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.84318674, z: -0, w: 0.53762084}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3016,7 +3017,7 @@ Transform:
   - {fileID: 1601130960}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 114.956, z: 0}
 --- !u!114 &209858323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3044,7 +3045,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eab764b01f7656478555216accb75ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
+  pickUpManager:
+    inventory:
+      inventory: []
+  ItemHolder: {fileID: 1601130959}
+  gadgetFlashLight: {fileID: 866936620}
+--- !u!114 &209858325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209858317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d53d3e05042eb499067f603909a9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invManager: {fileID: 0}
+  Flashlight: {fileID: 1877272977}
+  flashLightGadget: {fileID: 2036365906}
+  state: 0
 --- !u!1 &292948512
 GameObject:
   m_ObjectHideFlags: 0
@@ -8907,6 +8928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22de86c1b2354454386c63b8b35d3c9e, type: 3}
+--- !u!1 &866936620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6180408275691582641, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
+  m_PrefabInstance: {fileID: 8831895122115148746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &947152900
 GameObject:
   m_ObjectHideFlags: 0
@@ -9088,7 +9114,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16926
+  m_Name: pb_Mesh25126
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11845,7 +11871,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16608
+  m_Name: pb_Mesh24806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12009,7 +12035,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16532
+  m_Name: pb_Mesh24730
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14030,7 +14056,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16774
+  m_Name: pb_Mesh16762
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14263,7 +14289,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16914
+  m_Name: pb_Mesh25114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14462,13 +14488,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1297814994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6315894554875163438, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+  m_PrefabInstance: {fileID: 2476706236493155462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1328713597
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16652
+  m_Name: pb_Mesh24850
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17459,7 +17490,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16640
+  m_Name: pb_Mesh24838
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20364,6 +20395,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3143259806254633296, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
   m_PrefabInstance: {fileID: 2476706236493155462}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877272977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877272973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cce07f7e3fb6fd4fb47b8ce7be631a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightItem: {fileID: 1297814994}
 --- !u!1 &1890926137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 207582021675866403, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
@@ -20401,7 +20445,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16758
+  m_Name: pb_Mesh24956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23546,7 +23590,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16892
+  m_Name: pb_Mesh25092
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23734,6 +23778,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2036365906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3025488854925792975, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
+  m_PrefabInstance: {fileID: 8831895122115148746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052603516
 GameObject:
   m_ObjectHideFlags: 0
@@ -24204,6 +24253,18 @@ PrefabInstance:
     - target: {fileID: 696556091719222169, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143259806254633296, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_Name
+      value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315894554875163438, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_Name
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099692383238402959, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_Range
+      value: 0.53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
@@ -25122,6 +25183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlashLight
       objectReference: {fileID: 0}
+    - target: {fileID: 6180408275691582641, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6813638614644911627, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -25177,6 +25242,10 @@ PrefabInstance:
     - target: {fileID: 6813638614644911627, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043347709238360762, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
+      propertyPath: m_Range
+      value: 25.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}

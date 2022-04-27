@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class InteractBehaviour : MonoBehaviour
 {
-    public List<GameObject> inventory;
-    PickUpManager pickUpManager;
+    
+    public PickUpManager pickUpManager;
+    public GameObject ItemHolder;
+    public GameObject gadgetFlashLight;
     void Start()
     {
         pickUpManager = new PickUpManager();
@@ -22,28 +24,23 @@ public class InteractBehaviour : MonoBehaviour
                 var tar = hit.transform.GetComponent<IPickable>();
                 if (tar != null)
                 {
-                    pickUpManager.Interact(Interact, tar);
+                    pickUpManager.Interact(Interact, tar, gadgetFlashLight);
                 }
             }
         }
     }
 
-    void Interact(GameObject objectToInteract)
+    IItem Interact(GameObject objectToInteract)
     {
         if (objectToInteract == null)
         {
-            return;
+            return null;
         }
-        if(!inventory.Contains(objectToInteract))
-        {
-            FirstInteracted();
-        }
-        inventory.Add(objectToInteract);
-        Destroy(objectToInteract);
+        objectToInteract.transform.parent = ItemHolder.transform;
+        objectToInteract.SetActive(false);
+        return objectToInteract.GetComponent<IItem>();
     }
 
-    void FirstInteracted()
-    {
 
-    }
+
 }
