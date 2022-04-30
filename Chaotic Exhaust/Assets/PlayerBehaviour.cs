@@ -21,7 +21,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void FlashlightItem()
     {
-        if (invManager.pickUpManager.returnItem(Flashlight) != null)
+        if (invManager.pickUpManager.getItem(Flashlight) != null)
         {
             if (Input.GetKeyDown(KeyCode.F) && state == false)
                 state = true;

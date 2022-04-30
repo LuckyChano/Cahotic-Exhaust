@@ -29,7 +29,6 @@ public class Inventory<T>
             }
         }
         return returnItem;
-
     }
 }
 
@@ -58,7 +57,7 @@ public class PickUpManager
             inventory.AddItem(intObject);
         }
     }
-    public GameObject returnItem(IItem item)
+    public GameObject getItem(IItem item)
     {
         if (inventory.hasItem(item.ReturnItem()) == null)
             return null;

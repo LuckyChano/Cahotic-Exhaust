@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25040
+  m_Name: pb_Mesh16828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3064,7 +3064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invManager: {fileID: 0}
   Flashlight: {fileID: 1877272977}
-  flashLightGadget: {fileID: 2036365906}
+  flashLightGadget: {fileID: 1440005789}
   state: 0
 --- !u!1 &292948512
 GameObject:
@@ -9114,7 +9114,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25126
+  m_Name: pb_Mesh16916
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11871,7 +11871,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24806
+  m_Name: pb_Mesh16592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12035,7 +12035,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24730
+  m_Name: pb_Mesh16516
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14289,7 +14289,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25114
+  m_Name: pb_Mesh16904
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14488,18 +14488,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1297814994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6315894554875163438, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
-  m_PrefabInstance: {fileID: 2476706236493155462}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1328713597
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24850
+  m_Name: pb_Mesh16636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14916,6 +14911,11 @@ Transform:
   m_Father: {fileID: 1296471994}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1440005789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8020076132322283762, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
+  m_PrefabInstance: {fileID: 8831895122115148746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1479781143
 GameObject:
   m_ObjectHideFlags: 0
@@ -17490,7 +17490,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24838
+  m_Name: pb_Mesh16624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20407,7 +20407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cce07f7e3fb6fd4fb47b8ce7be631a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightItem: {fileID: 1297814994}
+  lightItem: {fileID: 0}
 --- !u!1 &1890926137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 207582021675866403, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
@@ -20445,7 +20445,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24956
+  m_Name: pb_Mesh16744
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23590,7 +23590,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25092
+  m_Name: pb_Mesh16880
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23778,11 +23778,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2036365906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3025488854925792975, guid: b46d051b0fef4f74b9c35469281f7eb5, type: 3}
-  m_PrefabInstance: {fileID: 8831895122115148746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052603516
 GameObject:
   m_ObjectHideFlags: 0
@@ -24254,19 +24249,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1231499713853895955, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298205645173661531, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298205645173661531, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_SpotAngle
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298205645173661531, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3143259806254633296, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
       propertyPath: m_Name
       value: Flashlight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143259806254633296, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6315894554875163438, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
+    - target: {fileID: 6315894554875163438, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8099692383238402959, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
       propertyPath: m_Range
       value: 0.53
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2298205645173661531, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}
 --- !u!1 &3058933742431212370
 GameObject:
