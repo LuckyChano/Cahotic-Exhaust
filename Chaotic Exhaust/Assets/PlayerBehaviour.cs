@@ -6,7 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public InteractBehaviour invManager;
     public FlashlightBehaviour Flashlight;
-    public GameObject flashLightGadget;
+    public GameObject FlashlightLight;
     public bool state;
     void Start()
     {
@@ -27,7 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
                 state = true;
             else if (Input.GetKeyDown(KeyCode.F) && state == true)
                 state = false;
-            flashLightGadget.SetActive(state);
+            Flashlight.Do(state, FlashlightLight);
         }
     }
 }

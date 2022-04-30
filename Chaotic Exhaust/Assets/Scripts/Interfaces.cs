@@ -19,6 +19,7 @@ public interface IPickable
 public interface IItem
 {
     void FirstInteracted(GameObject gadget);
+    void Do(params object[] args);
     GameObject ReturnItem();
 }
 

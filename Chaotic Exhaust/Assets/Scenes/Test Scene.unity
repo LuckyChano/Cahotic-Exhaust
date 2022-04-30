@@ -3008,8 +3008,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209858317}
-  m_LocalRotation: {x: -0, y: 0.84318674, z: -0, w: 0.53762084}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: -0, y: 0.91330814, z: -0, w: 0.40726927}
+  m_LocalPosition: {x: 10.47, y: 23.49, z: 31.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -3017,7 +3017,7 @@ Transform:
   - {fileID: 1601130960}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 114.956, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 131.933, z: 0}
 --- !u!114 &209858323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3045,9 +3045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eab764b01f7656478555216accb75ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpManager:
-    inventory:
-      inventory: []
   ItemHolder: {fileID: 1601130959}
   gadgetFlashLight: {fileID: 866936620}
 --- !u!114 &209858325
@@ -3064,7 +3061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invManager: {fileID: 0}
   Flashlight: {fileID: 1877272977}
-  flashLightGadget: {fileID: 1440005789}
+  FlashlightLight: {fileID: 1440005789}
   state: 0
 --- !u!1 &292948512
 GameObject:
@@ -20407,7 +20404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cce07f7e3fb6fd4fb47b8ce7be631a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightItem: {fileID: 0}
 --- !u!1 &1890926137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 207582021675866403, guid: 4f23831f9cf9b6e4181ce439ea8469c5, type: 3}

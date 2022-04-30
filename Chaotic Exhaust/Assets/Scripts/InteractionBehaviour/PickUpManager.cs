@@ -11,20 +11,22 @@ public class Inventory<T>
 
     }
 
-    public List<GameObject> inventory = new List<GameObject>();
+    //Inventario Donde amlacena objetos de tipo IItem
+
+    public List<IItem> inventory = new List<IItem>();
 
     public void AddItem(IItem item)
     {
-        inventory.Add(item.ReturnItem());
+        inventory.Add(item);
     }
-    public GameObject hasItem(GameObject item)
+    public GameObject hasItem(IItem item)
     {
         GameObject returnItem = null;
         foreach (var item2 in inventory)
         {
-            if (item2.name == item.name)
+            if (item2.ReturnItem() == item.ReturnItem())
             {
-                returnItem =  item2;
+                returnItem =  item2.ReturnItem();
                 break;
             }
         }
@@ -35,7 +37,8 @@ public class Inventory<T>
 [System.Serializable]
 public class PickUpManager
 {
-    public Inventory<IItem> inventory;
+    
+    Inventory<IItem> inventory;
     public PickUpManager()
     {
         inventory = new Inventory<IItem>();
@@ -50,7 +53,7 @@ public class PickUpManager
         if(GetObject != null)
         {
             var intObject = callback(GetObject.ReturnObject());
-            if(!inventory.hasItem(intObject.ReturnItem()))
+            if(!inventory.hasItem(intObject))
             {
                 intObject.FirstInteracted(gadget);
             }
@@ -59,7 +62,7 @@ public class PickUpManager
     }
     public GameObject getItem(IItem item)
     {
-        if (inventory.hasItem(item.ReturnItem()) == null)
+        if (inventory.hasItem(item) == null)
             return null;
         else return item.ReturnItem();
     }
