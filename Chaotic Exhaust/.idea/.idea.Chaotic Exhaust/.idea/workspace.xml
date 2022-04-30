@@ -24,6 +24,8 @@
       <option value="$PROJECT_DIR$/Assets/UI/ButtonBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/MenuButtonController.cs" />
+      <option value="$PROJECT_DIR$/Assets/UI/Scripts/BGParallax.cs" />
+      <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />
@@ -71,6 +73,7 @@
       <updated>1650498010821</updated>
       <workItem from="1650498038784" duration="2434000" />
       <workItem from="1650572848525" duration="3824000" />
+      <workItem from="1651320567471" duration="3131000" />
     </task>
     <servers />
   </component>
