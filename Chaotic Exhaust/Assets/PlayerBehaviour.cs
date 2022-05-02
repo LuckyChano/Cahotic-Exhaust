@@ -14,20 +14,20 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        FlashlightItem();
-    }
+    //void Update()
+    //{
+    //    FlashlightItem();
+    //}
 
-    void FlashlightItem()
-    {
-        if (invManager.pickUpManager.getItem(Flashlight) != null)
-        {
-            if (Input.GetKeyDown(KeyCode.F) && state == false)
-                state = true;
-            else if (Input.GetKeyDown(KeyCode.F) && state == true)
-                state = false;
-            Flashlight.Do(state, FlashlightLight);
-        }
-    }
+    //void FlashlightItem()
+    //{
+    //    if (invManager.pickUpManager.getItem(Flashlight) != null)
+    //    {
+    //        if (Input.GetKeyDown(KeyCode.F) && state == false)
+    //            state = true;
+    //        else if (Input.GetKeyDown(KeyCode.F) && state == true)
+    //            state = false;
+    //        Flashlight.Do(state, FlashlightLight);
+    //    }
+    //}
 }

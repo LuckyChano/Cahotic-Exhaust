@@ -8,7 +8,6 @@ public class Barrel : MonoBehaviour, IsShootable
     AudioSource hitShot;
     //public int hp = 1;
     LifeBehaviour hpComponent;
-
     public int hp;
     public void Damage(int dmg)
     {
@@ -30,6 +29,8 @@ public class Barrel : MonoBehaviour, IsShootable
         GetComponentInChildren<Renderer>().material.color = Color.white;
         if (hpComponent.hp <= 0)
             Destroy(gameObject);
+           
+        
     }
     private void Awake()
     {
