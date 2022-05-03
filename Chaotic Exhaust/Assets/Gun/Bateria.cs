@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Bateria : MonoBehaviour
 {
-    public GameObject linterna;
+    private GameObject linterna;
     public float cantidadEnergia;
 
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

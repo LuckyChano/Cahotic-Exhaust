@@ -21,6 +21,10 @@ public class EnemyAI : MonoBehaviour
 
     public float distanceToFollowPlayer = 10;
 
+    private void Awake()
+    {
+        SetTransforms();
+    }
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -29,7 +33,7 @@ public class EnemyAI : MonoBehaviour
 
         _player = FindObjectOfType<CharMovement>().gameObject;
 
-        _destinations = FindObjectOfType<GameObject>().gameObject;
+        
     }
 
     void Update()
@@ -66,5 +70,13 @@ public class EnemyAI : MonoBehaviour
     public void FollowPlayer()
     {
         navMeshAgent.destination = _player.transform.position;
+    }
+
+    private void SetTransforms()
+    {
+        for (var i = 0; i < destinations.GetLength(0); i++)
+        {
+            destinations[i] = GameObject.FindGameObjectWithTag("Destination").GetComponent<Transform>();
+        }
     }
 }

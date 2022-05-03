@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -14,13 +15,25 @@ public class EnemyManager : MonoBehaviour
     private int killAmount;
     private bool bossIsActive;
     public int KillLimit;
+    public Text counter; 
 
     private void Start()
     {
         InvokeRepeating("CreateEnemyLeft", 3, 4);
         InvokeRepeating("CreateEnemyRight", 4, 6);
         InvokeRepeating("CreateEnemyFront", 4, 2);
-        InvokeRepeating("CreateEnemyBack", 5, 2); ;    
+        InvokeRepeating("CreateEnemyBack", 5, 2); ;
+        
+    }
+
+    private void Update()
+    {
+        SetCounter();
+    }
+
+    private void SetCounter()
+    {
+        counter.text = killAmount.ToString() + "/40";
     }
 
     public void IncreaseAmount(int amount)
@@ -38,7 +51,7 @@ public class EnemyManager : MonoBehaviour
             if (bossIsActive == false)
             {
                 bossIsActive = true;
-                Invoke("CreateBoss", 10);
+                Invoke("CreateBoss", 8);
             }
         }
     }
@@ -72,5 +85,7 @@ public class EnemyManager : MonoBehaviour
         GameObject go = Instantiate(bossPrefab, spawnPointFront.position, spawnPointFront.rotation);
         go.GetComponent<EnemyAI>();
     }
+
+  
 }
 

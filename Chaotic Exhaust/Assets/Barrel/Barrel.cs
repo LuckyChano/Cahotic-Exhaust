@@ -8,10 +8,13 @@ public class Barrel : MonoBehaviour, IsShootable
     AudioSource hitShot;
     //public int hp = 1;
     LifeBehaviour hpComponent;
+    private EnemyManager _manager;
     public int hp;
+    public int amount;
     public void Damage(int dmg)
     {
         hpComponent.takeDamage(dmg);
+        _manager = FindObjectOfType<EnemyManager>();
     }
 
     public void DamageFeedback()
@@ -28,8 +31,13 @@ public class Barrel : MonoBehaviour, IsShootable
 
         GetComponentInChildren<Renderer>().material.color = Color.white;
         if (hpComponent.hp <= 0)
+        {
             Destroy(gameObject);
-           
+            _manager.IncreaseAmount(amount);
+            
+        }
+            
+         
         
     }
     private void Awake()

@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b3332252db663264190ddb076bf37aef, type: 2}
+  - {fileID: 2100000, guid: 638dc1daeca1822429e8888e94b52096, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,7 +237,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -268,8 +268,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _destinations: {fileID: 0}
   distanceToPoint: 2
-  distanceToFollowPlayer: 10
+  distanceToFollowPlayer: 50
 --- !u!114 &8097403968446044938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,4 +283,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2b9434c7d8b3643be3289d27e0ca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 75
+  amount: 0
