@@ -10,7 +10,7 @@ public class BarrelArena : MonoBehaviour, IsShootable
     LifeBehaviour hpComponent;
     private EnemyManager _manager;
     public int hp;
-    public int amount;
+    public int amount = 1;
     public void Damage(int dmg)
     {
         hpComponent.takeDamage(dmg);
