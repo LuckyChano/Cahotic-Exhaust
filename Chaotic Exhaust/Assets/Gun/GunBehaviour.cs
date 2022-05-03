@@ -12,7 +12,7 @@ public enum GunStates
 public class GunBehaviour : MonoBehaviour
 {
 
-    public int _damage = 2;
+    public int _damage = 1;
     public float _range = 200f;
     public int maxAmmo;
     public int bulletAmout = 20;

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7807209302634711639}
   - component: {fileID: 7807209302634711638}
   - component: {fileID: 7807209302634711627}
-  - component: {fileID: 6020412431243698845}
+  - component: {fileID: 442831703}
   m_Layer: 6
   m_Name: Enemy Model
   m_TagString: Untagged
@@ -252,9 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2b9434c7d8b3643be3289d27e0ca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTrigger: {fileID: 3382859643874651227, guid: 35cdf01e496952d4db82fa7e0b4eb300, type: 3}
+  roomTrigger: {fileID: 0}
   hp: 3
---- !u!54 &6020412431243698845
+--- !u!54 &442831703
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7807209302874192303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

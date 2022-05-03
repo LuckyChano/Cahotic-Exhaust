@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
 {
-    [SerializeField] private int enemyCount;
-    [SerializeField] private int enemyMin;
+    [SerializeField] private int enemyCount = 0;
+    [SerializeField] private int enemyMin = 0;
     public int enemyLayer;
     public int roomLayer;
     [SerializeField] private int playerLayer;

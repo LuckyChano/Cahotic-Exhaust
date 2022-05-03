@@ -16,7 +16,7 @@ GameObject:
   m_Name: Barril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &553948492425679013
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2b9434c7d8b3643be3289d27e0ca4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTrigger: {fileID: 3382859643874651227, guid: 35cdf01e496952d4db82fa7e0b4eb300, type: 3}
+  roomTrigger: {fileID: 0}
   hp: 1
 --- !u!54 &599886824095603847
 Rigidbody:
@@ -177,7 +177,7 @@ GameObject:
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3502067603235230589
@@ -275,7 +275,7 @@ GameObject:
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5146188880402746698
