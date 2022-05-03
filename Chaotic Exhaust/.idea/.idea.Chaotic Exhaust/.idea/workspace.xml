@@ -18,6 +18,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SmartDoor.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/UI/AlphaFade.cs" />
@@ -26,6 +29,9 @@
       <option value="$PROJECT_DIR$/Assets/UI/MenuButtonController.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/BGParallax.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Gun/BateryManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Barrel/Barrel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />
@@ -74,6 +80,7 @@
       <workItem from="1650498038784" duration="2434000" />
       <workItem from="1650572848525" duration="3824000" />
       <workItem from="1651320567471" duration="3131000" />
+      <workItem from="1651521586375" duration="13754000" />
     </task>
     <servers />
   </component>

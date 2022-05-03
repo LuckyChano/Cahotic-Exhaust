@@ -13,13 +13,13 @@ public class BateryManager : MonoBehaviour
     
 
     [Header("Visuales")]
-    public Image batery1;
-    public Image batery2;
-    public Image batery3;
-    public Image batery4;
+    public GameObject charge25;
+    public GameObject charge50;
+    public GameObject charge75;
+    public GameObject charge100;
     public Sprite emptyBatery;
     public Sprite filledBatery;
-    public Text porcentaje;
+    //public Text porcentaje;
     
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class BateryManager : MonoBehaviour
 
         charge = Mathf.Clamp(charge, 0, 100);
         int valorBatery = (int)charge;
-        porcentaje.text = valorBatery.ToString() + "%";
+        //porcentaje.text = valorBatery.ToString() + "%";
         
         if(Input.GetKeyDown(KeyCode.F) && isEquiped == true)
         {
@@ -48,7 +48,7 @@ public class BateryManager : MonoBehaviour
         if(charge == 0)
         {
             luzLinterna.intensity = 0;
-            batery1.sprite = emptyBatery;
+            charge25.gameObject.SetActive(false);
         }
 
         if(isOn == true && charge > 0)
@@ -59,29 +59,34 @@ public class BateryManager : MonoBehaviour
         if(charge > 0 && charge <= 25)
         {
             luzLinterna.intensity = 1;
-            batery1.sprite = filledBatery;
-            batery2.sprite = emptyBatery;
+            charge25.gameObject.SetActive(true);
+            charge50.gameObject.SetActive(false);
         }
 
         if (charge > 25 && charge <= 50)
         {
             luzLinterna.intensity = 1.5f;
-            batery2.sprite = filledBatery;
-            batery3.sprite = emptyBatery;
+            charge25.gameObject.SetActive(false);
+            charge50.gameObject.SetActive(true);
+            charge75.gameObject.SetActive(false);
         }
 
         if (charge > 50 && charge <= 75)
         {
             luzLinterna.intensity = 2;
-            batery3.sprite = filledBatery;
-            batery4.sprite = emptyBatery;
+            charge25.gameObject.SetActive(false);
+            charge50.gameObject.SetActive(false);
+            charge75.gameObject.SetActive(true);
+            charge100.gameObject.SetActive(false);
         }
 
         if (charge > 75 && charge <= 100)
         {
             luzLinterna.intensity = 2.5f;
-            batery4.sprite = filledBatery;
-            
+            charge25.gameObject.SetActive(false);
+            charge50.gameObject.SetActive(false);
+            charge75.gameObject.SetActive(false);
+            charge100.gameObject.SetActive(true);
         }
     }
 
