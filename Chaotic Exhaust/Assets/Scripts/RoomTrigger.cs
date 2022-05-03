@@ -5,34 +5,33 @@ public class RoomTrigger : MonoBehaviour
 {
     [SerializeField] private int enemyCount = 0;
     [SerializeField] private int enemyMin = 0;
-    public int enemyLayer;
-    public int roomLayer;
-    [SerializeField] private int playerLayer;
+    private LayerManager _layerManager;
 
     public Animator smartDoor;
 
     private void Awake()
     {
-        roomLayer = gameObject.layer;
+        _layerManager = FindObjectOfType<LayerManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(enemyLayer))
+        if (other.gameObject.layer.Equals(_layerManager.enemyLayer))
         {
             CloseDoor();
             enemyCount++;
+            print("enemycount");
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer.Equals(playerLayer))
+        if (other.gameObject.layer.Equals(_layerManager.playerLayer))
         {
             OpenDoor();
         }
         
-        if (other.gameObject.layer.Equals(enemyLayer))
+        if (other.gameObject.layer.Equals(_layerManager.enemyLayer))
         {
             Destroy(other.gameObject);
             OnEnemyKilled();

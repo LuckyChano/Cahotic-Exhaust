@@ -59,7 +59,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyCount: -1
   enemyMin: 0
-  enemyLayer: 6
-  roomLayer: 8
-  playerLayer: 7
   smartDoor: {fileID: 0}

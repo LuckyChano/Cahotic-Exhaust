@@ -4,30 +4,24 @@ using UnityEngine;
 
 public class Trampas : MonoBehaviour
 {
-    public GameObject Huevos;
-    public GameObject trampa;
-    public GameObject player;
-    public int danio = 15;
-    private static bool activa = true;
-    public float Duracion;
-
-
-    void Update()
-    {
-
-    }
-
+    public GameObject egg;
+    public GameObject trap;
+    public int dmg = 80;
+    private static bool active = true;
+    public float duration;
+    public PlayerHealth ph;
+    [SerializeField] private int playerLayer;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.layer.Equals(playerLayer))
         {
             if (true)
             {
-                trampa.SetActive(true);
-                //player.GetComponent<PlayerBehaviour>().Damage(danio);
-                //Pb.BarValue -= danio;
-                activa = false;
-                Destroy(Huevos, Duracion);
+                trap.SetActive(true);
+                ph.SendDamage(dmg);
+                active = false;
+                Destroy(egg, duration);
             }
         }
     }

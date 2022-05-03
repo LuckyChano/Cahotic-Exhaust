@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Barrel : MonoBehaviour, IsShootable
 {
-    public RoomTrigger roomTrigger;
+    private LayerManager _layerManager;
+    private RoomTrigger _roomTrigger;
     AudioSource hitShot;
     //public int hp = 1;
     LifeBehaviour hpComponent;
@@ -31,9 +29,9 @@ public class Barrel : MonoBehaviour, IsShootable
         GetComponentInChildren<Renderer>().material.color = Color.white;
         if (hpComponent.hp <= 0)
         {
-            if (gameObject.layer.Equals(roomTrigger.enemyLayer))
+            if (gameObject.layer.Equals(_layerManager.enemyLayer))
             {
-                roomTrigger.OnEnemyKilled();
+                _roomTrigger.OnEnemyKilled();
             }
             Destroy(gameObject);
         }
@@ -42,6 +40,8 @@ public class Barrel : MonoBehaviour, IsShootable
     private void Awake()
     {
         hitShot = GetComponent<AudioSource>();
+        _roomTrigger = FindObjectOfType<RoomTrigger>();
+        _layerManager = FindObjectOfType<LayerManager>();
     }
     void Start()
     {

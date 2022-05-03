@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 
 public enum GunStates
@@ -22,6 +24,7 @@ public class GunBehaviour : MonoBehaviour
     AudioSource _sound;
 
     public GameObject blast;
+    public TextMeshProUGUI ammoCounter;
 
     Machine _fsm;
     ShootingState _shootState;
@@ -43,6 +46,7 @@ public class GunBehaviour : MonoBehaviour
     void Update()
     {
             PlayerState();
+            ammoCounter.text = bulletAmout.ToString();
     }
 
     void PlayerState()
@@ -63,6 +67,6 @@ public class GunBehaviour : MonoBehaviour
             var gunBlast = Instantiate(blast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
             Destroy(gunBlast, .5f);
         }
-            bulletAmout--;
+        bulletAmout--;
     }
 }
