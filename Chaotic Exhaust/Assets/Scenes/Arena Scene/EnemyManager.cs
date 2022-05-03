@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour
 
     private void SetCounter()
     {
-        counter.text = killAmount.ToString() + "/40";
+        counter.text = killAmount.ToString() + "/50";
     }
 
     public void IncreaseAmount(int amount)
