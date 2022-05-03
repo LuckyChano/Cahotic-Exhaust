@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
 
     private GameObject _player;
 
+    public GameObject _destinations;
+
     private int _i = 0;
     
     public float distanceToPoint = 2;
@@ -26,6 +28,8 @@ public class EnemyAI : MonoBehaviour
         navMeshAgent.destination = destinations[0].position;
 
         _player = FindObjectOfType<CharMovement>().gameObject;
+
+        _destinations = FindObjectOfType<GameObject>().gameObject;
     }
 
     void Update()
