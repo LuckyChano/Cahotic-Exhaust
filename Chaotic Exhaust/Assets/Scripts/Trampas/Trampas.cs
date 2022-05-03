@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Trampas : MonoBehaviour
 {
+    private static bool active = true;
+    
     public GameObject egg;
     public GameObject trap;
-    public int dmg = 80;
-    private static bool active = true;
-    public float duration;
     public PlayerHealth ph;
-    [SerializeField] private int playerLayer;
+
+    public int dmg = 80;
+    public float duration;
     
+    [SerializeField]
+    private int playerLayer;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer.Equals(playerLayer))
         {
-            if (true)
+            if (active)
             {
                 trap.SetActive(true);
                 ph.SendDamage(dmg);

@@ -10,7 +10,10 @@ public class FootSensor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _contactCount++;
+        if (other.gameObject.layer == 3)
+        {
+            _contactCount++;
+        }
 
         if (_contactCount==1)
         {
@@ -20,7 +23,10 @@ public class FootSensor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        _contactCount--;
+        if (other.gameObject.layer == 3)
+        {
+            _contactCount--;
+        }
 
         if (_contactCount == 0)
         {

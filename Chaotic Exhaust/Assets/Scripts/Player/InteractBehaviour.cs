@@ -8,6 +8,9 @@ public class InteractBehaviour : MonoBehaviour
     public PickUpManager pickUpManager;
     public GameObject ItemHolder;
     public GameObject gadgetFlashLight;
+
+    public float range = 50f;
+
     void Start()
     {
         pickUpManager = new PickUpManager();
@@ -19,7 +22,7 @@ public class InteractBehaviour : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 50f))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range))
             {
                 var tar = hit.transform.GetComponent<IPickable>();
                 if (tar != null)

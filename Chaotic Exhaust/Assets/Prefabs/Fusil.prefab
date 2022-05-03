@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 4712347374699386373}
   - component: {fileID: 4712347374699386371}
   - component: {fileID: 4712347374699386372}
+  - component: {fileID: 37526635}
   m_Layer: 0
   m_Name: Fusil
   m_TagString: Untagged
@@ -586,6 +587,26 @@ MonoBehaviour:
   bulletAmout: 20
   shootSpeed: 7
   blast: {fileID: 2673247151236843949, guid: 39c6f65e299fa8941981590759d3c418, type: 3}
+  ammoCounter: {fileID: 0}
+--- !u!95 &37526635
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814951552134751043}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f77f2b5d8e69b5145a0c879afda3e365, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5150939824124923458
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,9 +10,9 @@ public class CharMovement : MonoBehaviour, IWalkable
     
     protected float walkSpeed = 7f;
 
-    protected float runSpeedMultiplier = 2f;
+    protected float runSpeedMultiplier = 1.5f;
 
-    protected float jumpSpeed = 6f;
+    protected float jumpSpeed = 10f;
 
     protected float dashSpeed = 12f;
 
@@ -105,7 +105,7 @@ public class CharMovement : MonoBehaviour, IWalkable
 
     public void Move()
     {
-        if (Input.GetButton(_runButton))
+        if (Input.GetButton(_runButton) && footSensor.isGrownded)
         {
             inputVector *= runSpeedMultiplier;
         }

@@ -6,18 +6,16 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
-
     public Transform[] destinations;
+    
+    public float distanceToPoint = 2;
+    public float distanceToFollowPlayer = 10;
 
     private GameObject _player;
 
     private int _i = 0;
-    
-    public float distanceToPoint = 2;
-
     private float _distanceToPlayer;
 
-    public float distanceToFollowPlayer = 10;
 
     void Start()
     {
