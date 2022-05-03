@@ -107,7 +107,7 @@ MonoBehaviour:
   - {fileID: 0}
   _destinations: {fileID: 0}
   distanceToPoint: 2
-  distanceToFollowPlayer: 10
+  distanceToFollowPlayer: 50
 --- !u!114 &8109085578153903872
 MonoBehaviour:
   m_ObjectHideFlags: 0
