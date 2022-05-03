@@ -17,8 +17,7 @@ public class BateryManager : MonoBehaviour
     public GameObject charge50;
     public GameObject charge75;
     public GameObject charge100;
-    public Sprite emptyBatery;
-    public Sprite filledBatery;
+    
     //public Text porcentaje;
     
 
