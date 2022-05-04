@@ -51,25 +51,25 @@ public class BateryManager : MonoBehaviour
         if(charge > 0 && charge <= 25)
         {
             luzLinterna.intensity = 1;
-            chargeUI.value = .25f;
+            chargeUI.value = 2.5f;
         }
 
         if (charge > 25 && charge <= 50)
         {
             luzLinterna.intensity = 1.5f;
-            chargeUI.value = .50f;
+            chargeUI.value = 5.0f;
         }
 
         if (charge > 50 && charge <= 75)
         {
             luzLinterna.intensity = 2;
-            chargeUI.value = .75f;
+            chargeUI.value = 7.5f;
         }
 
         if (charge > 75 && charge <= 100)
         {
             luzLinterna.intensity = 2.5f;
-            chargeUI.value = 1;
+            chargeUI.value = 10;
         }
     }
 
