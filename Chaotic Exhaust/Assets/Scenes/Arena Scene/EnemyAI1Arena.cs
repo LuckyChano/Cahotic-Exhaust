@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAIArena : MonoBehaviour
+public class EnemyAI1Arena: MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
-
     public Transform[] destinations;
+    
+    public float distanceToPoint = 2;
+    public float distanceToFollowPlayer = 10;
+    public float walkSpeed;
+    public float runSpeed;
 
     private GameObject _player;
 
-    public GameObject _destinations;
-
     private int _i = 0;
-    
-    public float distanceToPoint = 2;
-
     private float _distanceToPlayer;
-
-    public float distanceToFollowPlayer = 10;
 
     private void Awake()
     {
@@ -32,8 +29,6 @@ public class EnemyAIArena : MonoBehaviour
         navMeshAgent.destination = destinations[0].position;
 
         _player = FindObjectOfType<CharMovement>().gameObject;
-
-        
     }
 
     void Update()
@@ -52,6 +47,7 @@ public class EnemyAIArena : MonoBehaviour
 
     public void EnemyPath()
     {
+        navMeshAgent.speed = walkSpeed;
         navMeshAgent.destination = destinations[_i].position;
 
         if (Vector3.Distance(transform.position, destinations[_i].position) <= distanceToPoint)
@@ -70,6 +66,7 @@ public class EnemyAIArena : MonoBehaviour
     public void FollowPlayer()
     {
         navMeshAgent.destination = _player.transform.position;
+        navMeshAgent.speed = runSpeed;
     }
 
     private void SetTransforms()

@@ -59,31 +59,31 @@ public class EnemyManager : MonoBehaviour
     private void CreateEnemyLeft()
     {
         GameObject go = Instantiate(enemyPrefab, spawnPointLeft.position, spawnPointLeft.rotation);
-        go.GetComponent<EnemyAIArena>();
+        go.GetComponent<EnemyAI1Arena>();
     }
 
     private void CreateEnemyRight()
     {
         GameObject go = Instantiate(enemyPrefab, spawnPointRight.position, spawnPointRight.rotation);
-        go.GetComponent<EnemyAIArena>();
+        go.GetComponent<EnemyAI1Arena>();
     }
 
     private void CreateEnemyFront()
     {
         GameObject go = Instantiate(enemyPrefab, spawnPointFront.position, spawnPointFront.rotation);
-        go.GetComponent<EnemyAIArena>();
+        go.GetComponent<EnemyAI1Arena>();
     }
 
     private void CreateEnemyBack()
     {
         GameObject go = Instantiate(enemyPrefab, spawnPointBack.position, spawnPointBack.rotation);
-        go.GetComponent<EnemyAIArena>();
+        go.GetComponent<EnemyAI1Arena>();
     }
 
     private void CreateBoss()
     {
         GameObject go = Instantiate(bossPrefab, spawnPointFront.position, spawnPointFront.rotation);
-        go.GetComponent<EnemyAIArena>();
+        go.GetComponent<EnemyAI1Arena>();
     }
 
   
