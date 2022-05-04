@@ -8,6 +8,13 @@ public class PlayerBehaviour : MonoBehaviour
     public FlashlightBehaviour Flashlight;
     public GameObject FlashlightLight;
     public bool state;
+    public bool canMove;
+    public static PlayerBehaviour instance;
+    private void Awake()
+    {
+        instance = this;
+        canMove = true;
+    }
     void Start()
     {
         invManager = GetComponent<InteractBehaviour>();

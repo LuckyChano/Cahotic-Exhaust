@@ -41,15 +41,16 @@ public class PlayerHealth : MonoBehaviour
         screenFx.SetFloat("hit", 1);
         if (curHealth <= 0)
         {
-            StartCoroutine(PauseGame());
+            PlayerBehaviour.instance.canMove = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
     }
 
-    public IEnumerator PauseGame()
+    /*public IEnumerator PauseGame()
     {
+
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale = 0;
-    }
+        Time.timeScale *= 0.01f;
+    }*/
 }

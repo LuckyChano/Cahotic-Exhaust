@@ -15,9 +15,12 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        if(_optionsMenu != null)
         _optionsMenu.SetActive(false);
-        _mainMenu.SetActive(true);
-        _credits.SetActive(false);
+        if(_mainMenu != null)
+            _mainMenu.SetActive(true);
+        if(_credits != null)
+            _credits.SetActive(false);
     }
 
     public void LoadMainScene()

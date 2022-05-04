@@ -32,4 +32,5 @@ public class EnemyDamage : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
     }
+
 }
