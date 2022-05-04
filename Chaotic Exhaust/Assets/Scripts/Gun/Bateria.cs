@@ -6,8 +6,13 @@ public class Bateria : MonoBehaviour
 {
     public GameObject linterna;
     public float cantidadEnergia;
+    private BateryManager _flashLight;
 
-    
+    public void star()
+    {
+        _flashLight = FindObjectOfType<BateryManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

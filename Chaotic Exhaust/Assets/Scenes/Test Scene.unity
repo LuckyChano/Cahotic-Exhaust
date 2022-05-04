@@ -51691,6 +51691,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8158736182016972961, guid: 26f6cd8925f805148a66eab40dd0acf8, type: 3}
+      propertyPath: linterna
+      value: 
+      objectReference: {fileID: 866936620}
     - target: {fileID: 8553213282640119534, guid: 26f6cd8925f805148a66eab40dd0acf8, type: 3}
       propertyPath: m_RootOrder
       value: 1
