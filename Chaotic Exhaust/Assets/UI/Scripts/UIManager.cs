@@ -5,7 +5,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private int _mainScene;
     [SerializeField] private int _survivalScene;
-
+    [SerializeField] private int _mainMenuScene;
+    
     // Interfaces
     [SerializeField] private GameObject _optionsMenu;
     [SerializeField] private GameObject _levelSelection;
@@ -22,6 +23,7 @@ public class UIManager : MonoBehaviour
     public void LoadMainScene()
     {
         SceneManager.LoadScene(sceneBuildIndex: _mainScene);
+        Time.timeScale = 1;
     }
     
     public void LoadSurvivalScene()
@@ -29,6 +31,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(sceneBuildIndex: _survivalScene);
     }
     
+    public void LoadMainMenuScene()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: _mainMenuScene);
+        Time.timeScale = 1;
+    }
+
     public void ShowMainOptions()
     {
         _optionsMenu.SetActive(true);

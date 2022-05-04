@@ -33,7 +33,6 @@
       <option value="$PROJECT_DIR$/Assets/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Barrel/Barrel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trampas/Trampas.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/Barrel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" />
@@ -41,6 +40,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/FSM/States.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
     </changedPaths>
   </component>
