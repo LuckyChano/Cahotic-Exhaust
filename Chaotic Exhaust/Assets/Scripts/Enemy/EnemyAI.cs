@@ -10,6 +10,8 @@ public class EnemyAI: MonoBehaviour
     
     public float distanceToPoint = 2;
     public float distanceToFollowPlayer = 10;
+    public float walkSpeed;
+    public float runSpeed;
 
     private GameObject _player;
 
@@ -42,6 +44,7 @@ public class EnemyAI: MonoBehaviour
 
     public void EnemyPath()
     {
+        navMeshAgent.speed = walkSpeed;
         navMeshAgent.destination = destinations[_i].position;
 
         if (Vector3.Distance(transform.position, destinations[_i].position) <= distanceToPoint)
@@ -60,5 +63,6 @@ public class EnemyAI: MonoBehaviour
     public void FollowPlayer()
     {
         navMeshAgent.destination = _player.transform.position;
+        navMeshAgent.speed = runSpeed;
     }
 }
