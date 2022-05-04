@@ -16,7 +16,7 @@ public class RoomTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(_layerManager.enemyLayer))
+        if (!other.isTrigger && other.gameObject.layer.Equals(_layerManager.enemyLayer))
         {
             CloseDoor();
             enemyCount++;
@@ -26,12 +26,12 @@ public class RoomTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer.Equals(_layerManager.playerLayer))
+        if (!other.isTrigger && other.gameObject.layer.Equals(_layerManager.playerLayer))
         {
             OpenDoor();
         }
         
-        if (other.gameObject.layer.Equals(_layerManager.enemyLayer))
+        if (!other.isTrigger && other.gameObject.layer.Equals(_layerManager.enemyLayer))
         {
             Destroy(other.gameObject);
             OnEnemyKilled();

@@ -30,7 +30,6 @@
       <option value="$PROJECT_DIR$/Assets/UI/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/MenuButtonController.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/BGParallax.cs" />
-      <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Barrel/Barrel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trampas/Trampas.cs" />
@@ -38,9 +37,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/Barrel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/GunBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FSM/States.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />
@@ -91,6 +92,7 @@
       <workItem from="1651320567471" duration="3131000" />
       <workItem from="1651521586375" duration="13754000" />
       <workItem from="1651582986343" duration="6060000" />
+      <workItem from="1651665723071" duration="3174000" />
     </task>
     <servers />
   </component>

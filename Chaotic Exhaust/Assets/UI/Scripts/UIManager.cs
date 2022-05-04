@@ -3,10 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private int _sceneIndex;
-    
+    [SerializeField] private int _mainScene;
+    [SerializeField] private int _survivalScene;
+
     // Interfaces
     [SerializeField] private GameObject _optionsMenu;
+    [SerializeField] private GameObject _levelSelection;
     [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _credits;
 
@@ -19,7 +21,12 @@ public class UIManager : MonoBehaviour
 
     public void LoadMainScene()
     {
-        SceneManager.LoadScene(sceneBuildIndex: _sceneIndex);
+        SceneManager.LoadScene(sceneBuildIndex: _mainScene);
+    }
+    
+    public void LoadSurvivalScene()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: _survivalScene);
     }
     
     public void ShowMainOptions()
@@ -28,11 +35,18 @@ public class UIManager : MonoBehaviour
         _mainMenu.SetActive(false);
     }
     
+    public void ShowLevelSelectionMenu()
+    {
+        _mainMenu.SetActive(false);
+        _levelSelection.SetActive(true);
+    }
+    
     public void ShowMainMenu()
     {
         _mainMenu.SetActive(true);
         _optionsMenu.SetActive(false);
         _credits.SetActive(false);
+        _levelSelection.SetActive(false);
     }
 
     public void ShowCredits()

@@ -13,15 +13,8 @@ public class BateryManager : MonoBehaviour
     
 
     [Header("Visuales")]
-    public GameObject charge25;
-    public GameObject charge50;
-    public GameObject charge75;
-    public GameObject charge100;
+    public Slider chargeUI;
     
-    //public Text porcentaje;
-    
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -47,7 +40,7 @@ public class BateryManager : MonoBehaviour
         if(charge == 0)
         {
             luzLinterna.intensity = 0;
-            charge25.gameObject.SetActive(false);
+            chargeUI.value = 0;
         }
 
         if(isOn == true && charge > 0)
@@ -58,34 +51,25 @@ public class BateryManager : MonoBehaviour
         if(charge > 0 && charge <= 25)
         {
             luzLinterna.intensity = 1;
-            charge25.gameObject.SetActive(true);
-            charge50.gameObject.SetActive(false);
+            chargeUI.value = .25f;
         }
 
         if (charge > 25 && charge <= 50)
         {
             luzLinterna.intensity = 1.5f;
-            charge25.gameObject.SetActive(false);
-            charge50.gameObject.SetActive(true);
-            charge75.gameObject.SetActive(false);
+            chargeUI.value = .50f;
         }
 
         if (charge > 50 && charge <= 75)
         {
             luzLinterna.intensity = 2;
-            charge25.gameObject.SetActive(false);
-            charge50.gameObject.SetActive(false);
-            charge75.gameObject.SetActive(true);
-            charge100.gameObject.SetActive(false);
+            chargeUI.value = .75f;
         }
 
         if (charge > 75 && charge <= 100)
         {
             luzLinterna.intensity = 2.5f;
-            charge25.gameObject.SetActive(false);
-            charge50.gameObject.SetActive(false);
-            charge75.gameObject.SetActive(false);
-            charge100.gameObject.SetActive(true);
+            chargeUI.value = 1;
         }
     }
 

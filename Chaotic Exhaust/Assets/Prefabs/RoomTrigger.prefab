@@ -57,6 +57,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4964739fc5863d4e9a4c68755e65117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCount: -1
+  enemyCount: 0
   enemyMin: 0
   smartDoor: {fileID: 0}
