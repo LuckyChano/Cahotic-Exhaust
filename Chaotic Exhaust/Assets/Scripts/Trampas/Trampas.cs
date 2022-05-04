@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trampas : MonoBehaviour
 {
-    private static bool active = true;
+    private bool active = true;
     
     public GameObject egg;
     public GameObject trap;

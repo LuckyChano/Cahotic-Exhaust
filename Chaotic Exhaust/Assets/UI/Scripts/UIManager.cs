@@ -70,4 +70,9 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ReloadScene()
+    {
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+    }
 }
