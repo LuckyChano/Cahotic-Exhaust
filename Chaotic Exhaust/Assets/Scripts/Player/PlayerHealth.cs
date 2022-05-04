@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,5 +39,17 @@ public class PlayerHealth : MonoBehaviour
         curHealth -= damageValue;
         healthBar.value = curHealth;
         screenFx.SetFloat("hit", 1);
+        if (curHealth <= 0)
+        {
+            StartCoroutine(PauseGame());
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    public IEnumerator PauseGame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 0;
     }
 }

@@ -20,7 +20,6 @@ public class RoomTrigger : MonoBehaviour
         {
             CloseDoor();
             enemyCount++;
-            print("enemycount");
         }
     }
 
