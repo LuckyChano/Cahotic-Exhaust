@@ -16,8 +16,8 @@ TagManager:
   - Player
   - RoomTrigger
   - Destination
-  - 
-  - 
+  - PostProcessing
+  - GunHolder
   - 
   - 
   - 
