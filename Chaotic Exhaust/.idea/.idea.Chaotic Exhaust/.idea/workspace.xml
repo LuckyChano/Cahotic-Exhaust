@@ -19,7 +19,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SmartDoor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -33,16 +32,18 @@
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/BGParallax.cs" />
       <option value="$PROJECT_DIR$/Assets/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Barrel/Barrel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/Barrel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/GunBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FSM/States.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trampas/Trampas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Arena Scene/RayCastDamageSystemArena.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/Barrel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/RayCastDamageSystem.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />

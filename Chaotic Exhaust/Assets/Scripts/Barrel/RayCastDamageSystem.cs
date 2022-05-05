@@ -6,11 +6,10 @@ public class RayCastDamageSystem : MonoBehaviour, IsShootable
     public int hp;
     //public int hp = 1;
     
-    private LayerManager _layerManager;
-    private RoomTrigger _roomTrigger;
     private AudioSource _hitShot;
     private LifeBehaviour _hpComponent;
     private Renderer _myRenderer;
+    private RoomTrigger _roomTrigger;
 
     [SerializeField]
     private Color _hurtColor = Color.red;
@@ -20,9 +19,8 @@ public class RayCastDamageSystem : MonoBehaviour, IsShootable
     private void Awake()
     {
         _hitShot = GetComponent<AudioSource>();
-        _roomTrigger = FindObjectOfType<RoomTrigger>();
-        _layerManager = FindObjectOfType<LayerManager>();
         _myRenderer = GetComponent<Renderer>();
+        _roomTrigger = FindObjectOfType<RoomTrigger>();
 
         _normalColor = _myRenderer.material.color;
     }
@@ -64,7 +62,7 @@ public class RayCastDamageSystem : MonoBehaviour, IsShootable
 
     public void Die()
     {
-        if (gameObject.layer.Equals(_layerManager.enemyLayer))
+        if (gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             _roomTrigger.OnEnemyKilled();
         }

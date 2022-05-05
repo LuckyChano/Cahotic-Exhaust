@@ -6,7 +6,6 @@ public class RayCastDamageSystemArena : MonoBehaviour, IsShootable
     public int hp;
     //public int hp = 1;
     
-    private LayerManager _layerManager;
     private RoomTrigger _roomTrigger;
     private AudioSource _hitShot;
     private LifeBehaviour _hpComponent;
@@ -24,7 +23,6 @@ public class RayCastDamageSystemArena : MonoBehaviour, IsShootable
     {
         _hitShot = GetComponent<AudioSource>();
         _roomTrigger = FindObjectOfType<RoomTrigger>();
-        _layerManager = FindObjectOfType<LayerManager>();
         _myRenderer = GetComponent<Renderer>();
         _manager = FindObjectOfType<EnemyManager>();
         _normalColor = _myRenderer.material.color;
@@ -65,13 +63,4 @@ public class RayCastDamageSystemArena : MonoBehaviour, IsShootable
         }
 
     }
-
-    //public void Die()
-    //{
-    //    if (gameObject.layer.Equals(_layerManager.enemyLayer))
-    //    {
-    //        _roomTrigger.OnEnemyKilled();
-    //    }
-    //    Destroy(gameObject);
-    //}
 }

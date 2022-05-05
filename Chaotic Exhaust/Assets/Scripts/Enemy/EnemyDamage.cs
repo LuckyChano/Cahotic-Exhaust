@@ -3,19 +3,17 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    private LayerManager _layerManager;
     private PlayerHealth _playerHealth;
     [SerializeField] private int dmg;
 
     private void Awake()
     {
-        _layerManager = FindObjectOfType<LayerManager>();
         _playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer.Equals(_layerManager.playerLayer))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             DamageFeedback();
         }
@@ -32,5 +30,4 @@ public class EnemyDamage : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
     }
-
 }
