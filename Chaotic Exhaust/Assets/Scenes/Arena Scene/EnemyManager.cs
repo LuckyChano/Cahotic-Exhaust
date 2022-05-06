@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class EnemyManager : MonoBehaviour
     private int killAmount;
     private bool bossIsActive;
     public int KillLimit;
-    public Text counter; 
+    public TextMeshProUGUI counter; 
 
     private void Start()
     {

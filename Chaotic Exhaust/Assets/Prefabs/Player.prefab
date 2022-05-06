@@ -573,6 +573,26 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4129122721773866431, guid: 309babb34cfba574b827018692a9aea2, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129122721773866431, guid: 309babb34cfba574b827018692a9aea2, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129122721773866431, guid: 309babb34cfba574b827018692a9aea2, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 3295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129122721773866431, guid: 309babb34cfba574b827018692a9aea2, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129122721773866431, guid: 309babb34cfba574b827018692a9aea2, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4712347374699386370, guid: 309babb34cfba574b827018692a9aea2, type: 3}
       propertyPath: m_Enabled
       value: 1

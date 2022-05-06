@@ -45,6 +45,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/Bateria.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Arena Scene/EnemyManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />
