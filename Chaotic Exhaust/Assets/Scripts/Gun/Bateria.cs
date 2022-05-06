@@ -8,7 +8,7 @@ public class Bateria : MonoBehaviour
     public float cantidadEnergia;
     private BateryManager _flashLight;
 
-    public void star()
+    public void Start()
     {
         _flashLight = FindObjectOfType<BateryManager>();
     }

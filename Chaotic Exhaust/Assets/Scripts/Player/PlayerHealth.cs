@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +9,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float curHealth;
     [SerializeField] private float maxHealth;
 
-    public Slider healthBar;
-    public Animator screenFx;
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private TextMeshProUGUI healthPercentage;
+    [SerializeField] private Animator screenFx;
 
     void Start()
     {
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
     public void SendDamage(float damageValue)
     {
         curHealth -= damageValue;
+        healthPercentage.text = curHealth.ToString("g2");
         healthBar.value = curHealth;
         screenFx.SetFloat("hit", 1);
         if (curHealth <= 0)

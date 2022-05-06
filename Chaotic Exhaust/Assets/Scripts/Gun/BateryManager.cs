@@ -1,27 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BateryManager : MonoBehaviour
 {
-    public Light luzLinterna;
-    public bool isOn;
-    public bool isEquiped;
+    [SerializeField] private Light luzLinterna;
+    [SerializeField] private bool isOn;
+    [SerializeField] private bool isEquiped;
     public float charge;
-    public float lostCharge = 0.5f;
+    [SerializeField] private float lostCharge = 0.5f;
     
 
     [Header("Visuales")]
-    public Slider chargeUI;
-    
+    [SerializeField] private TextMeshProUGUI chargePercentage;
+    [SerializeField] private Slider chargeSlider;
+
     void Update()
     {
 
         charge = Mathf.Clamp(charge, 0, 100);
-        int valorBatery = (int)charge;
-        //porcentaje.text = valorBatery.ToString() + "%";
-        
+
         if(Input.GetKeyDown(KeyCode.F) && isEquiped == true)
         {
             isOn = !isOn;
@@ -40,36 +39,37 @@ public class BateryManager : MonoBehaviour
         if(charge == 0)
         {
             luzLinterna.intensity = 0;
-            chargeUI.value = 0;
+            chargeSlider.value = 0;
         }
 
-        if(isOn == true && charge > 0)
+        if(isOn && charge > 0)
         {
             charge -= lostCharge * Time.deltaTime;
+            chargePercentage.text = charge.ToString("g2");
         }
 
         if(charge > 0 && charge <= 25)
         {
             luzLinterna.intensity = 1;
-            chargeUI.value = 2.5f;
+            chargeSlider.value = 25f;
         }
 
         if (charge > 25 && charge <= 50)
         {
             luzLinterna.intensity = 1.5f;
-            chargeUI.value = 5.0f;
+            chargeSlider.value = 50f;
         }
 
         if (charge > 50 && charge <= 75)
         {
             luzLinterna.intensity = 2;
-            chargeUI.value = 7.5f;
+            chargeSlider.value = 75f;
         }
 
         if (charge > 75 && charge <= 100)
         {
             luzLinterna.intensity = 2.5f;
-            chargeUI.value = 10;
+            chargeSlider.value = 100;
         }
     }
 
