@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Bateria : MonoBehaviour
 {
-    public GameObject linterna;
-    public float cantidadEnergia;
+    public float energy;
     private BateryManager _flashLight;
 
     public void Start()
@@ -17,7 +16,7 @@ public class Bateria : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            linterna.GetComponent<BateryManager>().charge += cantidadEnergia;
+            _flashLight.Charge(energy);
             Destroy(gameObject);
         }
     }

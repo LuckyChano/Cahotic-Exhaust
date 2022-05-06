@@ -1,4 +1,3 @@
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,19 +17,16 @@ public class BateryManager : MonoBehaviour
 
     void Update()
     {
-
-        charge = Mathf.Clamp(charge, 0, 100);
-
         if(Input.GetKeyDown(KeyCode.F) && isEquiped == true)
         {
             isOn = !isOn;
 
-            if(isOn == true)
+            if(isOn)
             {
                 luzLinterna.enabled = true;
             }
 
-            if(isOn == false)
+            if(!isOn)
             {
                 luzLinterna.enabled = false;
             }
@@ -72,6 +68,12 @@ public class BateryManager : MonoBehaviour
             chargeSlider.value = 100;
         }
     }
-
-   
+            
+    public void Charge(float amount)
+    {
+        charge += amount;
+        charge = Mathf.Clamp(charge, 0, 100);
+        chargeSlider.value = amount;
+    }
+    
 }

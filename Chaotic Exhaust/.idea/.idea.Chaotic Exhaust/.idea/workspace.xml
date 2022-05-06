@@ -42,9 +42,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/Barrel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/RayCastDamageSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/Bateria.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />
@@ -106,6 +106,7 @@
       <workItem from="1651665723071" duration="3174000" />
       <workItem from="1651766466754" duration="604000" />
       <workItem from="1651803909441" duration="1589000" />
+      <workItem from="1651839265679" duration="534000" />
     </task>
     <servers />
   </component>
