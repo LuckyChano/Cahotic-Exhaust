@@ -597,6 +597,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4712347374699386371, guid: 309babb34cfba574b827018692a9aea2, type: 3}
+      propertyPath: swayAmount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4712347374699386372, guid: 309babb34cfba574b827018692a9aea2, type: 3}
       propertyPath: ammoCounter
       value: 

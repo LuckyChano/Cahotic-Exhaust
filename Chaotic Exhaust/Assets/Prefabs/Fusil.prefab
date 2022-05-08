@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4dfdbb56b5a7274bb5ff77450abe5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swayAmount: 8
+  swayAmount: 60
 --- !u!114 &4712347374699386372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,9 +802,5 @@ MonoBehaviour:
   isEquiped: 1
   charge: 100
   lostCharge: 1.5
-  charge25: {fileID: 0}
-  charge50: {fileID: 0}
-  charge75: {fileID: 0}
-  charge100: {fileID: 0}
-  emptyBatery: {fileID: 21300000, guid: cdeac2699cf5cff48bc8a1fa7590c1d1, type: 3}
-  filledBatery: {fileID: 21300000, guid: 1185ef045d892eb43ba6993c34bd2ced, type: 3}
+  chargePercentage: {fileID: 0}
+  chargeSlider: {fileID: 0}
