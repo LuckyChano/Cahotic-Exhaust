@@ -6,7 +6,7 @@ public class CamMovement : MonoBehaviour
 {
     public Transform playerBody;
 
-    private CharMovement _player;
+    private PlayerMovement _player;
     
     public FootSensor footSensor;
     
@@ -24,7 +24,7 @@ public class CamMovement : MonoBehaviour
     {
         _YlocalPos = transform.localPosition.y;
 
-        _player = GetComponentInParent<CharMovement>();
+        _player = GetComponentInParent<PlayerMovement>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

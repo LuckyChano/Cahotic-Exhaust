@@ -746,13 +746,13 @@ GameObject:
   - component: {fileID: 2923935174557468281}
   - component: {fileID: 4957092046005034855}
   - component: {fileID: 4957092045259079173}
+  - component: {fileID: 2674564009473195874}
   - component: {fileID: 2923935174557468284}
+  - component: {fileID: 4957092045986592528}
   - component: {fileID: 2923935174557468263}
   - component: {fileID: 2923935174557468262}
   - component: {fileID: 4273047859446960211}
   - component: {fileID: 6175323689087539123}
-  - component: {fileID: 4957092045986592528}
-  - component: {fileID: 2674564009473195874}
   - component: {fileID: 8768278805261197523}
   m_Layer: 6
   m_Name: Enemy
@@ -847,6 +847,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8239119, y: 2, z: 1.8561878}
   m_Center: {x: -0.008076549, y: 0, z: 0.008965492}
+--- !u!136 &2674564009473195874
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923935174557468260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!82 &2923935174557468284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -943,6 +957,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4957092045986592528
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923935174557468260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9d6da34d255f0fc40b07f82e7f07d669, type: 3}
+  m_Controller: {fileID: 9100000, guid: 067d7cf27a868f44f926a0be6d38946a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &2923935174557468263
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1015,39 +1048,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   _hurtColor: {r: 1, g: 0.58695996, b: 0, a: 1}
---- !u!95 &4957092045986592528
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2923935174557468260}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9d6da34d255f0fc40b07f82e7f07d669, type: 3}
-  m_Controller: {fileID: 9100000, guid: 067d7cf27a868f44f926a0be6d38946a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!136 &2674564009473195874
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2923935174557468260}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8768278805261197523
 MonoBehaviour:
   m_ObjectHideFlags: 0

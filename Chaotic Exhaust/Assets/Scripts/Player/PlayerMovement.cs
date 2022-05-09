@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharMovement : MonoBehaviour, IWalkable
+public class PlayerMovement : MonoBehaviour, IWalkable
 {
     protected Rigidbody rb;
 

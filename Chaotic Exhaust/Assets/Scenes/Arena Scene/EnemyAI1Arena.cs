@@ -28,7 +28,7 @@ public class EnemyAI1Arena: MonoBehaviour
 
         navMeshAgent.destination = destinations[0].position;
 
-        _player = FindObjectOfType<CharMovement>().gameObject;
+        _player = FindObjectOfType<PlayerMovement>().gameObject;
     }
 
     void Update()
