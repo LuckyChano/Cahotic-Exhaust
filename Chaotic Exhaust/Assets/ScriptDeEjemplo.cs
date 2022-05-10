@@ -19,7 +19,9 @@ public class ScriptDeEjemplo : MonoBehaviour
     /*  Metodos de Unity en este orden
             - Awake
             - Start
+            - Late Update
             - Updates
+            - Fixed Update
             - Collisions
     */
 

@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IWalkable
 {
-    protected Rigidbody rb;
-
     public FootSensor footSensor;
     
+    protected Rigidbody rb;
+    
     protected float walkSpeed = 7f;
-
     protected float runSpeedMultiplier = 1.5f;
-
     protected float jumpSpeed = 10f;
-
     protected float dashSpeed = 12f;
-
     protected float verAxis;
-
     protected float horAxis;
-
     private Vector3 inputVector;
 
     private string _runButton = "Run";
