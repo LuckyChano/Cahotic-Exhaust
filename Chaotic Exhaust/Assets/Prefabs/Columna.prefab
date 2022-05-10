@@ -566,7 +566,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: ecbab8113f8924846b932da9ae7347af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 997838294279436179, guid: d68986f5a3e1db142bd19367cc742ebf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ecbab8113f8924846b932da9ae7347af, type: 2}
     - target: {fileID: 1646616331885286982, guid: d68986f5a3e1db142bd19367cc742ebf, type: 3}
       propertyPath: m_Name
       value: Esquina 2

@@ -576,7 +576,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: ecbab8113f8924846b932da9ae7347af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1664,7 +1664,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: ecbab8113f8924846b932da9ae7347af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1715,6 +1715,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3143343006109577267}
     m_Modifications:
+    - target: {fileID: 5225982949598899003, guid: 149a6be0aecc16243adf8db0e2abd906, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ecbab8113f8924846b932da9ae7347af, type: 2}
     - target: {fileID: 6018664793651055342, guid: 149a6be0aecc16243adf8db0e2abd906, type: 3}
       propertyPath: m_Name
       value: Columna
@@ -1781,6 +1785,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 420048356659278992, guid: b29ff6334d7427f4ca1a7599ed5b1181, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ecbab8113f8924846b932da9ae7347af, type: 2}
     - target: {fileID: 1558072974768492543, guid: b29ff6334d7427f4ca1a7599ed5b1181, type: 3}
       propertyPath: m_RootOrder
       value: 0
