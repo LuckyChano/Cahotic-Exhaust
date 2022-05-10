@@ -4,56 +4,116 @@ using UnityEngine;
 
 public class PlayerMove
 {
-    private FootSensor _footSensor;
     private Transform _transform;
     private Rigidbody _rb;
-        
-    public bool isMoving;
-    public bool canMove;
+    private FootSensor _footSensor;
     
     private float _walkSpeed;
     private float _runSpeedMultiplier;
     private float _jumpForce;
     private float _dashForce;
-    
     private Vector3 _inputVector;
-    
-    private bool _canDash = true;
+    private bool _isMoving;
+    private bool _canMove;
+    private bool _canDash;
+    private bool _isStuned;
 
-    public PlayerMove(Transform transform, Rigidbody rb, float walkSpeed, float runSpeedMultiplier, float jumpForce, float dashForce)
+    public bool IsMoving
+    {
+        get
+        {
+            return _isMoving;
+        }
+    }
+
+    public bool CanMove
+    {
+        get
+        {
+            return _canMove;
+        }
+        set
+        {
+            _canMove = value;
+        }
+    }
+
+    public bool CanDash
+    {
+        get
+        {
+            return CanDash;
+        }
+        set
+        {
+            CanDash = value;
+        }
+    }
+
+    public bool IsStuned
+    {
+        get
+        {
+            return _isStuned;
+        }
+    }
+
+    public PlayerMove(Transform transform, Rigidbody rb, FootSensor footSensor, float walkSpeed, float runSpeedMultiplier, float jumpForce, float dashForce)
     {
         _transform = transform;
         _rb = rb;
+        _footSensor = footSensor;
         _walkSpeed = walkSpeed;
         _runSpeedMultiplier = runSpeedMultiplier;
         _jumpForce = jumpForce;
         _dashForce = dashForce;
 
-        canMove = true;
-        isMoving = false;
+        _canMove = true;
+        _isMoving = false;
+        _canDash = true;
+        _isStuned = false;
     }
 
     public void Move(float verAxis, float horAxis)
     {
-        _inputVector.x = horAxis;
-        _inputVector.z = verAxis;
-        _inputVector.y = 0;
-
-        if (_inputVector.magnitude > 1)
-        {
-            _inputVector.Normalize();
-        }
-
         if (verAxis != 0 || horAxis != 0)
         {
-            isMoving = true;
+            _isMoving = true;
         }
-        else isMoving = false;
+        else
+        {
+            _isMoving = false;
+        }
+
+        if (CanMove)
+        {
+            _inputVector.x = horAxis;
+            _inputVector.z = verAxis;
+            _inputVector.y = 0;
+
+            if (_inputVector.magnitude > 1)
+            {
+                _inputVector.Normalize();
+            }
+
+            _isStuned = false;
+        }
+        else
+        {
+            _inputVector.x = 0;
+            _inputVector.z = 0;
+            _inputVector.y = 0;
+
+            _isStuned = true;
+        }
     }
 
     public void Run()
     {
-        _inputVector *= _runSpeedMultiplier;
+        if (_footSensor.isGrownded && CanMove)
+        {
+            _inputVector *= _runSpeedMultiplier;
+        }
     }
 
     public void FixedMove()
@@ -66,9 +126,13 @@ public class PlayerMove
 
     public void Jump()
     {
-        _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        if (_footSensor.isGrownded && CanMove)
+        {
+            _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        }
     }
 
+    //Corregir.
     public IEnumerator Dash(float verAxis, float horAxis)
     {
 

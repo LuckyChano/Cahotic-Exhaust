@@ -31,15 +31,13 @@ public class PlayerControl
         {
             _playerMove.Dash(_verAxis, _horAxis);
         }
+        
+        _playerMove.Move(_verAxis, _horAxis);
 
         if (Input.GetButton(_runButton))
         {
             _playerMove.Run();
         }
-
-        _playerMove.Move(_verAxis, _horAxis);
-
-
 
     }
 

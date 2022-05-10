@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     //Variables Publicas por Referencia
     public Rigidbody rb;
+    public FootSensor footSensor;
 
     //Variables Privadas por Referencia
     private PlayerMove _playerMove;
@@ -27,18 +28,18 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        _playerMove = new PlayerMove(transform, rb, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
+        _playerMove = new PlayerMove(transform, rb, footSensor, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
         _playerControl = new PlayerControl(_playerMove);
 
     }
 
     void Update()
     {
-        
+        _playerControl.ArtificialUpdate();
     }
 
     private void FixedUpdate()
     {
-        
+        _playerControl.ArtificialFixedUpdate();
     }
 }
