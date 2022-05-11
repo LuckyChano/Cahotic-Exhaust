@@ -13,9 +13,11 @@ public class Player : MonoBehaviour
     //Variables Privadas por Referencia
     private PlayerMove _playerMove;
     private PlayerControl _playerControl;
-    private LifeSystem _PlayerLife;
+    private LifeSystem _playerLife;
+    private PlayerUI _playerUI;
 
     //Variables Publicas
+    public float playerLife = 100;
     public float walkSpeed = 7f;
     public float runSpeedMultiplier = 1.5f;
     public float jumpForce = 10f;
@@ -31,6 +33,10 @@ public class Player : MonoBehaviour
 
         _playerMove = new PlayerMove(transform, rb, footSensor, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
         _playerControl = new PlayerControl(_playerMove);
+
+        _playerLife = new LifeSystem(playerLife);
+        _playerUI = new PlayerUI(_playerLife);
+
 
     }
 
