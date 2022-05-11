@@ -120,7 +120,7 @@ public class PlayerMove
     {
         if (_inputVector.magnitude > 0)
         {
-            _rb.MovePosition(_rb.position + (_transform.right * _inputVector.x + _transform.forward * _inputVector.z) * _walkSpeed * Time.deltaTime);
+            _rb.MovePosition(_rb.position + (_transform.right * _inputVector.x + _transform.forward * _inputVector.z) * _walkSpeed * Time.fixedDeltaTime);
         }
     }
 
@@ -135,7 +135,6 @@ public class PlayerMove
     //Corregir.
     public IEnumerator Dash(float verAxis, float horAxis)
     {
-
         if (horAxis != 0 && verAxis == 0)
             _rb.AddForce((_transform.right * horAxis).normalized * _dashForce, ForceMode.Impulse);
         if (horAxis == 0 && verAxis != 0)

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     //Variables Privadas por Referencia
     private PlayerMove _playerMove;
     private PlayerControl _playerControl;
+    private LifeSystem _PlayerLife;
 
     //Variables Publicas
     public float walkSpeed = 7f;
