@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _levelSelection;
     [SerializeField] private GameObject _mainMenu;
     [SerializeField] private GameObject _credits;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private bool paused;
 
     private void Awake()
     {
@@ -74,5 +77,38 @@ public class UIManager : MonoBehaviour
     public void ReloadScene()
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        Time.timeScale = 1;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                UnpauseGame();
+            }
+        }
+    }
+
+    public void PauseGame()
+    {
+        paused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _pauseMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void UnpauseGame()
+    {
+        paused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _pauseMenu.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }
