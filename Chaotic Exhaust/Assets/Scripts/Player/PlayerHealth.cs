@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float curHealth;
-    [SerializeField] private float maxHealth;
+    public float curHealth;
+    public float maxHealth;
 
     [SerializeField] private Slider healthBar;
     [SerializeField] private TextMeshProUGUI healthPercentage;

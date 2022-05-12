@@ -8,7 +8,9 @@ public class BateryManager : MonoBehaviour
     [SerializeField] private bool isOn;
     [SerializeField] private bool isEquiped;
     public float charge;
-    [SerializeField] private float lostCharge = 0.5f;
+    public float lostCharge = 0.5f;
+    public int chargeMax = 100;
+    public int chargeMin = 0;
     
 
     [Header("Visuales")]
@@ -72,7 +74,7 @@ public class BateryManager : MonoBehaviour
     public void Charge(float amount)
     {
         charge += amount;
-        charge = Mathf.Clamp(charge, 0, 100);
+        charge = Mathf.Clamp(charge, chargeMin, chargeMax);
         chargeSlider.value = amount;
     }
     

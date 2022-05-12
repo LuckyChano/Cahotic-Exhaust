@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4691842325773928779}
   - component: {fileID: 7419736415215631745}
   - component: {fileID: 8158736182016972960}
-  - component: {fileID: 8158736182016972961}
+  - component: {fileID: 1982580064594123492}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Untagged
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04555782, y: 0.03227431, z: 0.020774867}
   m_Center: {x: -0.0009025733, y: 0.000015797714, z: 0.014590014}
---- !u!114 &8158736182016972961
+--- !u!114 &1982580064594123492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 9077232121694297172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5e1284a4261940429ae446187dcef20, type: 3}
+  m_Script: {fileID: 11500000, guid: d0bee6b0d5420c14fa648b38bc4184b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 25
+  name: Battery
+  pickupText: 
+  player: {fileID: 0}
+  battery: {fileID: 0}
+  health: {fileID: 0}
+  behaviour: {fileID: 0}
+  mainText: {fileID: 0}
+  charge: 25

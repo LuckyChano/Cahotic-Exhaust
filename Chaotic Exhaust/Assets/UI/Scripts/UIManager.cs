@@ -1,8 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+namespace UIManager
+{
+    public class UIManager : MonoBehaviour
 {
     [SerializeField] private int _mainScene;
     [SerializeField] private int _survivalScene;
@@ -15,16 +16,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _credits;
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private bool paused;
-
-    private void Awake()
-    {
-        if(_optionsMenu != null)
-        _optionsMenu.SetActive(false);
-        if(_mainMenu != null)
-            _mainMenu.SetActive(true);
-        if(_credits != null)
-            _credits.SetActive(false);
-    }
 
     public void LoadMainScene()
     {
@@ -111,4 +102,5 @@ public class UIManager : MonoBehaviour
         _pauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
+}
 }

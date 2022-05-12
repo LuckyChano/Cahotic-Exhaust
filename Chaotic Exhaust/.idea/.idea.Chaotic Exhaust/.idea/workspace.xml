@@ -22,7 +22,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventTrigger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SmartDoor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Key.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -33,24 +32,28 @@
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/BGParallax.cs" />
       <option value="$PROJECT_DIR$/Assets/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Barrel/Barrel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/GunBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FSM/States.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Trampas/Trampas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/LayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/Arena Scene/RayCastDamageSystemArena.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/Barrel.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Barrel/RayCastDamageSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/Bateria.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/Arena Scene/EnemyManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Pickup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/PickupObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/PickupBattery.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Pickup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/GunBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/Bateria.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Gun/BateryManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Key.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/PickupBattery.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/KeyPickup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RoomTrigger.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ExtensionMethods.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/Pickup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/BatteryPickup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/KeyPickup.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
     </changedPaths>
   </component>
@@ -114,6 +117,8 @@
       <workItem from="1651766466754" duration="604000" />
       <workItem from="1651803909441" duration="1589000" />
       <workItem from="1651839265679" duration="534000" />
+      <workItem from="1652334910834" duration="12016000" />
+      <workItem from="1652369993885" duration="5569000" />
     </task>
     <servers />
   </component>
