@@ -10,11 +10,13 @@ public class KeyPickup : Pickup
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "Player")
+            mainText.text = pickupText;
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             winScreen.gameObject.SetActive(true);
             PlayerBehaviour.instance.canMove = false;
-            mainText.text = pickupText;
             CursorUnlock();
         }
     }

@@ -55,6 +55,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/BatteryPickup.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Pickups/KeyPickup.cs" />
       <option value="$PROJECT_DIR$/Assets/UI/Scripts/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="285ELa7fiG5JfLqFs0tmz6E6QQT" />

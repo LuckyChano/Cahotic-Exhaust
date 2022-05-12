@@ -1038,7 +1038,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   destinations: []
   myRend: {fileID: 0}
-  hp: 0
+  hp: 3
 --- !u!1 &2955725985705819937
 GameObject:
   m_ObjectHideFlags: 0

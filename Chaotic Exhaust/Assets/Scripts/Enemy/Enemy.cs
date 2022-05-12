@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,18 @@ public class Enemy : MonoBehaviour, IsShootable
     private EnemyAI _movement;
     private LifeBehaviour _hpComponent;
     public SkinnedMeshRenderer myRend;
+    private RoomTrigger roomTrigger;
 
     public int hp;
     private GameObject _player;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("RoomTrigger"))
+        {
+            roomTrigger = other.GetComponent<RoomTrigger>();
+        }
+    }
 
     private void Awake()
     {
@@ -22,7 +31,6 @@ public class Enemy : MonoBehaviour, IsShootable
         _player = FindObjectOfType<PlayerMovement>().gameObject;
         navMeshAgent = GetComponent<NavMeshAgent>();
         _hpComponent = new LifeBehaviour(DamageFeedback, GetComponent<AudioSource>(), hp);
-
     }
 
     void Start()
@@ -33,6 +41,11 @@ public class Enemy : MonoBehaviour, IsShootable
 
     void Die()
     {
+        if (roomTrigger != null)
+        {
+            roomTrigger.OnEnemyKilled();
+        }
+        
         Destroy(gameObject, 0.2f);
     }
 

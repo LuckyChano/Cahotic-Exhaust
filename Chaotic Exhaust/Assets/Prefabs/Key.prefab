@@ -45,6 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d00b08c139493a40bfc44499a10c4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Key
+  pickupText: '[E] Pickup Key'
+  player: {fileID: 0}
+  battery: {fileID: 0}
+  health: {fileID: 0}
+  behaviour: {fileID: 0}
   winScreen: {fileID: 0}
   mainText: {fileID: 0}
 --- !u!135 &7931419896022079489
