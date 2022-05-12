@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, IsShootable
     private EnemyAI _movement;
     private LifeBehaviour _hpComponent;
     public SkinnedMeshRenderer myRend;
-    private RoomTrigger roomTrigger;
+    private RoomTrigger _roomTrigger;
 
     public int hp;
     private GameObject _player;
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour, IsShootable
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("RoomTrigger"))
         {
-            roomTrigger = other.GetComponent<RoomTrigger>();
+            _roomTrigger = other.GetComponent<RoomTrigger>();
         }
     }
 
@@ -41,9 +41,9 @@ public class Enemy : MonoBehaviour, IsShootable
 
     void Die()
     {
-        if (roomTrigger != null)
+        if (_roomTrigger != null)
         {
-            roomTrigger.OnEnemyKilled();
+            _roomTrigger.OnEnemyKilled();
         }
         
         Destroy(gameObject, 0.2f);
