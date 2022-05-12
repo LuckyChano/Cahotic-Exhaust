@@ -3,34 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI: MonoBehaviour
+public class EnemyAI
 {
     public NavMeshAgent navMeshAgent;
     public Transform[] destinations;
-    
+
     public float distanceToPoint = 2;
     public float distanceToFollowPlayer = 10;
-    public float walkSpeed;
-    public float runSpeed;
+    public float walkSpeed = 2;
+    public float runSpeed = 6;
+
+    private Transform _enemyTransform;
 
     private GameObject _player;
 
     private int _i = 0;
     private float _distanceToPlayer;
 
-
-    void Start()
+    public EnemyAI(Enemy enemy, GameObject target)
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-
-        navMeshAgent.destination = destinations[0].position;
-
-        _player = FindObjectOfType<PlayerMovement>().gameObject;
+        navMeshAgent = enemy.navMeshAgent;
+        destinations = enemy.destinations;
+        _enemyTransform = enemy.transform;
+        _player = target;
     }
 
-    void Update()
+    public void ArtificialStart()
     {
-        _distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+        if (destinations.Length == 0)
+        {
+            return;
+        }
+        navMeshAgent.destination = destinations[0].position;
+    }
+
+    public void ArtificialUpdate()
+    {
+        _distanceToPlayer = Vector3.Distance(_enemyTransform.position, _player.transform.position);
 
         if (_distanceToPlayer <= distanceToFollowPlayer)
         {
@@ -45,9 +54,13 @@ public class EnemyAI: MonoBehaviour
     public void EnemyPath()
     {
         navMeshAgent.speed = walkSpeed;
+        if (destinations.Length == 0)
+        {
+            return;
+        }
         navMeshAgent.destination = destinations[_i].position;
 
-        if (Vector3.Distance(transform.position, destinations[_i].position) <= distanceToPoint)
+        if (Vector3.Distance(_enemyTransform.position, destinations[_i].position) <= distanceToPoint)
         {
             if (destinations[_i] != destinations[destinations.Length - 1])
             {

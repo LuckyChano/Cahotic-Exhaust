@@ -750,10 +750,9 @@ GameObject:
   - component: {fileID: 2923935174557468284}
   - component: {fileID: 4957092045986592528}
   - component: {fileID: 2923935174557468263}
-  - component: {fileID: 2923935174557468262}
   - component: {fileID: 4273047859446960211}
-  - component: {fileID: 6175323689087539123}
   - component: {fileID: 8768278805261197523}
+  - component: {fileID: 3222472546947573759}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -990,7 +989,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 500
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -998,29 +997,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2923935174557468262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2923935174557468260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab04513c3502384980a94d32ded8dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
-  destinations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  distanceToPoint: 2
-  distanceToFollowPlayer: 10
-  walkSpeed: 2
-  runSpeed: 6
 --- !u!114 &4273047859446960211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,20 +1010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmg: 20
---- !u!114 &6175323689087539123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2923935174557468260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6a880cb6aa2a947bf77666cf0903d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 3
-  _hurtColor: {r: 1, g: 0.58695996, b: 0, a: 1}
 --- !u!114 &8768278805261197523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,6 +1023,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayer: 7
+--- !u!114 &3222472546947573759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2923935174557468260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baae96462a4a0c409f01b99bdf3d7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}
+  destinations: []
+  myRend: {fileID: 0}
+  hp: 0
 --- !u!1 &2955725985705819937
 GameObject:
   m_ObjectHideFlags: 0
