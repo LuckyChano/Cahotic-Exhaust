@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LifeSystem
 {
-    private float _currentHealth;
-    private float _maxHealth;
-    private bool _isAlive;
+    protected float _currentHealth;
+    protected float _maxHealth;
+    protected bool _isAlive;
 
     //Vida que tenemos
     public float CurrentHealth
@@ -33,7 +33,7 @@ public class LifeSystem
             return _isAlive;
         }
     }
-
+    
     public LifeSystem(float maxHealth)
     {
         _maxHealth = maxHealth;
@@ -45,10 +45,12 @@ public class LifeSystem
     //resivir daño
     public void TakeDamage(float value)
     {
-        //tomar daño
+        _currentHealth -= value;
 
         if (_currentHealth<=0)
         {
+            _currentHealth = 0;
+
             Die();
         }
     }
@@ -67,8 +69,6 @@ public class LifeSystem
     //Muere
     private void Die()
     {
-
+        _isAlive = false;
     }
-
-
 }

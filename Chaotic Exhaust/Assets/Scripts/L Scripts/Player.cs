@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class Player : MonoBehaviour
     //Variables Publicas por Referencia
     public Rigidbody rb;
     public FootSensor footSensor;
+    public Slider healthBar;
+    public TextMeshProUGUI healthPercentage;
+    //public Animator screenFx;
 
     //Variables Privadas por Referencia
     private PlayerMove _playerMove;
@@ -35,14 +40,24 @@ public class Player : MonoBehaviour
         _playerControl = new PlayerControl(_playerMove);
 
         _playerLife = new LifeSystem(playerLife);
-        _playerUI = new PlayerUI(_playerLife);
-
-
+        _playerUI = new PlayerUI(_playerLife, healthBar, healthPercentage);
     }
 
     void Update()
     {
         _playerControl.ArtificialUpdate();
+
+        _playerUI.ArtificialUpdate();
+
+
+        //Esto lo hace el game Manager
+        //if (_playerLife.IsAlive == false)
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
+
+
     }
 
     private void FixedUpdate()
