@@ -49,15 +49,6 @@ public class Player : MonoBehaviour
 
         _playerUI.ArtificialUpdate();
 
-
-        //Esto lo hace el game Manager
-        //if (_playerLife.IsAlive == false)
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.visible = true;
-        //}
-
-
     }
 
     private void FixedUpdate()

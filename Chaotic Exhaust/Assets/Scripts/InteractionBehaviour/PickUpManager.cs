@@ -4,16 +4,12 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class Inventory<T>
+public class Inventory
 {
-    public Inventory()
-    {
-
-    }
 
     //Inventario Donde amlacena objetos de tipo IItem
-
-    public List<IItem> inventory = new List<IItem>();
+    [SerializeField]
+    List<IItem> inventory;
 
     public void AddItem(IItem item)
     {
@@ -37,11 +33,11 @@ public class Inventory<T>
 [System.Serializable]
 public class PickUpManager
 {
-    
-    Inventory<IItem> inventory;
+    [SerializeField]
+    Inventory inventory;
     public PickUpManager()
     {
-        inventory = new Inventory<IItem>();
+        inventory = new Inventory();
     }
 
     public delegate IItem PickUpCallback(GameObject gameObject);

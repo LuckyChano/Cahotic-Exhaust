@@ -30,6 +30,7 @@ public class ReloadState : IStates
     {
         machine.ChangeState(GunStates.SHOOT);
     }
+
 }
 public class ShootingState : IStates
 {
