@@ -25,7 +25,7 @@ public class EngineMovement : MonoBehaviour
        
         _top.transform.RotateAround(transform.position, Vector3.down, -_Tspeed * Time.fixedDeltaTime);
         _mid.transform.RotateAround(transform.position, Vector3.down, _Mspeed * Time.fixedDeltaTime);
-        _bottom.transform.RotateAround(transform.position, Vector3.down, _Bspeed * Time.fixedDeltaTime);
+        _bottom.transform.RotateAround(transform.position, Vector3.down, -_Bspeed * Time.fixedDeltaTime);
 
     }
 }

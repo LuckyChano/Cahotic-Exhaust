@@ -1194,11 +1194,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4682460866667027724, guid: dcde71873bb0a8842936122c165f5c6f, type: 3}
       propertyPath: _Mspeed
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4682460866667027724, guid: dcde71873bb0a8842936122c165f5c6f, type: 3}
       propertyPath: _Tspeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507823880485383462, guid: dcde71873bb0a8842936122c165f5c6f, type: 3}
+      propertyPath: m_Name
+      value: Engine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcde71873bb0a8842936122c165f5c6f, type: 3}
