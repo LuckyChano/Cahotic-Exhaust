@@ -71,4 +71,7 @@ public class LifeSystem
     {
         _isAlive = false;
     }
+
+
+
 }

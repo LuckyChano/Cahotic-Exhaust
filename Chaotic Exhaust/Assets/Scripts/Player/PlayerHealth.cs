@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IAffectGas
 {
     public float curHealth;
     public float maxHealth;
@@ -48,6 +48,11 @@ public class PlayerHealth : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+    }
+
+    public void EnterGas(float dmg)
+    {
+        SendDamage(dmg);
     }
 
     /*public IEnumerator PauseGame()

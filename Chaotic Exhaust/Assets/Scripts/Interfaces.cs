@@ -23,4 +23,9 @@ public interface IItem
     GameObject ReturnItem();
 }
 
+public interface IAffectGas
+{
+    void EnterGas(float dmg);
+}
+
 

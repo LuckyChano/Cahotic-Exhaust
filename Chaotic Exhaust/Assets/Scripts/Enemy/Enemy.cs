@@ -73,4 +73,6 @@ public class Enemy : MonoBehaviour, IsShootable
         myRend.material.color = Color.white;
 
     }
+
+   
 }

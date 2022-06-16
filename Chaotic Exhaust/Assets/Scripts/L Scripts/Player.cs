@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IAffectGas
 {
     //Variables Estaticas
 
@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public Slider healthBar;
     public TextMeshProUGUI healthPercentage;
     //public Animator screenFx;
+
+    public delegate void EnterOnGas(int a);
 
     //Variables Privadas por Referencia
     private PlayerMove _playerMove;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
 
         _playerMove = new PlayerMove(transform, rb, footSensor, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
         _playerControl = new PlayerControl(_playerMove);
@@ -54,5 +57,10 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         _playerControl.ArtificialFixedUpdate();
+    }
+
+    public void EnterGas(float dmg)
+    {
+        _playerLife.TakeDamage(dmg);
     }
 }
