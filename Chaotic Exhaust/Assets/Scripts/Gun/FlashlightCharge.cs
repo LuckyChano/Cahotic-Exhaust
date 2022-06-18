@@ -39,13 +39,13 @@ public class FlashlightCharge
 
         if (charge > 0 && charge <= 25)
         {
-            luzLinterna.intensity = 1;
+            luzLinterna.intensity = 2;
             chargeSlider.value = 25f;
         }
 
         if (charge > 25 && charge <= 50)
         {
-            luzLinterna.intensity = 1.5f;
+            luzLinterna.intensity = 4;
             chargeSlider.value = 50f;
         }
 
@@ -57,7 +57,7 @@ public class FlashlightCharge
 
         if (charge > 75 && charge <= 101)
         {
-            luzLinterna.intensity = 2.5f;
+            luzLinterna.intensity = 8;
             chargeSlider.value = 100;
         }
     }
