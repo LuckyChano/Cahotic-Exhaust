@@ -8,32 +8,36 @@ public class FuseScreenManager
     Material p_ScreenOff;
     List<GameObject> p_Screens;
     List<GameObject> p_Doors;
-
-    int index = 0;
-    public FuseScreenManager(Material On, Material Off, List<GameObject> screens, List<GameObject> doors)
+    List<GameObject> p_Fuses;
+    public FuseScreenManager(Material On, Material Off, List<GameObject> screens, List<GameObject> doors, List<GameObject> fuses)
     {
         p_ScreenOn = On;
         p_ScreenOff = Off;
         p_Screens = screens;
         p_Doors = doors;
+        p_Fuses = fuses;
     }
 
-    public void ActivateScreen()
+    public void ActivateScreen(int fuseNumber)
     {
-        if(index > p_Screens.Count)
+        if(fuseNumber > p_Screens.Count)
         {
             return;
         }
-        p_Screens[index].GetComponent<Renderer>().material = p_ScreenOn;
-        UnlockDoor();
-        index++;
+        p_Screens[fuseNumber].GetComponent<Renderer>().material = p_ScreenOn;
+        DoorAndFuse(fuseNumber);
     }
 
-    void UnlockDoor()
+    void DoorAndFuse(int fuseNumber)
     {
-        if(index < p_Doors.Count)
+        if(fuseNumber < p_Doors.Count)
         {
-            p_Doors[index].SetActive(false);
+            p_Doors[fuseNumber].SetActive(false);
         }
+        if(fuseNumber < p_Fuses.Count)
+        {
+            p_Fuses[fuseNumber].SetActive(true);
+        }
+
     }
 }

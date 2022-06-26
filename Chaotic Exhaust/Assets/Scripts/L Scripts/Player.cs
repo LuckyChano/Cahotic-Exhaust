@@ -13,6 +13,8 @@ public class Player : MonoBehaviour, IAffectGas
     public FootSensor footSensor;
     public Slider healthBar;
     public TextMeshProUGUI healthPercentage;
+
+    public int FuseAmount = -1;
     //public Animator screenFx;
 
     public delegate void EnterOnGas(int a);
