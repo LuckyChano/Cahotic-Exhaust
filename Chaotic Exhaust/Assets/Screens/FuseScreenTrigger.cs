@@ -15,6 +15,7 @@ public class FuseScreenTrigger : MonoBehaviour
     private void Start()
     {
         manager = new FuseScreenManager(OnScreen, OffScreen, Screens, Doors, Fuses);
+        manager.ActivateScreen(0);
     }
     private void OnTriggerEnter(Collider other)
     {
