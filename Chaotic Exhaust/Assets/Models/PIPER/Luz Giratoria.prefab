@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5653543656336587903}
   - component: {fileID: 8646199594085533016}
   m_Layer: 0
-  m_Name: polySurface878
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f451957932319054ba2d93daa679b447, type: 2}
+  - {fileID: 2100000, guid: f5aa8c2639576044bb4f436f92745d47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,7 +174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f451957932319054ba2d93daa679b447, type: 2}
+  - {fileID: 2100000, guid: 3608ba8f96dbb8144918c46cf5576a92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b9054c7931e00419fc67d049e42010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 40
+  _speed: 20
 --- !u!1 &8004127125895891701
 GameObject:
   m_ObjectHideFlags: 0
