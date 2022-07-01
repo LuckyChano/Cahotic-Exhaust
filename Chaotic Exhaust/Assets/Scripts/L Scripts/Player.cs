@@ -56,6 +56,14 @@ public class Player : PlayerLifeSystem
         _playerControl.ArtificialFixedUpdate();
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            TakeDamage(1);
+        }
+    }
+
     //-----------------------------------------------------------------------------------
 
     public override void TakeDamage(float value)
@@ -68,6 +76,8 @@ public class Player : PlayerLifeSystem
 
             Die();
         }
+
+        UpdateUI();
     }
 
     //curacion
