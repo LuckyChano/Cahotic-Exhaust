@@ -16,6 +16,8 @@ public class ScriptDeEjemplo : MonoBehaviour
 
     //Propiedades
 
+    //Delegados
+
     /*  Metodos de Unity en este orden
             - Awake
             - Start
@@ -28,10 +30,12 @@ public class ScriptDeEjemplo : MonoBehaviour
     //Nuestros Metodos Privados
 
     //Nuestros Metodos Publicos
+    
+    //Nuestros Metodos Herdados y modificados que comienzan con override
 
     //Nuestros Metodos Heredados que comienzan con virtual
 
-    //Nuestros Metodos Herdados y modificados que comienzan con override
+    //Operadores
 
     //Cosas raras que no sabemos usar XD..
 }

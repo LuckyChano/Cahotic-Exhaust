@@ -4,65 +4,86 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Player : MonoBehaviour, IAffectGas
+public class Player : PlayerLifeSystem
 {
     //Variables Estaticas
 
     //Variables Publicas por Referencia
     public Rigidbody rb;
     public FootSensor footSensor;
-    public Slider healthBar;
-    public TextMeshProUGUI healthPercentage;
 
-    public int FuseAmount = -1;
     //public Animator screenFx;
-
-    public delegate void EnterOnGas(int a);
 
     //Variables Privadas por Referencia
     private PlayerMove _playerMove;
     private PlayerControl _playerControl;
-    private LifeSystem _playerLife;
-    private PlayerUI _playerUI;
 
     //Variables Publicas
     public float playerLife = 100;
+
+
     public float walkSpeed = 7f;
     public float runSpeedMultiplier = 1.5f;
     public float jumpForce = 10f;
     public float dashForce = 12f;
 
+    public int FuseAmount = -1;
+
     //Variables Privadas
 
     //Propiedades
+
+    //Delegados
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         
-
         _playerMove = new PlayerMove(transform, rb, footSensor, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
         _playerControl = new PlayerControl(_playerMove);
 
-        _playerLife = new LifeSystem(playerLife);
-        _playerUI = new PlayerUI(_playerLife, healthBar, healthPercentage);
+        SetLife(playerLife);
+        StartUI();
     }
 
     void Update()
     {
         _playerControl.ArtificialUpdate();
-
-        _playerUI.ArtificialUpdate();
-
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         _playerControl.ArtificialFixedUpdate();
     }
 
-    public void EnterGas(float dmg)
+    //-----------------------------------------------------------------------------------
+
+    public override void TakeDamage(float value)
     {
-        _playerLife.TakeDamage(dmg);
+        _currentHealth -= value;
+
+        if (_currentHealth <= 0)
+        {
+            _currentHealth = 0;
+
+            Die();
+        }
+    }
+
+    //curacion
+    public override void Heal(float value)
+    {
+        _currentHealth += value;
+
+        if (_currentHealth >= _maxHealth)
+        {
+            _currentHealth = _maxHealth;
+        }
+    }
+
+    //Muere
+    public override void Die()
+    {
+        _isAlive = false;
     }
 }
