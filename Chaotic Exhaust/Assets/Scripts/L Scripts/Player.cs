@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Player : PlayerLifeSystem
 {
@@ -27,7 +28,8 @@ public class Player : PlayerLifeSystem
     public float jumpForce = 10f;
     public float dashForce = 12f;
 
-    public int FuseAmount = -1;
+    [SerializeField]
+    int FuseAmount = 0;
 
     //Variables Privadas
 
@@ -95,5 +97,15 @@ public class Player : PlayerLifeSystem
     public override void Die()
     {
         _isAlive = false;
+    }
+
+    public void AddFuse()
+    {
+        FuseAmount++;
+    }
+
+    public int GetFuses()
+    {
+        return FuseAmount;
     }
 }

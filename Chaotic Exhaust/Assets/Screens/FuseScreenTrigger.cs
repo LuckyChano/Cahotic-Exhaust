@@ -14,14 +14,14 @@ public class FuseScreenTrigger : MonoBehaviour
     int index;
     private void Start()
     {
-        manager = new FuseScreenManager(OnScreen, OffScreen, Screens, Doors, Fuses);
+        manager = new FuseScreenManager(OnScreen, Screens, Doors, Fuses);
         manager.ActivateScreen(0);
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<Player>() != null)
         {
-            manager.ActivateScreen(other.GetComponent<Player>().FuseAmount);
+            manager.ActivateScreen(other.GetComponent<Player>().GetFuses());
         }
     }
 }

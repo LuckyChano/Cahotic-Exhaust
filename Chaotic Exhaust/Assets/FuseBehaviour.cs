@@ -9,7 +9,7 @@ public class FuseBehaviour : MonoBehaviour
     {
         if(other.GetComponent<Player>())
         {
-            other.GetComponent<Player>().FuseAmount++;
+            other.GetComponent<Player>().AddFuse();
             Destroy(fuse);
         }
     }

@@ -5,14 +5,12 @@ using UnityEngine;
 public class FuseScreenManager
 {
     Material p_ScreenOn;
-    Material p_ScreenOff;
     List<GameObject> p_Screens;
     List<GameObject> p_Doors;
     List<GameObject> p_Fuses;
-    public FuseScreenManager(Material On, Material Off, List<GameObject> screens, List<GameObject> doors, List<GameObject> fuses)
+    public FuseScreenManager(Material On, List<GameObject> screens, List<GameObject> doors, List<GameObject> fuses)
     {
         p_ScreenOn = On;
-        p_ScreenOff = Off;
         p_Screens = screens;
         p_Doors = doors;
         p_Fuses = fuses;
