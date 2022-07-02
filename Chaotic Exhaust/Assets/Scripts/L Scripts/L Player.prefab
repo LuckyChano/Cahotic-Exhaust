@@ -2511,6 +2511,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2436571629794064953}
   - {fileID: 8244237077661519944}
   m_Father: {fileID: 4055253582431416711}
   m_RootOrder: 0
@@ -2711,7 +2712,6 @@ Transform:
   m_Children:
   - {fileID: 4055253583101908690}
   - {fileID: 4055253582431416711}
-  - {fileID: 2436571629794064953}
   - {fileID: 4264123934180620381}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2907,11 +2907,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4065984461724340729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.70000005, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4055253583172432865}
-  m_RootOrder: 2
+  m_Father: {fileID: 4055253582233204472}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8540033231598644855
 Camera:
@@ -3623,7 +3623,7 @@ RectTransform:
   - {fileID: 4264123935110525736}
   - {fileID: 5029943185873610806}
   m_Father: {fileID: 4055253583172432865}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5238,7 +5238,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8244237077661519944}
-  - component: {fileID: 6067314816576159667}
   - component: {fileID: 6067314816576159668}
   - component: {fileID: 6067314816576159666}
   - component: {fileID: 6067314816576159669}
@@ -5269,21 +5268,8 @@ Transform:
   - {fileID: 3390837101577440067}
   - {fileID: 2042662034683431218}
   m_Father: {fileID: 4055253582233204472}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0.06, y: -90.62, z: -0.008}
---- !u!65 &6067314816576159667
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728742839576349426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &6067314816576159668
 AudioSource:
   m_ObjectHideFlags: 0
