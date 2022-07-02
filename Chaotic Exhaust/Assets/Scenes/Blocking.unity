@@ -14109,7 +14109,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 6
-      minScalar: 0
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14162,7 +14162,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.5471698, g: 0, b: 0, a: 1}
+      maxColor: {r: 0.6415094, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14930,8 +14930,8 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.3524975
-          value: 0.71933496
+          time: 0.32617608
+          value: 1
           inSlope: 0.061503977
           outSlope: 0.061503977
           tangentMode: 0
@@ -14939,8 +14939,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.985199
-          value: 0.034801483
+          time: 1
+          value: 0
           inSlope: -1.4174163
           outSlope: -1.4174163
           tangentMode: 0
@@ -15269,7 +15269,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 25443
+        atime1: 24287
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -19928,7 +19928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590936611}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2724266, y: -0.08959103, z: 0.1268425}
+  m_LocalPosition: {x: 0.2724266, y: -1.56, z: -0.921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 513493767}
@@ -47259,7 +47259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 636568285670076282, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.56
+      value: 29.53
       objectReference: {fileID: 0}
     - target: {fileID: 636568285670076282, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -47267,7 +47267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 636568285670076282, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -99.35
+      value: -23.8
       objectReference: {fileID: 0}
     - target: {fileID: 636568285670076282, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47331,15 +47331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 846565672470717642, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1803524944885129105, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1803524944885129105, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2056398691537205397, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_Range
@@ -47443,11 +47443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387933625632089874, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7387933625632089874, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b602016c1bc30b4a8851176006ced0a, type: 3}
@@ -62063,7 +62063,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6603774, g: 0, b: 0, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -63227,20 +63227,29 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 1
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.3939293
+          value: 0.8407242
+          inSlope: -0.14940487
+          outSlope: -0.14940487
+          tangentMode: 0
+          weightedMode: 0
           inWeight: 0.33333334
-          outWeight: 0.33333334
+          outWeight: 0.38042128
+        - serializedVersion: 3
+          time: 0.9853801
+          value: 0.19521928
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
