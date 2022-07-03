@@ -9,8 +9,6 @@ public enum GunStates
     SHOOT,
     RELOAD
 }
-
-
 public class GunBehaviour : MonoBehaviour
 {
 

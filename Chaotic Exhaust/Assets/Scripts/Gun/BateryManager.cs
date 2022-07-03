@@ -7,17 +7,23 @@ public class BateryManager : MonoBehaviour
     [SerializeField] public Light luzLinterna;
     [SerializeField] public bool isOn;
     [SerializeField] private bool isEquiped;
-    public float charge;
-    public float lostCharge = 0.5f;
-    public int chargeMax = 100;
-    public int chargeMin = 0;
 
-    FlashlightCharge chargeBehaviour;
+    public float charge = 100;
+
+    public FlashlightCharge chargeBehaviour;
 
     [Header("Visuales")]
     [SerializeField] public TextMeshProUGUI chargePercentage;
     [SerializeField] public Slider chargeSlider;
 
+    public static BateryManager instance;
+
+    private void Awake()
+    {
+        if(instance != null)
+            Destroy(instance);
+        instance = this;
+    }
     private void Start()
     {
         chargeBehaviour = new FlashlightCharge(this);
@@ -33,22 +39,17 @@ public class BateryManager : MonoBehaviour
             {
                 luzLinterna.enabled = true;
             }
-
             if (!isOn)
             {
                 luzLinterna.enabled = false;
             }
         }
-
         chargeBehaviour.ArtificialUpdate();
-
     }
 
-    public void Charge(float amount)
+    public void ChargeFlashlight(float amount)
     {
-        charge += amount;
-        charge = Mathf.Clamp(charge, chargeMin, chargeMax);
-        chargeSlider.value = amount;
+        print("bateria");
+        chargeBehaviour.Charge(amount);
     }
-
 }

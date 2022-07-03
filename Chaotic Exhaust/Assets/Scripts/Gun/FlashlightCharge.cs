@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class FlashlightCharge
 {
     [SerializeField] private Light luzLinterna;
-    public float charge = 100;
+
     public float lostCharge = 0.5f;
+    public int chargeMax = 100;
+    public int chargeMin = 0;
 
     private TextMeshProUGUI chargePercentage;
     private Slider chargeSlider;
@@ -16,49 +18,51 @@ public class FlashlightCharge
 
     public FlashlightCharge(BateryManager bat)
     {
+        _bat = bat;
         luzLinterna = bat.luzLinterna;
         chargeSlider = bat.chargeSlider;
         chargePercentage = bat.chargePercentage;
-        _bat = bat;
     }
 
     public void ArtificialUpdate()
     {
-
-        if (charge == 0)
+        if (_bat.charge == 0)
         {
             luzLinterna.intensity = 0;
-            chargeSlider.value = 0;
         }
-
-        if (_bat.isOn && charge > 0)
+        if (_bat.charge > 100)
         {
-            charge -= lostCharge * Time.deltaTime;
-            chargePercentage.text = charge.ToString("g2");
+            _bat.charge = 100;
         }
-
-        if (charge > 0 && charge <= 25)
+        if (_bat.isOn && _bat.charge > 0)
         {
-            luzLinterna.intensity = 2;
-            chargeSlider.value = 25f;
+            _bat.charge -= lostCharge * Time.deltaTime;
         }
 
-        if (charge > 25 && charge <= 50)
+        if (_bat.charge > 0 && _bat.charge <= 25)
+        {
+            luzLinterna.intensity = _bat.charge / chargeMax;
+        }
+        if (_bat.charge > 25 && _bat.charge <= 50)
         {
             luzLinterna.intensity = 4;
-            chargeSlider.value = 50f;
         }
-
-        if (charge > 50 && charge <= 75)
+        if (_bat.charge > 50 && _bat.charge <= 75)
         {
-            luzLinterna.intensity = 2;
-            chargeSlider.value = 75f;
+            luzLinterna.intensity = 6;
         }
-
-        if (charge > 75 && charge <= 101)
+        if (_bat.charge > 75 && _bat.charge <= 101)
         {
             luzLinterna.intensity = 8;
-            chargeSlider.value = 100;
         }
+        chargeSlider.value = Mathf.Round(_bat.charge);
+        chargePercentage.text = $"{Mathf.Round(chargeSlider.value)}";
+    }
+
+
+    public void Charge(float amount)
+    {
+        _bat.charge += amount;
+        _bat.charge = Mathf.Clamp(_bat.charge, chargeMin, chargeMax);
     }
 }

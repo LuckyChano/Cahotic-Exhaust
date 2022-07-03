@@ -672,7 +672,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17982
+  m_Name: pb_Mesh-20548
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -845,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1131453911}
+    - target: {fileID: 6326998113560450830, guid: fc25add0e2e4f504396bc91718ad925b, type: 3}
+      propertyPath: pickupText
+      value: Bat picked up
+      objectReference: {fileID: 0}
     - target: {fileID: 7197020828614993620, guid: fc25add0e2e4f504396bc91718ad925b, type: 3}
       propertyPath: m_Name
       value: Test Map

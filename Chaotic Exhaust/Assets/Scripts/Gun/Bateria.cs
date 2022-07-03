@@ -5,18 +5,12 @@ using UnityEngine;
 public class Bateria : MonoBehaviour
 {
     public float energy;
-    private BateryManager _flashLight;
-
-    public void Start()
-    {
-        _flashLight = FindObjectOfType<BateryManager>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            _flashLight.Charge(energy);
+            BateryManager.instance.chargeBehaviour.Charge(energy);
             Destroy(gameObject);
         }
     }

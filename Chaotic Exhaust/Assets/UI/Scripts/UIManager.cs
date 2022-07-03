@@ -91,7 +91,8 @@ namespace UIManager
         paused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        _pauseMenu.gameObject.SetActive(true);
+        if(_pauseMenu != null)
+            _pauseMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
     public void UnpauseGame()
@@ -99,7 +100,8 @@ namespace UIManager
         paused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        _pauseMenu.gameObject.SetActive(false);
+        if (_pauseMenu != null)
+            _pauseMenu.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 }

@@ -13,12 +13,9 @@ public class Barrel : MonoBehaviour, IsShootable
     {
         _hitShot = GetComponent<AudioSource>();
         _roomTrigger = FindObjectOfType<RoomTrigger>();
-    }
-    
-    void Start()
-    {
         _hpComponent = new LifeBehaviour(DamageFeedback, _hitShot, hp);
     }
+
     
     public void Damage(int dmg)
     {
@@ -38,6 +35,7 @@ public class Barrel : MonoBehaviour, IsShootable
         yield return new WaitForSeconds(.5f);
 
         GetComponentInChildren<Renderer>().material.color = Color.white;
+        
         if (_hpComponent.hp <= 0)
         { 
             Destroy(gameObject);
@@ -47,6 +45,7 @@ public class Barrel : MonoBehaviour, IsShootable
     
     public int ReturnHP()
     {
+        
         return _hpComponent.hp;
     }
 }
