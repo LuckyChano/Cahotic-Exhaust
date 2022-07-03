@@ -7,21 +7,21 @@ public class LifeBehaviour
 {
     //Action = guarda metodos <-callback
     public Action ShootCallback;
-    private int _hp;
+    private float _hp;
     AudioSource _hitShot;
-    public int hp
+    public float hp
     {
         get { return _hp; }
     }
 
-    public LifeBehaviour(Action callback, AudioSource hitSound, int healthPoints = 2)
+    public LifeBehaviour(Action callback, AudioSource hitSound, float healthPoints = 2)
     {
         ShootCallback = callback;
         _hp = healthPoints;
         _hitShot = hitSound;
     }
 
-    public void takeDamage(int damageTaken)
+    public void takeDamage(float damageTaken)
     {
         if (!_hitShot.isPlaying)
             _hitShot.Play();

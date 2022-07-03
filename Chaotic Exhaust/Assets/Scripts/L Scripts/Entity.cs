@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour,IDamageable,IShootable
 {
 
     protected float _currentHealth;
@@ -35,7 +35,7 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    protected void SetLife(float playerLife)
+    protected void StartLife(float playerLife)
     {
         _maxHealth = playerLife;
         _currentHealth = _maxHealth;
@@ -51,4 +51,8 @@ public abstract class Entity : MonoBehaviour
 
     //Muere
     public abstract void Die();
+
+    public abstract void Damage(float value);
+
+    public abstract void ShootDamage(float value);
 }

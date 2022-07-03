@@ -7,11 +7,18 @@ public interface IWalkable
 
     void Jump();
 }
-public interface IsShootable
+
+//Lista
+public interface IShootable
 {
-    void Damage(int damage);
-    void DamageFeedback();
+    void ShootDamage(float damage);
 }
+//Lista
+public interface IDamageable
+{
+    void Damage(float damage);
+}
+
 public interface IPickable
 {
     GameObject ReturnObject();

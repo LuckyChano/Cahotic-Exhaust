@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour, IsShootable
+public class Enemy : MonoBehaviour, IShootable
 {
     //Variables Privadas por Referencia
     public NavMeshAgent navMeshAgent;
@@ -54,13 +54,15 @@ public class Enemy : MonoBehaviour, IsShootable
         _movement.ArtificialUpdate();
     }
 
-    public void Damage(int damage)
+    public void ShootDamage(float damage)
     {
         _hpComponent.takeDamage(damage);
         if (_hpComponent.hp <= 0)
         {
             Die();
         }
+
+        DamagedFeedback();
     }
     public void DamageFeedback()
     {

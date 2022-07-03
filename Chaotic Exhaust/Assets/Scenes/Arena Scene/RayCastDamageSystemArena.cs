@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class RayCastDamageSystemArena : MonoBehaviour, IsShootable
+public class RayCastDamageSystemArena : MonoBehaviour, IShootable
 {
     public int hp;
     //public int hp = 1;
@@ -32,14 +32,15 @@ public class RayCastDamageSystemArena : MonoBehaviour, IsShootable
         _hpComponent = new LifeBehaviour(DamageFeedback, _hitShot, hp);
     }
 
-    public int ReturnHP()
+    public float ReturnHP()
     {
         return _hpComponent.hp;
     }
 
-    public void Damage(int dmg)
+    public void ShootDamage(float dmg)
     {
         _hpComponent.takeDamage(dmg);
+        DamageFeedback();
     }
 
     public void DamageFeedback()

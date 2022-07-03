@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Barrel : MonoBehaviour, IsShootable
+public class Barrel : MonoBehaviour, IShootable
 {
     private RoomTrigger _roomTrigger;
     AudioSource _hitShot;
@@ -17,9 +17,11 @@ public class Barrel : MonoBehaviour, IsShootable
     }
 
     
-    public void Damage(int dmg)
+    public void ShootDamage(float dmg)
     {
         _hpComponent.takeDamage(dmg);
+
+        DamageFeedback();
     }
 
     public void DamageFeedback()
@@ -43,7 +45,7 @@ public class Barrel : MonoBehaviour, IsShootable
 
     }
     
-    public int ReturnHP()
+    public float ReturnHP()
     {
         
         return _hpComponent.hp;

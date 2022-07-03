@@ -10,7 +10,7 @@ public class PlayerControl
     private float _horAxis;
     private string _runButton = "Run";
     private string _jumpButton = "Jump";
-    private string _dashButton = "Dash";
+    //private string _dashButton = "Dash";
 
     public PlayerControl(PlayerMove playerMove)
     {
@@ -27,10 +27,10 @@ public class PlayerControl
             _playerMove.Jump();
         }
 
-        if (Input.GetButtonDown(_dashButton))
-        {
-            _playerMove.Dash(_verAxis, _horAxis);
-        }
+        //if (Input.GetButtonDown(_dashButton))
+        //{
+        //    _playerMove.Dash(_verAxis, _horAxis);
+        //}
         
         _playerMove.Move(_verAxis, _horAxis);
 

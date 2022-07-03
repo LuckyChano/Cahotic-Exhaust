@@ -12,6 +12,7 @@ public class Player : PlayerLifeSystem
     //Variables Publicas por Referencia
     public Rigidbody rb;
     public FootSensor footSensor;
+    //agregar animator
 
     //public Animator screenFx;
 
@@ -22,16 +23,15 @@ public class Player : PlayerLifeSystem
     //Variables Publicas
     public float playerLife = 100;
 
-
     public float walkSpeed = 7f;
     public float runSpeedMultiplier = 1.5f;
     public float jumpForce = 10f;
     public float dashForce = 12f;
-
-    [SerializeField]
-    int FuseAmount = 0;
-
+        
     //Variables Privadas
+    [SerializeField]
+    private int _fuseAmount = 0;
+
 
     //Propiedades
 
@@ -44,7 +44,7 @@ public class Player : PlayerLifeSystem
         _playerMove = new PlayerMove(transform, rb, footSensor, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
         _playerControl = new PlayerControl(_playerMove);
 
-        SetLife(playerLife);
+        StartLife(playerLife);
         StartUI();
     }
 
@@ -58,15 +58,15 @@ public class Player : PlayerLifeSystem
         _playerControl.ArtificialFixedUpdate();
     }
 
-    void OnTriggerStay(Collider other)
+    public void AddFuse()
     {
-        if (other.gameObject.layer == 6)
-        {
-            TakeDamage(1);
-        }
+        _fuseAmount++;
     }
 
-    //-----------------------------------------------------------------------------------
+    public int GetFuses()
+    {
+        return _fuseAmount;
+    }
 
     public override void TakeDamage(float value)
     {
@@ -79,10 +79,11 @@ public class Player : PlayerLifeSystem
             Die();
         }
 
+        //Agregar FeedBack
+
         UpdateUI();
     }
 
-    //curacion
     public override void Heal(float value)
     {
         _currentHealth += value;
@@ -91,21 +92,24 @@ public class Player : PlayerLifeSystem
         {
             _currentHealth = _maxHealth;
         }
+
+        //Agregar FeedBack
+
+        UpdateUI();
     }
 
-    //Muere
     public override void Die()
     {
         _isAlive = false;
     }
 
-    public void AddFuse()
+    public override void Damage(float value)
     {
-        FuseAmount++;
+        TakeDamage(value);
     }
 
-    public int GetFuses()
+    public override void ShootDamage(float value)
     {
-        return FuseAmount;
+        TakeDamage(value);
     }
 }

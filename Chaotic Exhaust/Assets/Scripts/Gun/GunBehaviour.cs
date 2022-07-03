@@ -12,7 +12,7 @@ public enum GunStates
 public class GunBehaviour : MonoBehaviour
 {
 
-    public int damage = 1;
+    public float damage = 1;
     public float range = 200f;
     public int maxAmmo;
     public int bulletAmout = 20;
@@ -57,10 +57,10 @@ public class GunBehaviour : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range))
         {
-            var tar = hit.transform.GetComponent<IsShootable>();
+            var tar = hit.transform.GetComponent<IShootable>();
             if(tar !=null)
             {
-                tar.Damage(damage);
+                tar.ShootDamage(damage);
             }
             var gunBlast = Instantiate(blast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
             Destroy(gunBlast, .5f);

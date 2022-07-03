@@ -30,12 +30,14 @@ public class ScriptDeEjemplo : MonoBehaviour
     //Nuestros Metodos Privados
 
     //Nuestros Metodos Publicos
-    
-    //Nuestros Metodos Herdados y modificados que comienzan con override
 
-    //Nuestros Metodos Heredados que comienzan con virtual
+    //Metodos Herdados override
+
+    //Metodos de Interfaces
 
     //Operadores
-
+    
     //Cosas raras que no sabemos usar XD..
+
+    //Metodos virtual
 }

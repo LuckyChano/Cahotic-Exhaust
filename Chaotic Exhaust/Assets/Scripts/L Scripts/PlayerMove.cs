@@ -42,7 +42,7 @@ public class PlayerMove
     {
         get
         {
-            return CanDash;
+            return _canDash;
         }
         set
         {
@@ -135,13 +135,19 @@ public class PlayerMove
     //Corregir.
     public IEnumerator Dash(float verAxis, float horAxis)
     {
-        if (horAxis != 0 && verAxis == 0)
-            _rb.AddForce((_transform.right * horAxis).normalized * _dashForce, ForceMode.Impulse);
-        if (horAxis == 0 && verAxis != 0)
-            _rb.AddForce((_transform.forward * verAxis).normalized * _dashForce, ForceMode.Impulse);
-        if (horAxis == 0 && verAxis == 0)
-            _rb.AddForce((_transform.forward * 1).normalized * _dashForce, ForceMode.Impulse);
-        _canDash = false;
+        if (CanDash)
+        {
+            if (horAxis != 0 && verAxis == 0)
+                _rb.AddForce((_transform.right * horAxis).normalized * _dashForce, ForceMode.Impulse);
+        
+            if (horAxis == 0 && verAxis != 0)
+                _rb.AddForce((_transform.forward * verAxis).normalized * _dashForce, ForceMode.Impulse);
+        
+            if (horAxis == 0 && verAxis == 0)
+                _rb.AddForce((_transform.forward * 1).normalized * _dashForce, ForceMode.Impulse);
+         
+            _canDash = false;
+        }
 
         yield return new WaitForSeconds(2f);
         _canDash = true;
