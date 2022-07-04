@@ -21,7 +21,8 @@ public class GunBehaviour : MonoBehaviour
 
     AudioSource _sound;
 
-    public GameObject blast;
+    public GameObject EnemyBlast;
+    public GameObject WallBlast;
     public TextMeshProUGUI ammoCounter;
 
     Machine _fsm;
@@ -61,9 +62,14 @@ public class GunBehaviour : MonoBehaviour
             if(tar !=null)
             {
                 tar.ShootDamage(damage);
+                var gunBlast = Instantiate(EnemyBlast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
+                Destroy(gunBlast, .5f);
             }
-            var gunBlast = Instantiate(blast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
-            Destroy(gunBlast, .5f);
+            else
+            {
+                var gunBlast = Instantiate(WallBlast, hit.point, Quaternion.LookRotation(hit.normal).normalized);
+                Destroy(gunBlast, .5f);
+            }
         }
         bulletAmout--;
     }

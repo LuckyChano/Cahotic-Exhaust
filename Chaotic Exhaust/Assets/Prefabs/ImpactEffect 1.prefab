@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5980561476158177171}
   m_Layer: 0
-  m_Name: ImpactEffect
+  m_Name: ImpactEffect 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fd70550bfa287a141869d59755847f15, type: 2}
+  - {fileID: 2100000, guid: b52f46f95d5f79f4a97eb7a9dbc1174d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
