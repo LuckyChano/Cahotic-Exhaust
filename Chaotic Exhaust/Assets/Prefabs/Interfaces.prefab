@@ -55,7 +55,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIManager.UIManager, Assembly-CSharp
           m_MethodName: ReloadScene
           m_Mode: 1
           m_Arguments:
@@ -367,7 +367,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIManager.UIManager, Assembly-CSharp
           m_MethodName: LoadMainMenuScene
           m_Mode: 1
           m_Arguments:
@@ -1685,7 +1685,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIManager.UIManager, Assembly-CSharp
           m_MethodName: UnpauseGame
           m_Mode: 1
           m_Arguments:
@@ -1729,7 +1729,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -0.0000076293945, y: -0.00012207031}
   m_SizeDelta: {x: 0.0000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1970,7 +1970,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &4747024186318049905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,7 +2761,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIManager.UIManager, Assembly-CSharp
           m_MethodName: LoadMainMenuScene
           m_Mode: 1
           m_Arguments:
@@ -2827,7 +2827,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIManager.UIManager, Assembly-CSharp
           m_MethodName: ReloadScene
           m_Mode: 1
           m_Arguments:
@@ -2931,7 +2931,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6067082464596202066
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5395,7 +5395,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.3512955, y: -0.0000052452087}
   m_SizeDelta: {x: 8.5047, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6639,7 +6639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7709388360282499103
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7659,7 +7659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7709388360566864018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8581,7 +8581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7709388360775821752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8831,7 +8831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7709388361023643912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10740,7 +10740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7709388361855526873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11762,6 +11762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2052468785869262273}
+  - component: {fileID: 390030213}
   m_Layer: 0
   m_Name: Interfaces
   m_TagString: Untagged
@@ -11785,6 +11786,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &390030213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056917579300802490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ca656679e528a43b46eb6a09ac5d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainScene: 1
+  _survivalScene: 2
+  _mainMenuScene: 0
+  _optionsMenu: {fileID: 7709388360566864019}
+  _levelSelection: {fileID: 7709388360282499096}
+  _mainMenu: {fileID: 7709388361023643913}
+  _credits: {fileID: 7709388361855526874}
+  paused: 0
+  _pauseMenu: {fileID: 2582926437093330062}
 --- !u!1 &8517273247713494102
 GameObject:
   m_ObjectHideFlags: 0
@@ -12095,7 +12117,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_TargetAssemblyTypeName: UIManager.UIManager, Assembly-CSharp
           m_MethodName: LoadMainMenuScene
           m_Mode: 1
           m_Arguments:

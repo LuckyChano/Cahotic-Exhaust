@@ -14,8 +14,8 @@ namespace UIManager
         [SerializeField] private GameObject _levelSelection;
         [SerializeField] private GameObject _mainMenu;
         [SerializeField] private GameObject _credits;
-        [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private bool paused;
+        public GameObject _pauseMenu;
 
 
         public static UIManager instance;
@@ -107,15 +107,15 @@ namespace UIManager
             Cursor.visible = true;
             if (_pauseMenu != null)
                 _pauseMenu.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
         }
         public void UnpauseGame()
         {
+            Debug.Log("asd");
             paused = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            if (_pauseMenu != null)
-                _pauseMenu.gameObject.SetActive(false);
+            _pauseMenu.gameObject.SetActive(false);
             Time.timeScale = 1;
         }
     }
