@@ -5,14 +5,12 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AnimatorController : MonoBehaviour
 {
-    private PlayerHealth _playerHealth;
     private NavMeshAgent _agent;
     private Animator _animator;
     public int targetLayer;
 
     private void Start()
     {
-        _playerHealth = FindObjectOfType<PlayerHealth>();
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
     }

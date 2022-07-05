@@ -41,6 +41,17 @@ public class Player : PlayerLifeSystem
             return _playerMove.IsMoving;
         }
     }
+    public bool CanMove
+    {
+        get
+        {
+            return _playerMove.CanMove;
+        }
+        set
+        {
+            _playerMove.CanMove = value;
+        }
+    }
 
     //Delegados
 

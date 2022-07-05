@@ -13,9 +13,12 @@ public class Enemy : Entity,IDamageable,IShootable
     private EnemyAI _movement;
     private RoomTrigger _roomTrigger;
     private GameObject _player;
+    private NavMeshAgent _agent;
+    private Animator _animator;
 
     public float enemyLife = 3;
     public float enemyDamage = 20;
+    public int targetLayer;
 
     private void Awake()
     {
@@ -26,6 +29,9 @@ public class Enemy : Entity,IDamageable,IShootable
 
     void Start()
     {
+        _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponent<Animator>();
+
         StartLife(enemyLife);
 
         _movement = new EnemyAI(this, _player);
@@ -35,6 +41,9 @@ public class Enemy : Entity,IDamageable,IShootable
     void Update()
     {
         _movement.ArtificialUpdate();
+
+        _animator.SetBool("isMoving", _agent.velocity.magnitude > 0.1f);
+        _animator.SetFloat("velocity", _agent.velocity.magnitude);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,6 +57,19 @@ public class Enemy : Entity,IDamageable,IShootable
         if (other.gameObject.layer == LayerMask.NameToLayer("RoomTrigger"))
         {
             _roomTrigger = other.GetComponent<RoomTrigger>();
+        }
+
+        if (!other.isTrigger && other.gameObject.layer.Equals(targetLayer))
+        {
+            _animator.SetBool("inRange", true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.isTrigger && other.gameObject.layer.Equals(targetLayer))
+        {
+            _animator.SetBool("inRange", false);
         }
     }
 

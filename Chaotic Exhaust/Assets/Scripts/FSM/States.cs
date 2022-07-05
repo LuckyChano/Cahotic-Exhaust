@@ -55,7 +55,7 @@ public class ShootingState : IStates
     public void OnUpdate()
     {
 
-        if (Input.GetButton("Fire1") && PlayerBehaviour.instance.canMove == true)
+        if (Input.GetButton("Fire1"))
         {
             if (Time.time - shootTimer > 1 / shootSpeed && _agent.bulletAmout > 0)
             {
