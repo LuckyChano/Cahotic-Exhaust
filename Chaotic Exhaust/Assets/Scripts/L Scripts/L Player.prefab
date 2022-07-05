@@ -7379,6 +7379,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 5751744471165637651}
   - {fileID: 2436571629794064953}
   - {fileID: 8244237077661519944}
   m_Father: {fileID: 4055253582431416711}
@@ -7728,7 +7729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4055253582233204472}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8540033231598644855
 Camera:
@@ -10059,7 +10060,6 @@ GameObject:
   - component: {fileID: 6067314816576159666}
   - component: {fileID: 6067314816576159669}
   - component: {fileID: 1537680573398742490}
-  - component: {fileID: 5942964518274211762}
   m_Layer: 11
   m_Name: Fusil
   m_TagString: Untagged
@@ -10087,7 +10087,7 @@ Transform:
   - {fileID: 2042662034683431218}
   - {fileID: 522638127}
   m_Father: {fileID: 4055253582233204472}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0.06, y: -90.62, z: -0.008}
 --- !u!82 &6067314816576159668
 AudioSource:
@@ -10238,19 +10238,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &5942964518274211762
-BoxCollider:
+--- !u!1 &8754104735712809482
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728742839576349426}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5751744471165637651}
+  - component: {fileID: 2375289178041996560}
+  m_Layer: 0
+  m_Name: Granade Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5751744471165637651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754104735712809482}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.493, y: -0.268, z: 0.321}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4055253582233204472}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2375289178041996560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754104735712809482}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.2, z: 0.15}
-  m_Center: {x: -0.03, y: 0.2, z: 0.02}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60376e2538c6dc14ca585cf6f8dc3f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwForce: 1000
+  granadePrefab: {fileID: 3814194579576553662, guid: d53400e181d67eb4389157e0bf8aa0da, type: 3}
 --- !u!1 &8955369814951892589
 GameObject:
   m_ObjectHideFlags: 0
