@@ -18,7 +18,6 @@ public class Enemy : Entity,IDamageable,IShootable
 
     public float enemyLife = 3;
     public float enemyDamage = 20;
-    public int targetLayer;
 
     private void Awake()
     {
@@ -59,7 +58,7 @@ public class Enemy : Entity,IDamageable,IShootable
             _roomTrigger = other.GetComponent<RoomTrigger>();
         }
 
-        if (!other.isTrigger && other.gameObject.layer.Equals(targetLayer))
+        if (!other.isTrigger && other.gameObject.layer == 7)
         {
             _animator.SetBool("inRange", true);
         }
@@ -67,7 +66,7 @@ public class Enemy : Entity,IDamageable,IShootable
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.isTrigger && other.gameObject.layer.Equals(targetLayer))
+        if (!other.isTrigger && other.gameObject.layer == 7)
         {
             _animator.SetBool("inRange", false);
         }
