@@ -6,7 +6,7 @@ public class CamMovement : MonoBehaviour
 {
     public Transform playerBody;
 
-    private PlayerMovement _player;
+    private Player _player;
     
     public FootSensor footSensor;
     
@@ -24,7 +24,7 @@ public class CamMovement : MonoBehaviour
     {
         _YlocalPos = transform.localPosition.y;
 
-        _player = GetComponentInParent<PlayerMovement>();
+        _player = GetComponentInParent<Player>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -41,7 +41,7 @@ public class CamMovement : MonoBehaviour
         _xRotation = Mathf.Clamp(_xRotation, -90, 90);
         transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             
-        if (_player.isMoving && footSensor.isGrownded)
+        if (_player.IsMoving && footSensor.isGrownded)
         {
             CamSineWave(_YRange, _YmovSens, _YlocalPos);
         }

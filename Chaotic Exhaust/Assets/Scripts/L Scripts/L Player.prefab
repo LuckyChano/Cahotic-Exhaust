@@ -1113,9 +1113,6 @@ MonoBehaviour:
   isOn: 1
   isEquiped: 1
   charge: 100
-  lostCharge: 1.5
-  chargeMax: 100
-  chargeMin: 0
   chargePercentage: {fileID: 4413371628824736212}
   chargeSlider: {fileID: 4839689871424046373}
 --- !u!1 &1814039837904678489
@@ -2687,10 +2684,9 @@ GameObject:
   - component: {fileID: 4055253583172432867}
   - component: {fileID: 4055253583172432893}
   - component: {fileID: 4055253583172432892}
+  - component: {fileID: 9200777774326667683}
   - component: {fileID: 4055253583172432871}
-  - component: {fileID: 4055253583172432864}
   - component: {fileID: 4055253583172432870}
-  - component: {fileID: 4055253583172432869}
   - component: {fileID: 4055253583172432835}
   m_Layer: 7
   m_Name: L Player
@@ -2795,6 +2791,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &9200777774326667683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055253583172432894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4055253583172432871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2811,21 +2820,6 @@ MonoBehaviour:
   ItemHolder: {fileID: 0}
   gadgetFlashLight: {fileID: 1662724230657856392}
   range: 50
---- !u!114 &4055253583172432864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4055253583172432894}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39d6585407427de43af64ae1e63d2ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footSensor: {fileID: 4055253583101908689}
-  isMoving: 0
-  canMove: 0
 --- !u!114 &4055253583172432870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,23 +2837,6 @@ MonoBehaviour:
   FlashlightLight: {fileID: 3286254111575013323}
   state: 0
   canMove: 0
---- !u!114 &4055253583172432869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4055253583172432894}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd6717cedce5464db4c73f2eeb2670b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curHealth: 0
-  maxHealth: 100
-  healthBar: {fileID: 3289824954176596735}
-  healthPercentage: {fileID: 1040677985113304897}
-  screenFx: {fileID: 4264123934289966102}
 --- !u!114 &4055253583172432835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,7 +2858,7 @@ MonoBehaviour:
   runSpeedMultiplier: 1.5
   jumpForce: 10
   dashForce: 12
-  FuseAmount: -1
+  _fuseAmount: 0
 --- !u!1 &4065984461724340729
 GameObject:
   m_ObjectHideFlags: 0
@@ -5396,7 +5373,8 @@ MonoBehaviour:
   maxAmmo: 20
   bulletAmout: 20
   shootSpeed: 7
-  blast: {fileID: 2673247151236843949, guid: 39c6f65e299fa8941981590759d3c418, type: 3}
+  EnemyBlast: {fileID: 7443827257059858660, guid: bc99421629d3dbc4fbe29f11d78ca51d, type: 3}
+  WallBlast: {fileID: 2673247151236843949, guid: 881f238fcd151c6449ea8f542d18a9ea, type: 3}
   ammoCounter: {fileID: 307588341877333432}
 --- !u!95 &1537680573398742490
 Animator:

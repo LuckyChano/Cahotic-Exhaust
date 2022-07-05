@@ -20,7 +20,7 @@ public class Enemy : Entity,IDamageable,IShootable
     private void Awake()
     {
         myRend = GetComponentInChildren<SkinnedMeshRenderer>();
-        _player = FindObjectOfType<PlayerMovement>().gameObject;
+        _player = FindObjectOfType<Player>().gameObject;
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 

@@ -34,6 +34,13 @@ public class Player : PlayerLifeSystem
 
 
     //Propiedades
+    public bool IsMoving
+    {
+        get
+        {
+            return _playerMove.IsMoving;
+        }
+    }
 
     //Delegados
 
