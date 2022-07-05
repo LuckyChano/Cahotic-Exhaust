@@ -41,19 +41,19 @@ public class FlashlightCharge
 
         if (_bat.charge > 0 && _bat.charge <= 25)
         {
-            luzLinterna.intensity = _bat.charge / chargeMax;
+            luzLinterna.intensity = 1f;
         }
         if (_bat.charge > 25 && _bat.charge <= 50)
         {
-            luzLinterna.intensity = 4;
+            luzLinterna.intensity = 2f;
         }
         if (_bat.charge > 50 && _bat.charge <= 75)
         {
-            luzLinterna.intensity = 6;
+            luzLinterna.intensity = 3f;
         }
         if (_bat.charge > 75 && _bat.charge <= 101)
         {
-            luzLinterna.intensity = 8;
+            luzLinterna.intensity = 4f;
         }
         chargeSlider.value = Mathf.Round(_bat.charge);
         chargePercentage.text = $"{Mathf.Round(chargeSlider.value)}";
