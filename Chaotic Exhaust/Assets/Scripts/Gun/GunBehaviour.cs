@@ -17,7 +17,7 @@ public class GunBehaviour : MonoBehaviour
     public int maxAmmo;
     public int bulletAmout = 20;
     public float shootSpeed = 5f;
-    Animator _anim;
+    //Animator _anim;
 
     AudioSource _sound;
 
@@ -32,7 +32,7 @@ public class GunBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _anim = GetComponent<Animator>();
+        //_anim = GetComponent<Animator>();
         _fsm = new Machine();
         bulletAmout = maxAmmo;
         _sound = GetComponent<AudioSource>();

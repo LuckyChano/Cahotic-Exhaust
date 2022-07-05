@@ -65,14 +65,14 @@ public class ShootingState : IStates
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            machine.ChangeState(GunStates.RELOAD);
-        }
-        if (_agent.bulletAmout <= 0 && Input.GetKeyDown(KeyCode.R))
-        {
-            machine.ChangeState(GunStates.RELOAD);
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    machine.ChangeState(GunStates.RELOAD);
+        //}
+        //if (_agent.bulletAmout <= 0 && Input.GetKeyDown(KeyCode.R))
+        //{
+        //    machine.ChangeState(GunStates.RELOAD);
+        //}
     }
     public ShootingState(GunBehaviour agent, Machine fsm, ShootingDelegate shoot, float _shootSpeed, AudioSource _shootSound)
     {

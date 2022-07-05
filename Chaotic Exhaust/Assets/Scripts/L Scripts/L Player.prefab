@@ -7457,7 +7457,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 223
+    m_Bits: 8415
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -10059,6 +10059,7 @@ GameObject:
   - component: {fileID: 6067314816576159666}
   - component: {fileID: 6067314816576159669}
   - component: {fileID: 1537680573398742490}
+  - component: {fileID: 5942964518274211762}
   m_Layer: 11
   m_Name: Fusil
   m_TagString: Untagged
@@ -10237,6 +10238,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5942964518274211762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8728742839576349426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.2, z: 0.15}
+  m_Center: {x: -0.03, y: 0.2, z: 0.02}
 --- !u!1 &8955369814951892589
 GameObject:
   m_ObjectHideFlags: 0
