@@ -11,8 +11,8 @@ public class PlayerHealth : MonoBehaviour, IAffectGas
 
     [SerializeField] private Slider healthBar;
     [SerializeField] private TextMeshProUGUI healthPercentage;
-    [SerializeField] private Animator screenFx;
-
+    [SerializeField] private Animator _screenFx;
+    public Player player;
     void Start()
     {
         curHealth = maxHealth;
@@ -20,40 +20,27 @@ public class PlayerHealth : MonoBehaviour, IAffectGas
         healthBar.value = curHealth;
     }
 
-    private void Update()
-    {
-        float hit = screenFx.GetFloat("hit");
-
-        if (hit > 0)
-        {
-            hit -= Time.deltaTime * 3;
-            screenFx.SetFloat("hit", hit);
-        }
-
-        if (curHealth <1)
-        {
-            screenFx.SetBool("death", true);
-        }
-    }
-
+   
     public void SendDamage(float damageValue)
     {
         curHealth -= damageValue;
         healthPercentage.text = curHealth.ToString("g2");
         healthBar.value = curHealth;
-        screenFx.SetFloat("hit", 1);
+        _screenFx.SetTrigger("hit");
         if (curHealth <= 0)
         {
             PlayerBehaviour.instance.canMove = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+
         }
     }
 
     public void EnterGas(float dmg)
     {
-        SendDamage(dmg);
+        player.Damage(dmg);
     }
+
 
     /*public IEnumerator PauseGame()
     {

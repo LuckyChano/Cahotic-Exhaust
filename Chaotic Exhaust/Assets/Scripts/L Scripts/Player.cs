@@ -5,14 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class Player : PlayerLifeSystem
+public class Player : PlayerLifeSystem, IAffectGas
 {
     //Variables Estaticas
 
     //Variables Publicas por Referencia
     public Rigidbody rb;
     public FootSensor footSensor;
-    //agregar animator
+    public Animator screenFx;
+    
 
     //public Animator screenFx;
 
@@ -99,7 +100,8 @@ public class Player : PlayerLifeSystem
             Die();
         }
 
-        //Agregar FeedBack
+        screenFx.SetTrigger("hit");
+        AudioManager.instance.Play("PlayerHurt");
 
         UpdateUI();
     }
@@ -134,4 +136,11 @@ public class Player : PlayerLifeSystem
     {
         TakeDamage(value);
     }
+
+    public void EnterGas(float dmg)
+    {
+        Damage(dmg);
+    }
+
+ 
 }
