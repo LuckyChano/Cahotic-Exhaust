@@ -23,6 +23,7 @@ public class GunBehaviour : MonoBehaviour
 
     public GameObject EnemyBlast;
     public GameObject WallBlast;
+    public ParticleSystem MuzzleParticle;
     public TextMeshProUGUI ammoCounter;
 
     Machine _fsm;
@@ -56,6 +57,7 @@ public class GunBehaviour : MonoBehaviour
     public void Shoot()
     {
         RaycastHit hit;
+        MuzzleParticle.Play();
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range))
         {
             var tar = hit.transform.GetComponent<IShootable>();
