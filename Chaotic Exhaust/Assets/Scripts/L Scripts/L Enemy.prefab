@@ -714,11 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 0}
-  destinations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  destinations: []
   myRend: {fileID: 0}
   enemyLife: 5
   enemyDamage: 20
