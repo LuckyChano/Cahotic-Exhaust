@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: f53faac090566344a8e3e6bfd4910abd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/L Test Scene 1.unity
+    guid: 1cfaac1d622624f45a5b097509923332
+  - enabled: 1
+    path: Assets/Scenes/Blocking.unity
+    guid: b39d55ebe4649d9498f03e4398ac5982
+  - enabled: 0
     path: Assets/Scenes/Arena.unity
     guid: c7816e8bb15e15a41b5609872e2e4501
   m_configObjects: {}
