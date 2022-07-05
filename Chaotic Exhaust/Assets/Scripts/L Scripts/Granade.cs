@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Granade : MonoBehaviour
 {
+    public GameObject explisionEffect;
+
     public float delay=3;
     public float radius = 5;
     public float explosionForce = 2000;
@@ -29,6 +31,8 @@ public class Granade : MonoBehaviour
 
     void Explode()
     {
+        Instantiate(explisionEffect, transform.position, transform.rotation);
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (var rangeObject in colliders)
