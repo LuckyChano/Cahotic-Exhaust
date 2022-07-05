@@ -8,7 +8,6 @@ public class AnimatorController : MonoBehaviour
     private PlayerHealth _playerHealth;
     private NavMeshAgent _agent;
     private Animator _animator;
-    private float _distanceToPlayer;
     public int targetLayer;
 
     private void Start()

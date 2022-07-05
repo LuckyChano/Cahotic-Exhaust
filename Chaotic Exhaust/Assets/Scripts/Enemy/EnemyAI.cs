@@ -7,15 +7,14 @@ public class EnemyAI
 {
     public NavMeshAgent navMeshAgent;
     public Transform[] destinations;
+    
+    private Transform _enemyTransform;
+    private GameObject _player;
 
     public float distanceToPoint = 2;
     public float distanceToFollowPlayer = 10;
     public float walkSpeed = 2;
     public float runSpeed = 6;
-
-    private Transform _enemyTransform;
-
-    private GameObject _player;
 
     private int _i = 0;
     private float _distanceToPlayer;

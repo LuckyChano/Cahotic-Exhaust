@@ -8,6 +8,8 @@ public abstract class PlayerLifeSystem : Entity
 {
     public Slider healthBar;
     public TextMeshProUGUI healthPercentage;
+    
+    //Si tenemos enemigos que se muestre su vida en pantalla lo agregamos con eventos o referecia de esta clase
 
     public void StartUI()
     {

@@ -35,9 +35,9 @@ public abstract class Entity : MonoBehaviour,IDamageable,IShootable
         }
     }
 
-    protected void StartLife(float playerLife)
+    protected void StartLife(float life)
     {
-        _maxHealth = playerLife;
+        _maxHealth = life;
         _currentHealth = _maxHealth;
 
         _isAlive = true;

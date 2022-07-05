@@ -58,6 +58,8 @@ public class Player : PlayerLifeSystem
         _playerControl.ArtificialFixedUpdate();
     }
 
+    //-------------------------------------------------------------------------------------------------------------------------------------
+
     public void AddFuse()
     {
         _fuseAmount++;
@@ -101,6 +103,8 @@ public class Player : PlayerLifeSystem
     public override void Die()
     {
         _isAlive = false;
+
+        //Agregar FeedBack
     }
 
     public override void Damage(float value)
