@@ -13,22 +13,22 @@ public class Enemy : Entity,IDamageable,IShootable
     private EnemyAI _movement;
     private RoomTrigger _roomTrigger;
     private GameObject _player;
-    private NavMeshAgent _agent;
     private Animator _animator;
 
-    public float enemyLife = 3;
+    public float enemyLife = 5;
     public float enemyDamage = 20;
+    public float walkSpeed = 2;
+    public float runSpeed = 6;
 
     private void Awake()
     {
-        myRend = GetComponentInChildren<SkinnedMeshRenderer>();
         _player = FindObjectOfType<Player>().gameObject;
-        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
+        myRend = GetComponentInChildren<SkinnedMeshRenderer>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
 
         StartLife(enemyLife);
@@ -41,8 +41,8 @@ public class Enemy : Entity,IDamageable,IShootable
     {
         _movement.ArtificialUpdate();
 
-        _animator.SetBool("isMoving", _agent.velocity.magnitude > 0.1f);
-        _animator.SetFloat("velocity", _agent.velocity.magnitude);
+        _animator.SetBool("isMoving", navMeshAgent.velocity.magnitude > 0.1f);
+        _animator.SetFloat("velocity", navMeshAgent.velocity.magnitude);
     }
 
     private void OnTriggerEnter(Collider other)
