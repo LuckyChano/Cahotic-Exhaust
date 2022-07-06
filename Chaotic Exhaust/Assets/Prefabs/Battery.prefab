@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9077232121694297172}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -13.075222, y: 0.011818, z: -6.4435635}
-  m_LocalScale: {x: 6, y: 6, z: 26}
+  m_LocalScale: {x: 9.24, y: 9.24, z: 40.04}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -4532758957498553600, guid: e281692ff21b5bf4fa96e93348cabd05, type: 3}
-  - {fileID: 4250972779551834545, guid: e281692ff21b5bf4fa96e93348cabd05, type: 3}
+  - {fileID: 2100000, guid: 8f55ec85864ea5e43b37a8b3a3941368, type: 2}
   - {fileID: -874164558550236988, guid: e281692ff21b5bf4fa96e93348cabd05, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -110,11 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0bee6b0d5420c14fa648b38bc4184b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Battery
   pickupText: 
-  player: {fileID: 0}
-  battery: {fileID: 0}
-  health: {fileID: 0}
-  behaviour: {fileID: 0}
-  mainText: {fileID: 0}
   charge: 25
