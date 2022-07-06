@@ -24,7 +24,7 @@ public class EnemyAI
 
     public void ArtificialStart()
     {
-        _enemy.navMeshAgent.destination = _enemy.destinations[0].position;
+       // _enemy.navMeshAgent.destination = _enemy.destinations[0].position;
     }
 
     public void ArtificialUpdate()

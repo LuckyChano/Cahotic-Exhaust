@@ -19,7 +19,6 @@ public class GunBehaviour : MonoBehaviour
     public float shootSpeed = 5f;
     //Animator _anim;
 
-    AudioSource _sound;
 
     public GameObject EnemyBlast;
     public GameObject WallBlast;
@@ -35,8 +34,8 @@ public class GunBehaviour : MonoBehaviour
         //_anim = GetComponent<Animator>();
         _fsm = new Machine();
         bulletAmout = maxAmmo;
-        _sound = GetComponent<AudioSource>();
-        _shootState = new ShootingState(this, _fsm, Shoot, shootSpeed, _sound);
+        
+        _shootState = new ShootingState(this, _fsm, Shoot, shootSpeed);
         _reloadStatel = new ReloadState(this, _fsm, null);
         _fsm.AddState(GunStates.SHOOT, _shootState);
         _fsm.AddState(GunStates.RELOAD, _reloadStatel);

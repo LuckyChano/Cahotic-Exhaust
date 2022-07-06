@@ -41,7 +41,7 @@ public class ShootingState : IStates
     float shootTimer = 0;
     float shootSpeed;
 
-    AudioSource _shootSound;
+    
     public void OnEnter()
     {
         
@@ -61,7 +61,7 @@ public class ShootingState : IStates
             {
                 shootTimer = Time.time;
                 shoot();
-                _shootSound.Play();
+                AudioManager.instance.PlayGun("Shoot");
             }
         }
 
@@ -74,12 +74,12 @@ public class ShootingState : IStates
             machine.ChangeState(GunStates.RELOAD);
         }
     }
-    public ShootingState(GunBehaviour agent, Machine fsm, ShootingDelegate shoot, float _shootSpeed, AudioSource _shootSound)
+    public ShootingState(GunBehaviour agent, Machine fsm, ShootingDelegate shoot, float _shootSpeed)
     {
         _agent = agent;
         machine = fsm;
         shootSpeed = _shootSpeed;
         this.shoot = shoot;
-        this._shootSound = _shootSound;
+        
     }
 }

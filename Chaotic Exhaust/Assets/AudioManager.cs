@@ -48,6 +48,15 @@ public class AudioManager : MonoBehaviour
        
         if(!s.source.isPlaying)
             s.source.Play();
-
     }
+
+    public void PlayGun(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+            return;
+
+        s.source.Play();
+    }
+
 }

@@ -8,6 +8,9 @@ public class FuseScreenManager
     List<GameObject> p_Screens;
     List<GameObject> p_Doors;
     List<GameObject> p_Fuses;
+
+    public delegate void EndSequence();
+    public event EndSequence OnFilledFuses;
     public FuseScreenManager(Material On, List<GameObject> screens, List<GameObject> doors, List<GameObject> fuses)
     {
         p_ScreenOn = On;
@@ -36,6 +39,10 @@ public class FuseScreenManager
         {
             p_Fuses[fuseNumber].SetActive(true);
         }
+
+        if (fuseNumber == 4)
+            OnFilledFuses?.Invoke();
+
 
     }
 }
