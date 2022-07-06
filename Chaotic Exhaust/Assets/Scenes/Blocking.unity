@@ -67799,7 +67799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
       propertyPath: sounds.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
       propertyPath: sounds.Array.data[4].clip
@@ -67818,6 +67818,14 @@ PrefabInstance:
       value: EnemyHurt
       objectReference: {fileID: 0}
     - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: aca65130ee511cd4da386e85d9aa4e8e, type: 3}
+    - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
+      propertyPath: sounds.Array.data[6].name
+      value: Granade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
       propertyPath: sounds.Array.data[1].pitch
       value: 1.003
       objectReference: {fileID: 0}
@@ -67830,6 +67838,10 @@ PrefabInstance:
       value: 0.921
       objectReference: {fileID: 0}
     - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
+      propertyPath: sounds.Array.data[6].pitch
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
       propertyPath: sounds.Array.data[1].volume
       value: 0.397
       objectReference: {fileID: 0}
@@ -67839,6 +67851,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
       propertyPath: sounds.Array.data[5].volume
+      value: 0.309
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212112969053426763, guid: 3a6cb976a06a61c4282c3480f02c3296, type: 3}
+      propertyPath: sounds.Array.data[6].volume
       value: 0.309
       objectReference: {fileID: 0}
     m_RemovedComponents: []

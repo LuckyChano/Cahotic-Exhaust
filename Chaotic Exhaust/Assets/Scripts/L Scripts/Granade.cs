@@ -40,6 +40,7 @@ public class Granade : MonoBehaviour
     {
         Instantiate(explisionEffect, transform.position, transform.rotation);
 
+        AudioManager.instance.Play("Granade");
 
         foreach (var rangeObject in colliders)
         {
