@@ -103,7 +103,7 @@ public class Enemy : Entity,IDamageable,IShootable
         AudioManager.instance.Play("EnemyDie");
         _animator.SetTrigger("Die");
 
-        Destroy(gameObject, 1.4f); ;
+        //Destroy(gameObject, 1.4f); ;
     }
 
     public override void Damage(float value)
