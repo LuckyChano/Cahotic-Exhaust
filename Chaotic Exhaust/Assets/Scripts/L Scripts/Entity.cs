@@ -55,4 +55,5 @@ public abstract class Entity : MonoBehaviour,IDamageable,IShootable
     public abstract void Damage(float value);
 
     public abstract void ShootDamage(float value);
+
 }

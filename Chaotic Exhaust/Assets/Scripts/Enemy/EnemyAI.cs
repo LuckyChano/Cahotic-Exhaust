@@ -14,6 +14,8 @@ public class EnemyAI
     private int _i = 0;
     private float _distanceToPlayer;
 
+    private bool isAggroed = false;
+
     public EnemyAI(Enemy enemy, GameObject target)
     {
         _enemy = enemy;
@@ -29,14 +31,14 @@ public class EnemyAI
     {
         _distanceToPlayer = Vector3.Distance(_enemy.transform.position, _player.transform.position);
 
-        if (_distanceToPlayer <= distanceToFollowPlayer)
+        if (_distanceToPlayer <= distanceToFollowPlayer || isAggroed)
         {
             FollowPlayer();
         }
-        else
+        /*else
         {
             EnemyPath();
-        }
+        }*/
     }
 
     public void EnemyPath()
@@ -63,5 +65,10 @@ public class EnemyAI
         _enemy.navMeshAgent.destination = _player.transform.position;
 
         _enemy.navMeshAgent.speed = _enemy.runSpeed;
+    }
+
+    public void SetAgroToFollow()
+    {
+        isAggroed = true;
     }
 }

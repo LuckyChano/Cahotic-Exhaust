@@ -61,7 +61,7 @@ public class GunBehaviour : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range))
         {
             var tar = hit.transform.GetComponent<IShootable>();
-            if(tar !=null)
+            if (tar !=null)
             {
                 tar.ShootDamage(damage);
                 var gunBlast = Instantiate(EnemyBlast, hit.point, Quaternion.LookRotation(hit.normal).normalized);

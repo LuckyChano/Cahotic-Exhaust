@@ -142,6 +142,4 @@ public class Player : PlayerLifeSystem, IAffectGas
     {
         Damage(dmg);
     }
-
- 
 }

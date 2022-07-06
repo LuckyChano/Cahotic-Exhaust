@@ -122,6 +122,7 @@ public class Enemy : Entity
     public override void ShootDamage(float value)
     {
         TakeDamage(value);
+        _movement.SetAgroToFollow();
     }
 
     public IEnumerator DamagedFeedback()
