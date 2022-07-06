@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : Entity,IDamageable,IShootable
+public class Enemy : Entity
 {
     public NavMeshAgent navMeshAgent;
     public Transform[] destinations;

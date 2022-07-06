@@ -6,12 +6,17 @@ public class Granade : MonoBehaviour
 {
     public GameObject explisionEffect;
 
+    public int granadeDamage = 2;
     public float delay=3;
     public float radius = 5;
     public float explosionForce = 2000;
 
     private float _countdown;
     private bool _exploded = false;
+
+    public LayerMask damagableLayers;
+
+    public Collider[] colliders;
 
     private void Start()
     {
@@ -27,13 +32,14 @@ public class Granade : MonoBehaviour
             Explode();
             _exploded = true;
         }
+        colliders = Physics.OverlapSphere(transform.position, radius, damagableLayers);
+
     }
 
     void Explode()
     {
         Instantiate(explisionEffect, transform.position, transform.rotation);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
         foreach (var rangeObject in colliders)
         {
@@ -42,6 +48,10 @@ public class Granade : MonoBehaviour
             if (rb != null)
             {
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
+            }
+            if(rb.GetComponent<IShootable>() != null)
+            {
+                rb.GetComponent<IShootable>().ShootDamage(granadeDamage);
             }
         }
 
