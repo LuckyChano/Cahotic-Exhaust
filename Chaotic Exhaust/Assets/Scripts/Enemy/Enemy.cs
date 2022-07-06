@@ -14,6 +14,7 @@ public class Enemy : Entity,IDamageable,IShootable
     private RoomTrigger _roomTrigger;
     private GameObject _player;
     private Animator _animator;
+    [SerializeField] private Collider colliderMano;
 
     public float enemyLife = 5;
     public float enemyDamage = 20;
@@ -58,11 +59,20 @@ public class Enemy : Entity,IDamageable,IShootable
             _roomTrigger = other.GetComponent<RoomTrigger>();
         }
 
-        if (!other.isTrigger && other.gameObject.layer == 7)
+        
+    }
+
+    private void OnCollisionEnter(Collision collisionMano)
+    {
+        if (collisionMano.gameObject.layer == 7)
         {
-            _animator.SetBool("inRange", true);
+            var player = colliderMano.gameObject.GetComponent<Player>();
+            //_animator.SetBool("inRange", true);
+            player.TakeDamage(enemyDamage);
         }
     }
+
+    
 
     private void OnTriggerExit(Collider other)
     {
