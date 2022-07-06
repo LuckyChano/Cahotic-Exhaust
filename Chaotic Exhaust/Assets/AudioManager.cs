@@ -46,7 +46,8 @@ public class AudioManager : MonoBehaviour
         if (s == null)
            return;       
        
-        s.source.Play();
+        if(!s.source.isPlaying)
+            s.source.Play();
 
     }
 }

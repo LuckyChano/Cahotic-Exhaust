@@ -12,7 +12,7 @@ public class Enemy : Entity,IDamageable,IShootable
     
     private EnemyAI _movement;
     private RoomTrigger _roomTrigger;
-    private GameObject _player;
+    private Player _player;
     private Animator _animator;
     [SerializeField] private Collider colliderMano;
 
@@ -23,7 +23,7 @@ public class Enemy : Entity,IDamageable,IShootable
 
     private void Awake()
     {
-        _player = FindObjectOfType<Player>().gameObject;
+        _player = FindObjectOfType<Player>();
     }
 
     void Start()
@@ -34,7 +34,7 @@ public class Enemy : Entity,IDamageable,IShootable
 
         StartLife(enemyLife);
 
-        _movement = new EnemyAI(this, _player);
+        _movement = new EnemyAI(this, _player.gameObject);
         _movement.ArtificialStart();
     }
 
@@ -51,7 +51,7 @@ public class Enemy : Entity,IDamageable,IShootable
         var player = other.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            player.TakeDamage(enemyDamage);
+            _animator.SetTrigger("HitTrigger");
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("RoomTrigger"))
@@ -62,13 +62,11 @@ public class Enemy : Entity,IDamageable,IShootable
         
     }
 
-    private void OnCollisionEnter(Collision collisionMano)
+    private void OnTriggerStay(Collider collisionMano)
     {
         if (collisionMano.gameObject.layer == 7)
         {
-            var player = colliderMano.gameObject.GetComponent<Player>();
-            //_animator.SetBool("inRange", true);
-            player.TakeDamage(enemyDamage);
+            _animator.SetBool("inRange", true);
         }
     }
 
@@ -100,7 +98,7 @@ public class Enemy : Entity,IDamageable,IShootable
 
     public override void Heal(float value)
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     public override void Die()
@@ -118,7 +116,7 @@ public class Enemy : Entity,IDamageable,IShootable
 
     public override void Damage(float value)
     {
-        throw new NotImplementedException();
+        _player.TakeDamage(value);
     }
 
     public override void ShootDamage(float value)

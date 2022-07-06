@@ -128,8 +128,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explisionEffect: {fileID: 811657456846862064}
   delay: 3
-  radius: 5
+  radius: 3
   explosionForce: 1000
+  damagableLayers:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!1001 &3195081487773235056
 PrefabInstance:
   m_ObjectHideFlags: 0

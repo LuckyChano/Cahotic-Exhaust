@@ -101,6 +101,7 @@ public class Player : PlayerLifeSystem, IAffectGas
         }
 
         screenFx.SetTrigger("hit");
+        
         AudioManager.instance.Play("PlayerHurt");
 
         UpdateUI();
