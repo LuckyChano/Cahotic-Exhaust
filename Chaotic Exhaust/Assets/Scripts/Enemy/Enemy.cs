@@ -100,9 +100,10 @@ public class Enemy : Entity,IDamageable,IShootable
             _roomTrigger.OnEnemyKilled();
         }
 
-        //FeedBack
+        AudioManager.instance.Play("EnemyDie");
+        _animator.SetTrigger("Die");
 
-        Destroy(gameObject, 0.2f); ;
+        Destroy(gameObject, 1.4f); ;
     }
 
     public override void Damage(float value)
@@ -118,7 +119,7 @@ public class Enemy : Entity,IDamageable,IShootable
     public IEnumerator DamagedFeedback()
     {
         myRend.material.color = Color.red;
-        //AudioManager.Play("SHOOTSOUND");
+        AudioManager.instance.Play("EnemyHurt");
         yield return new WaitForSeconds(.5f);
         myRend.material.color = Color.white;
     }
