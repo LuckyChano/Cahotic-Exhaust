@@ -9,6 +9,7 @@ public class FuseBehaviour : MonoBehaviour
     {
         if(other.GetComponent<Player>())
         {
+            AudioManager.instance.Play("PickUp");
             other.GetComponent<Player>().AddFuse();
             Destroy(fuse);
         }

@@ -111,7 +111,6 @@ namespace UIManager
         }
         public void UnpauseGame()
         {
-            Debug.Log("asd");
             paused = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

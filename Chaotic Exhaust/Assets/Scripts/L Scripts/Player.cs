@@ -13,7 +13,8 @@ public class Player : PlayerLifeSystem, IAffectGas
     public Rigidbody rb;
     public FootSensor footSensor;
     public Animator screenFx;
-    
+    public GameObject deathScreen;
+
 
     //public Animator screenFx;
 
@@ -69,12 +70,14 @@ public class Player : PlayerLifeSystem, IAffectGas
 
     void Update()
     {
-        _playerControl.ArtificialUpdate();
+        if(IsAlive)
+            _playerControl.ArtificialUpdate();
     }
 
     void FixedUpdate()
     {
-        _playerControl.ArtificialFixedUpdate();
+        if (IsAlive)
+            _playerControl.ArtificialFixedUpdate();
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------
@@ -125,7 +128,18 @@ public class Player : PlayerLifeSystem, IAffectGas
     {
         _isAlive = false;
 
-        //Agregar FeedBack
+        Cursor.lockState = CursorLockMode.None;
+
+        screenFx.SetTrigger("die");
+
+        var timer = 0f;
+        timer += Time.deltaTime * 2;
+
+        if(timer > 0.5f)
+        {
+            Time.timeScale = 0;
+        }
+
     }
 
     public override void Damage(float value)

@@ -49,7 +49,6 @@ public class BateryManager : MonoBehaviour
 
     public void ChargeFlashlight(float amount)
     {
-        print("bateria");
         chargeBehaviour.Charge(amount);
     }
 }
