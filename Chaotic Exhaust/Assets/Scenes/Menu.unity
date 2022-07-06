@@ -159,8 +159,8 @@ MonoBehaviour:
   _levelSelection: {fileID: 147936966}
   _mainMenu: {fileID: 735590752}
   _credits: {fileID: 1802854634}
-  _pauseMenu: {fileID: 1900037288}
   paused: 0
+  _pauseMenu: {fileID: 1900037288}
 --- !u!4 &47257312
 Transform:
   m_ObjectHideFlags: 0
@@ -251,11 +251,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4110159012595290502, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4110159012595290502, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4747024186318049904, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_IsActive
@@ -267,11 +267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082991424212117765, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5082991424212117765, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6067082463380855078, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_IsActive
@@ -279,7 +279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6067082464596202078, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7067621996372042173, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_Delegates.Array.size
@@ -453,6 +453,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1684417194}
+    - target: {fileID: 7709388360775821748, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7709388360775821754, guid: d1d94a532c5d8ad4c8cf4c8bad2451ef, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 1
