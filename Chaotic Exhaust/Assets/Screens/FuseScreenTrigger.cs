@@ -9,7 +9,9 @@ public class FuseScreenTrigger : MonoBehaviour
     public List<GameObject> Screens = new List<GameObject> ();
     public List<GameObject> Doors = new List<GameObject> ();
     public List<GameObject> Fuses = new List<GameObject> ();
+    public Light EmergencyLight;
     FuseScreenManager manager;
+
 
     int index;
     private void Start()
@@ -23,5 +25,10 @@ public class FuseScreenTrigger : MonoBehaviour
         {
             manager.ActivateScreen(other.GetComponent<Player>().GetFuses());
         }
+    }
+
+    public void EndSequence()
+    {
+        EmergencyLight.GetComponent<Animator>().SetBool("IsEnd", true);
     }
 }
