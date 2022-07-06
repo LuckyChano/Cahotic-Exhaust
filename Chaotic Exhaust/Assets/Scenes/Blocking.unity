@@ -9638,9 +9638,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.6740873, b: 0.36209506, a: 1}
-  m_Intensity: 12.86
+  m_Intensity: 6
   m_Range: 11.478014
-  m_SpotAngle: 30.718845
+  m_SpotAngle: 44.068375
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -21676,10 +21676,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1849312425281747852, guid: 44174b21b76588b44bac97ac38996435, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44174b21b76588b44bac97ac38996435, type: 3}
 --- !u!1001 &703935646
@@ -28044,7 +28040,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9716981, g: 0.6740873, b: 0.36209506, a: 1}
-  m_Intensity: 9.37
+  m_Intensity: 6
   m_Range: 15.59467
   m_SpotAngle: 58.5
   m_InnerSpotAngle: 21.80208
@@ -54493,9 +54489,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1859035641}
     m_Modifications:
-    - target: {fileID: 1157253188929315601, guid: 44174b21b76588b44bac97ac38996435, type: 3}
-      propertyPath: runSpeed
-      value: 9
+    - target: {fileID: 1451286754477163145, guid: 44174b21b76588b44bac97ac38996435, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 1451286754477163146, guid: 44174b21b76588b44bac97ac38996435, type: 3}
       propertyPath: m_Name
@@ -64419,8 +64415,8 @@ MonoBehaviour:
   - {fileID: 5596431853268208793}
   Doors:
   - {fileID: 568066134}
-  - {fileID: 711646472}
   - {fileID: 1927465578}
+  - {fileID: 711646472}
   - {fileID: 1941647004}
   Fuses:
   - {fileID: 6921648036236410098}
