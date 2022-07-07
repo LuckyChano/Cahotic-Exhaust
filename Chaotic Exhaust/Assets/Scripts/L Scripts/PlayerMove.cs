@@ -129,6 +129,7 @@ public class PlayerMove
         if (_footSensor.isGrownded && CanMove)
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            AudioManager.instance.Play("PlayerJump");
         }
     }
 
