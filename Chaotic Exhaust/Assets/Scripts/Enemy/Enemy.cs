@@ -132,4 +132,9 @@ public class Enemy : Entity
         yield return new WaitForSeconds(.5f);
         myRend.material.color = Color.white;
     }
+
+    public override void TurnOff()
+    {
+        gameObject.SetActive(false);
+    }
 }

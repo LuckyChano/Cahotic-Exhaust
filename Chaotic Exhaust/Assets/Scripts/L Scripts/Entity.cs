@@ -56,4 +56,6 @@ public abstract class Entity : MonoBehaviour,IDamageable,IShootable
 
     public abstract void ShootDamage(float value);
 
+    public abstract void TurnOff();
+
 }

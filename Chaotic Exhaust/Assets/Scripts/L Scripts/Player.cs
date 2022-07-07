@@ -156,4 +156,9 @@ public class Player : PlayerLifeSystem, IAffectGas
     {
         Damage(dmg);
     }
+
+    public override void TurnOff()
+    {
+        
+    }
 }
