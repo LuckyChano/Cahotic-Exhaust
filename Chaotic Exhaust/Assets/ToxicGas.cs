@@ -6,9 +6,10 @@ public class ToxicGas : MonoBehaviour
 {
     [SerializeField]
     float _damage;
-    private void OnTriggerStay(Collider other)
+    [SerializeField]private Collider _gasZone;
+    private void OnTriggerStay(Collider _gasZone)
     {
-        var affectGas = other.gameObject.GetComponent<IAffectGas>();
+        var affectGas = _gasZone.gameObject.GetComponent<IAffectGas>();
 
         if (affectGas != null)
             affectGas.EnterGas(_damage);
