@@ -34,10 +34,3 @@ public interface IAffectGas
 {
     void EnterGas(float dmg);
 }
-
-public interface IIluminatte
-{
-    IEnumerator SetOnLight(float time);
-}
-
-
