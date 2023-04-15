@@ -40,7 +40,8 @@ public class Enemy : Entity
 
     void Update()
     {
-        _movement.ArtificialUpdate();
+        if(_isAlive)
+            _movement.ArtificialUpdate();
 
         _animator.SetBool("isMoving", navMeshAgent.velocity.magnitude > 0.1f);
         _animator.SetFloat("velocity", navMeshAgent.velocity.magnitude);
@@ -89,7 +90,7 @@ public class Enemy : Entity
         if (_currentHealth <= 0)
         {
             _currentHealth = 0;
-
+            _isAlive = false;
             Die();
         }
 

@@ -50,23 +50,20 @@ public class PlayerMove
         }
     }
 
-    public bool IsStuned
-    {
-        get
-        {
-            return _isStuned;
-        }
-    }
 
-    public PlayerMove(Transform transform, Rigidbody rb, FootSensor footSensor, float walkSpeed, float runSpeedMultiplier, float jumpForce, float dashForce)
+    public PlayerMove(Player player, float walkSpeed, float runSpeedMultiplier, float jumpForce, float dashForce)
     {
-        _transform = transform;
-        _rb = rb;
-        _footSensor = footSensor;
+        _transform = player.transform;
+        _rb = player.rb;
+        _footSensor = player.footSensor;
         _walkSpeed = walkSpeed;
         _runSpeedMultiplier = runSpeedMultiplier;
         _jumpForce = jumpForce;
         _dashForce = dashForce;
+
+        player.controller.Move = Move;
+        player.controller.Jump = Jump;
+        player.controller.Run = Run;
 
         _canMove = true;
         _isMoving = false;
@@ -110,7 +107,7 @@ public class PlayerMove
 
     public void Run()
     {
-        if (_footSensor.isGrownded && CanMove)
+        if (_footSensor.isGrounded && CanMove)
         {
             _inputVector *= _runSpeedMultiplier;
         }
@@ -126,7 +123,7 @@ public class PlayerMove
 
     public void Jump()
     {
-        if (_footSensor.isGrownded && CanMove)
+        if (_footSensor.isGrounded && CanMove)
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             AudioManager.instance.Play("PlayerJump");

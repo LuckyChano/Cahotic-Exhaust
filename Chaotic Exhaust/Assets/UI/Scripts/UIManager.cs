@@ -15,6 +15,7 @@ namespace UIManager
         [SerializeField] private GameObject _mainMenu;
         [SerializeField] private GameObject _credits;
         [SerializeField] private bool paused;
+
         public GameObject _pauseMenu;
 
 
@@ -41,8 +42,6 @@ namespace UIManager
             _optionsMenu.SetActive(true);
             _mainMenu.SetActive(false);
         }
-
-
 
         public void ShowLevelSelectionMenu()
         {
@@ -74,33 +73,19 @@ namespace UIManager
             Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
             Time.timeScale = 1;
         }
-
-
-
-        private void Update()
+        public void Pause()
         {
-
-            ArticifialUpdate();
-
-        }
-
-        private void ArticifialUpdate()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (!paused)
             {
-                if (!paused)
-                {
-                    PauseGame();
-                }
-                else
-                {
-                    UnpauseGame();
-                }
+                PauseGame();
+            }
+            else
+            {
+                UnpauseGame();
             }
         }
 
-
-        public void PauseGame()
+        void PauseGame()
         {
             paused = true;
             Cursor.lockState = CursorLockMode.None;
@@ -109,7 +94,7 @@ namespace UIManager
                 _pauseMenu.gameObject.SetActive(true);
             Time.timeScale = 0f;
         }
-        public void UnpauseGame()
+        void UnpauseGame()
         {
             paused = false;
             Cursor.lockState = CursorLockMode.Locked;

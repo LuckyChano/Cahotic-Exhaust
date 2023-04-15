@@ -7,13 +7,14 @@ using System;
 
 public class Player : PlayerLifeSystem, IAffectGas
 {
+    [Header("Player Configurations")]
     //Variables Estaticas
 
     //Variables Publicas por Referencia
     public Rigidbody rb;
     public FootSensor footSensor;
-    public Animator screenFx;
     public GameObject deathScreen;
+    public UIManager.UIManager uiManager;
 
 
     //public Animator screenFx;
@@ -24,48 +25,53 @@ public class Player : PlayerLifeSystem, IAffectGas
 
     //Variables Publicas
     public float playerLife = 100;
-
     public float walkSpeed = 7f;
     public float runSpeedMultiplier = 1.5f;
     public float jumpForce = 10f;
     public float dashForce = 12f;
-        
+    public float throwForce = 500;
+
+    public GameObject granadePrefab;
+    public Transform throwPos;
+
+
     //Variables Privadas
     [SerializeField]
     private int _fuseAmount = 0;
 
 
+
     //Propiedades
-    public bool IsMoving
+    public PlayerMove movement
     {
         get
         {
-            return _playerMove.IsMoving;
+            return _playerMove;
         }
     }
-    public bool CanMove
+    public PlayerControl controller
     {
         get
         {
-            return _playerMove.CanMove;
-        }
-        set
-        {
-            _playerMove.CanMove = value;
+            return _playerControl;
         }
     }
 
     //Delegados
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
         
-        _playerMove = new PlayerMove(transform, rb, footSensor, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
-        _playerControl = new PlayerControl(_playerMove);
+        _playerControl = new PlayerControl(this);
 
         StartLife(playerLife);
         StartUI();
+        _playerControl.Throw = Throw;
+        _playerControl.Pause = uiManager.Pause;
+
+        _playerMove = new PlayerMove(this, walkSpeed, runSpeedMultiplier, jumpForce, dashForce);
+
     }
 
     void Update()
@@ -82,6 +88,13 @@ public class Player : PlayerLifeSystem, IAffectGas
 
     //-------------------------------------------------------------------------------------------------------------------------------------
 
+    public void Throw()
+    {
+        GameObject newGranede = Instantiate(granadePrefab, throwPos.position, throwPos.rotation);
+
+        newGranede.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce);
+    }
+
     public void AddFuse()
     {
         _fuseAmount++;
@@ -92,37 +105,6 @@ public class Player : PlayerLifeSystem, IAffectGas
         return _fuseAmount;
     }
 
-    public override void TakeDamage(float value)
-    {
-        _currentHealth -= value;
-
-        if (_currentHealth <= 0)
-        {
-            _currentHealth = 0;
-
-            Die();
-        }
-
-        screenFx.SetTrigger("hit");
-        
-        AudioManager.instance.Play("PlayerHurt");
-
-        UpdateUI();
-    }
-
-    public override void Heal(float value)
-    {
-        _currentHealth += value;
-
-        if (_currentHealth >= _maxHealth)
-        {
-            _currentHealth = _maxHealth;
-        }
-
-        //Agregar FeedBack
-
-        UpdateUI();
-    }
 
     public override void Die()
     {

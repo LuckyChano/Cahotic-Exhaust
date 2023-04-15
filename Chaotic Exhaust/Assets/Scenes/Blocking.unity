@@ -4746,6 +4746,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4055253583172432835, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 1395739440}
+    - target: {fileID: 4055253583172432835, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
+      propertyPath: granadeThrow
+      value: 
+      objectReference: {fileID: 924406217}
+    - target: {fileID: 4055253583172432835, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
+      propertyPath: granadePrefab
+      value: 
+      objectReference: {fileID: 3814194579576553662, guid: d53400e181d67eb4389157e0bf8aa0da, type: 3}
     - target: {fileID: 4055253583172432865, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4842,7 +4854,8 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadMainScene
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2375289178041996560, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
 --- !u!43 &169571698
 Mesh:
@@ -32720,6 +32733,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1158777231335667002, guid: 5806c034e9067e942b7d87c69f5ec6fc, type: 3}
   m_PrefabInstance: {fileID: 924127283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &924406217 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5751744471165637651, guid: 3012c7f514dae72489a18fdc39a47597, type: 3}
+  m_PrefabInstance: {fileID: 166963054}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &928566433
 PrefabInstance:

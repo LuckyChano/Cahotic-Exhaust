@@ -32,7 +32,6 @@ public class PlayerHealth : MonoBehaviour, IAffectGas
             PlayerBehaviour.instance.canMove = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
         }
     }
 

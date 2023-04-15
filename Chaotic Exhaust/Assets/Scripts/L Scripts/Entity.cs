@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour,IDamageable,IShootable
 {
 
-    protected float _currentHealth;
+    [SerializeField] protected float _currentHealth;
     protected float _maxHealth;
     protected bool _isAlive;
 
@@ -43,7 +43,7 @@ public abstract class Entity : MonoBehaviour,IDamageable,IShootable
         _isAlive = true;
     }
 
-    //resivir daño
+    //recibir daño
     public abstract void TakeDamage(float value);
 
     //curacion

@@ -7431,7 +7431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 4055253583172432865}
-  footSensor: {fileID: 4055253583101908689}
   mouseSens: 150
 --- !u!1 &4055253583101908691
 GameObject:
@@ -7490,7 +7489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab610a1b7ec7a9d4992456ac3e6ff1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrownded: 0
+  isGrounded: 0
 --- !u!1 &4055253583172432894
 GameObject:
   m_ObjectHideFlags: 0
@@ -7637,17 +7636,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22aca89a25acc145b12ab4189e41957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentHealth: 0
   healthBar: {fileID: 3289824954176596735}
-  healthPercentage: {fileID: 1040677985113304897}
+  healthDisplay: {fileID: 0}
+  screenFx: {fileID: 4264123934289966102}
   rb: {fileID: 0}
   footSensor: {fileID: 4055253583101908689}
-  screenFx: {fileID: 4264123934289966102}
   deathScreen: {fileID: 0}
+  uiManager: {fileID: 0}
   playerLife: 100
   walkSpeed: 7
   runSpeedMultiplier: 1.5
   jumpForce: 10
   dashForce: 12
+  throwForce: 500
+  granadePrefab: {fileID: 0}
+  throwPos: {fileID: 0}
   _fuseAmount: 0
 --- !u!1 &4065984461724340729
 GameObject:
@@ -10082,7 +10086,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8244237077661519944}
   - component: {fileID: 6067314816576159668}
-  - component: {fileID: 6067314816576159666}
   - component: {fileID: 6067314816576159669}
   - component: {fileID: 1537680573398742490}
   m_Layer: 11
@@ -10210,19 +10213,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6067314816576159666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8728742839576349426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4dfdbb56b5a7274bb5ff77450abe5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swayAmount: 8
 --- !u!114 &6067314816576159669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10272,7 +10262,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5751744471165637651}
-  - component: {fileID: 2375289178041996560}
   m_Layer: 0
   m_Name: Granade Point
   m_TagString: Untagged
@@ -10287,27 +10276,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8754104735712809482}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.493, y: -0.268, z: 0.321}
+  m_LocalRotation: {x: -0.18663935, y: 1.1641532e-10, z: -0.0000458496, w: 0.9824285}
+  m_LocalPosition: {x: -0.49300024, y: -0.26799983, z: 0.32100013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4055253582233204472}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2375289178041996560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8754104735712809482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60376e2538c6dc14ca585cf6f8dc3f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  throwForce: 1000
-  granadePrefab: {fileID: 3814194579576553662, guid: d53400e181d67eb4389157e0bf8aa0da, type: 3}
+  m_LocalEulerAnglesHint: {x: -21.513, y: 0.001, z: -0.006}
 --- !u!1 &8955369814951892589
 GameObject:
   m_ObjectHideFlags: 0

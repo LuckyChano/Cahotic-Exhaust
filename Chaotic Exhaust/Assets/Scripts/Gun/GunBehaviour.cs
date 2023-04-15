@@ -25,6 +25,8 @@ public class GunBehaviour : MonoBehaviour
     public ParticleSystem MuzzleParticle;
     public TextMeshProUGUI ammoCounter;
 
+    private GunSway _gunEffects;
+
     Machine _fsm;
     ShootingState _shootState;
     ReloadState _reloadStatel;
@@ -33,6 +35,7 @@ public class GunBehaviour : MonoBehaviour
     {
         //_anim = GetComponent<Animator>();
         _fsm = new Machine();
+        _gunEffects = new GunSway(this);
         bulletAmout = maxAmmo;
         
         _shootState = new ShootingState(this, _fsm, Shoot, shootSpeed);
@@ -44,8 +47,9 @@ public class GunBehaviour : MonoBehaviour
 
     void Update()
     {
-            PlayerState();
-            ammoCounter.text = bulletAmout.ToString();
+        PlayerState();
+        _gunEffects.Update();
+        ammoCounter.text = bulletAmout.ToString();
     }
 
     void PlayerState()
@@ -59,6 +63,7 @@ public class GunBehaviour : MonoBehaviour
         MuzzleParticle.Play();
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range))
         {
+            _gunEffects.Recoil();
             var tar = hit.transform.GetComponent<IShootable>();
             if (tar !=null)
             {

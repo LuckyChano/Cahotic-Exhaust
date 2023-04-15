@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControl
 {
-    private PlayerMove _playerMove;
+    private Player _player;
 
     private float _verAxis;
     private float _horAxis;
@@ -12,9 +12,15 @@ public class PlayerControl
     private string _jumpButton = "Jump";
     //private string _dashButton = "Dash";
 
-    public PlayerControl(PlayerMove playerMove)
+    public System.Action<float, float> Move;
+    public System.Action Run;
+    public System.Action Jump;
+    public System.Action Throw;
+    public System.Action Pause;
+
+    public PlayerControl(Player player)
     {
-        _playerMove = playerMove;
+        _player = player;
     }
 
     public void ArtificialUpdate()
@@ -22,27 +28,36 @@ public class PlayerControl
         _verAxis = Input.GetAxisRaw("Vertical");
         _horAxis = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown(_jumpButton))
-        {
-            _playerMove.Jump();
-        }
+        Move?.Invoke(_verAxis, _horAxis);
+
 
         //if (Input.GetButtonDown(_dashButton))
         //{
         //    _playerMove.Dash(_verAxis, _horAxis);
         //}
-        
-        _playerMove.Move(_verAxis, _horAxis);
 
+
+
+        if (Input.GetButtonDown(_jumpButton))
+        {
+            Jump?.Invoke();
+        }
         if (Input.GetButton(_runButton))
         {
-            _playerMove.Run();
+            Run?.Invoke();
         }
-
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Throw?.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause?.Invoke();
+        }
     }
 
     public void ArtificialFixedUpdate()
     {
-        _playerMove.FixedMove();
+        _player.movement.FixedMove();
     }
 }

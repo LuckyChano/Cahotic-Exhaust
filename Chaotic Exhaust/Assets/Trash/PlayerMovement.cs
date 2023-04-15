@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour, IWalkable
             inputVector.Normalize();
         }
 
-        if (Input.GetButtonDown(_jumpButton) && footSensor.isGrownded)
+        if (Input.GetButtonDown(_jumpButton) && footSensor.isGrounded)
         {
             Jump();
 
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour, IWalkable
 
     public void Move()
     {
-        if (Input.GetButton(_runButton) && footSensor.isGrownded)
+        if (Input.GetButton(_runButton) && footSensor.isGrounded)
         {
             inputVector *= runSpeedMultiplier;
         }

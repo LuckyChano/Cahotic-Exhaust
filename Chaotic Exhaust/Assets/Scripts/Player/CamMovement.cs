@@ -8,8 +8,6 @@ public class CamMovement : MonoBehaviour
 
     private Player _player;
     
-    public FootSensor footSensor;
-    
     public float mouseSens = 100f;
         
     private float _xRotation = 0f;
@@ -41,7 +39,7 @@ public class CamMovement : MonoBehaviour
         _xRotation = Mathf.Clamp(_xRotation, -90, 90);
         transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             
-        if (_player.IsMoving && footSensor.isGrownded)
+        if (_player.movement.IsMoving && _player.footSensor.isGrounded)
         {
             CamSineWave(_YRange, _YmovSens, _YlocalPos);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FootSensor : MonoBehaviour
 {
-    public bool isGrownded;
+    public bool isGrounded;
 
     private float _contactCount;
 
@@ -17,7 +17,7 @@ public class FootSensor : MonoBehaviour
 
         if (_contactCount==1)
         {
-            isGrownded = true;
+            isGrounded = true;
         }
     }
 
@@ -30,7 +30,7 @@ public class FootSensor : MonoBehaviour
 
         if (_contactCount == 0)
         {
-            isGrownded = false;
+            isGrounded = false;
         }
     }
 }
