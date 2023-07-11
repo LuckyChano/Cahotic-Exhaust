@@ -9,11 +9,11 @@ public class Machine
 
     private IStates currentState;// = new BlankState();
 
-    private Dictionary<GunStates, IStates> statesDict = new Dictionary<GunStates, IStates>();
+    private Dictionary<int, IStates> statesDict = new Dictionary<int, IStates>();
 
 
 
-    public void AddState(GunStates key, IStates state)
+    public void AddState(int key, IStates state)
     {
         if(statesDict.ContainsKey(key))
         {
@@ -28,7 +28,12 @@ public class Machine
             currentState.OnUpdate();
     }
 
-    public void ChangeState(GunStates key)
+    public void FixedUpdate()
+    {
+        currentState.OnFixedUpdate();
+    }
+
+    public void ChangeState(int key)
     {
         if (!statesDict.ContainsKey(key)) return;
         currentState?.OnExit();

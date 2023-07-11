@@ -40,9 +40,9 @@ public class GunBehaviour : MonoBehaviour
         
         _shootState = new ShootingState(this, _fsm, Shoot, shootSpeed);
         _reloadStatel = new ReloadState(this, _fsm, null);
-        _fsm.AddState(GunStates.SHOOT, _shootState);
-        _fsm.AddState(GunStates.RELOAD, _reloadStatel);
-        _fsm.ChangeState(GunStates.SHOOT);
+        _fsm.AddState((int)GunStates.SHOOT, _shootState);
+        _fsm.AddState((int)GunStates.RELOAD, _reloadStatel);
+        _fsm.ChangeState((int)GunStates.SHOOT);
     }
 
     void Update()

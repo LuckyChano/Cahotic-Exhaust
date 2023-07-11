@@ -6,6 +6,7 @@ public interface IStates
 {
     void OnEnter();
     void OnUpdate();
+    void OnFixedUpdate();
     void OnExit();
 }
 

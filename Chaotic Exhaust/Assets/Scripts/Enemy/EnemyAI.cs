@@ -8,13 +8,14 @@ public class EnemyAI
     private GameObject _player;
     private Enemy _enemy;
 
+    public float distanceToPlayer { get { return _distanceToPlayer; } private set { } }
     public float distanceToPoint = 2;
     public float distanceToFollowPlayer = 10;
+    public bool isAggroed = false;
 
     private int _i = 0;
     private float _distanceToPlayer;
 
-    private bool isAggroed = false;
 
     public EnemyAI(Enemy enemy, GameObject target)
     {
@@ -31,13 +32,9 @@ public class EnemyAI
     {
         _distanceToPlayer = Vector3.Distance(_enemy.transform.position, _player.transform.position);
 
-        if (_distanceToPlayer <= distanceToFollowPlayer || isAggroed)
+        /*if (_distanceToPlayer <= distanceToFollowPlayer || isAggroed)
         {
             FollowPlayer();
-        }
-        /*else
-        {
-            EnemyPath();
         }*/
     }
 

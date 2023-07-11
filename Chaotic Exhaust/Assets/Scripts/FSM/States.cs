@@ -26,9 +26,14 @@ public class ReloadState : IStates
         _agent.bulletAmout = 20;
     }
 
+    public void OnFixedUpdate()
+    {
+        
+    }
+
     public void OnUpdate()
     {
-        machine.ChangeState(GunStates.SHOOT);
+        machine.ChangeState((int)GunStates.SHOOT);
     }
 
 }
@@ -67,13 +72,19 @@ public class ShootingState : IStates
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            machine.ChangeState(GunStates.RELOAD);
+            machine.ChangeState((int)GunStates.RELOAD);
         }
         if (_agent.bulletAmout <= 0 && Input.GetKeyDown(KeyCode.R))
         {
-            machine.ChangeState(GunStates.RELOAD);
+            machine.ChangeState((int)GunStates.RELOAD);
         }
     }
+
+    public void OnFixedUpdate()
+    {
+        
+    }
+
     public ShootingState(GunBehaviour agent, Machine fsm, ShootingDelegate shoot, float _shootSpeed)
     {
         _agent = agent;

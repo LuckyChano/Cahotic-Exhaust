@@ -13,13 +13,22 @@ public class Enemy : Entity
     private EnemyAI _movement;
     private RoomTrigger _roomTrigger;
     private Player _player;
-    private Animator _animator;
     [SerializeField] private Collider colliderMano;
 
+    public Animator animator;
     public float enemyLife = 5;
     public float enemyDamage = 20;
     public float walkSpeed = 2;
     public float runSpeed = 6;
+
+
+    //----------------FSM-------------------
+    public Machine fsm;
+
+    EnemyMoveState _moveState;
+    EnemyIdleState _idleState;
+    //-----------------------------------
+
 
     private void Awake()
     {
@@ -28,23 +37,30 @@ public class Enemy : Entity
 
     void Start()
     {
+        fsm = new Machine();
+
         myRend = GetComponentInChildren<SkinnedMeshRenderer>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        _animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
         StartLife(enemyLife);
 
         _movement = new EnemyAI(this, _player.gameObject);
-        _movement.ArtificialStart();
+        _idleState = new EnemyIdleState(this, _movement);
+        _moveState = new EnemyMoveState(this, _movement);
+        fsm.AddState(0, _idleState);
+        fsm.AddState(1, _moveState);
+        fsm.ChangeState(0);
+        //_movement.ArtificialStart();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        if(_isAlive)
-            _movement.ArtificialUpdate();
-
-        _animator.SetBool("isMoving", navMeshAgent.velocity.magnitude > 0.1f);
-        _animator.SetFloat("velocity", navMeshAgent.velocity.magnitude);
+       fsm.FixedUpdate();
+    }
+    private void Update()
+    {
+        fsm.Update();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,22 +68,20 @@ public class Enemy : Entity
         var player = other.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            _animator.SetTrigger("HitTrigger");
+            animator.SetTrigger("HitTrigger");
         }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("RoomTrigger"))
         {
             _roomTrigger = other.GetComponent<RoomTrigger>();
-        }
-
-        
+        }   
     }
 
     private void OnTriggerStay(Collider collisionMano)
     {
         if (collisionMano.gameObject.layer == 7)
         {
-            _animator.SetBool("inRange", true);
+            animator.SetBool("inRange", true);
         }
     }
 
@@ -77,7 +91,7 @@ public class Enemy : Entity
     {
         if (!other.isTrigger && other.gameObject.layer == 7)
         {
-            _animator.SetBool("inRange", false);
+            animator.SetBool("inRange", false);
         }
     }
 
@@ -110,7 +124,7 @@ public class Enemy : Entity
         }
 
         AudioManager.instance.Play("EnemyDie");
-        _animator.SetTrigger("Die");
+        animator.SetTrigger("Die");
 
         //Destroy(gameObject, 1.4f); ;
     }
