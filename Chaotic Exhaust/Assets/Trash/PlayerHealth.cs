@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour, IAffectGas
 
     public void EnterGas(float dmg)
     {
-        player.Damage(dmg);
+        //player.Damage(dmg);
     }
 
 

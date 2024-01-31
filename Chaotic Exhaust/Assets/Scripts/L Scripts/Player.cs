@@ -34,11 +34,9 @@ public class Player : PlayerLifeSystem, IAffectGas
     public GameObject granadePrefab;
     public Transform throwPos;
 
-
     //Variables Privadas
     [SerializeField]
     private int _fuseAmount = 0;
-
 
 
     //Propiedades

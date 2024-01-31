@@ -24,8 +24,11 @@ public abstract class PlayerLifeSystem : Entity
     //Esto se hace en take damage
     protected void UpdateUI()
     {
-        healthBar.value = CurrentHealth;
-        healthDisplay.text = CurrentHealth.ToString("g2");
+        if (healthBar != null && healthDisplay != null)
+        {
+            healthBar.value = CurrentHealth;
+            healthDisplay.text = CurrentHealth.ToString("g2");
+        }
     }
 
 
@@ -40,11 +43,18 @@ public abstract class PlayerLifeSystem : Entity
             Die();
         }
 
-        screenFx.SetTrigger("hit");
+
+        UpdateUI();
+
+
+        if (screenFx != null)
+        {
+            screenFx.SetTrigger("hit");
+        }
 
         AudioManager.instance.Play("PlayerHurt");
 
-        UpdateUI();
+        //UpdateUI();
     }
 
     public override void Heal(float value)
